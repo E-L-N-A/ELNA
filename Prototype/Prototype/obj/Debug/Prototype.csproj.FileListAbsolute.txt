@@ -1,0 +1,12 @@
+C:\Users\nmb90\source\repos\Prototype\Prototype\bin\Debug\Prototype.exe.config
+C:\Users\nmb90\source\repos\Prototype\Prototype\bin\Debug\Prototype.exe
+C:\Users\nmb90\source\repos\Prototype\Prototype\bin\Debug\Prototype.pdb
+C:\Users\nmb90\source\repos\Prototype\Prototype\obj\Debug\Prototype.Form1.resources
+C:\Users\nmb90\source\repos\Prototype\Prototype\obj\Debug\Prototype.Properties.Resources.resources
+C:\Users\nmb90\source\repos\Prototype\Prototype\obj\Debug\Prototype.csproj.GenerateResource.Cache
+C:\Users\nmb90\source\repos\Prototype\Prototype\obj\Debug\Prototype.csproj.CoreCompileInputs.cache
+C:\Users\nmb90\source\repos\Prototype\Prototype\obj\Debug\Prototype.exe
+C:\Users\nmb90\source\repos\Prototype\Prototype\obj\Debug\Prototype.pdb
+C:\Users\nmb90\source\repos\Prototype\Prototype\bin\Debug\MaterialSkin.dll
+C:\Users\nmb90\source\repos\Prototype\Prototype\obj\Debug\Prototype.csprojResolveAssemblyReference.cache
+C:\Users\nmb90\source\repos\Prototype\Prototype\obj\Debug\Prototype.Form2.resources
