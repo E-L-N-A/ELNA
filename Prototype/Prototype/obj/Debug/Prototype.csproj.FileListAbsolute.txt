@@ -70,3 +70,4 @@ C:\Users\Pei\Documents\GitHub\ELNA\Prototype\Prototype\obj\Debug\Prototype.exe
 C:\Users\Pei\Documents\GitHub\ELNA\Prototype\Prototype\obj\Debug\Prototype.pdb
 C:\Users\Pei\Documents\GitHub\ELNA\Prototype\Prototype\obj\Debug\Prototype.Form4.resources
 C:\Users\Pei\Documents\GitHub\ELNA\Prototype\Prototype\obj\Debug\Prototype.Form2.resources
+C:\Users\nmb90\Documents\GitHub\ELNA\Prototype\Prototype\obj\Debug\Prototype.Form4.resources
