@@ -7,10 +7,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using MetroFramework.Controls;
+using MetroFramework;
+using MaterialSkin.Controls;
+using MaterialSkin.Animations;
+using MaterialSkin;
+using System.IO;
 namespace Prototype
 {
-    public partial class Form1 : Form
+    public partial class Form1 : MetroFramework.Forms.MetroForm
     {
         public Form1()
         {
@@ -19,7 +24,30 @@ namespace Prototype
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            comboBox1.SelectedIndex = 0;
+            metroComboBox1.SelectedIndex=0;
         }
+
+
+        private void materialCheckBox1_CheckStateChanged(object sender, EventArgs e)
+        {
+            Form1 form = new Form1();
+            if (materialCheckBox1.Checked)
+            {
+                form.AutoSize = true;
+                materialRaisedButton2.Visible = true;
+                materialLabel1.Visible = true;
+                textBox1.Visible = true;
+            }
+            else
+            {
+                materialRaisedButton2.Visible = false;
+                materialLabel1.Visible = false;
+                textBox1.Visible = false;
+                form.AutoSize = false;
+                form.Size = new Size(287, 541);
+            }
+        }
+
+
     }
 }
