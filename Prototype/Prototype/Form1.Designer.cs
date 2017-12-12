@@ -43,13 +43,13 @@
             this.metroComboBox1.FontWeight = MetroFramework.MetroComboBoxWeight.Bold;
             this.metroComboBox1.ForeColor = System.Drawing.SystemColors.WindowText;
             this.metroComboBox1.FormattingEnabled = true;
-            this.metroComboBox1.ItemHeight = 24;
+            this.metroComboBox1.ItemHeight = 23;
             this.metroComboBox1.Items.AddRange(new object[] {
             "Dictionary Mode",
             "Translation Mode"});
             this.metroComboBox1.Location = new System.Drawing.Point(10, 75);
             this.metroComboBox1.Name = "metroComboBox1";
-            this.metroComboBox1.Size = new System.Drawing.Size(200, 30);
+            this.metroComboBox1.Size = new System.Drawing.Size(200, 29);
             this.metroComboBox1.TabIndex = 11;
             this.metroComboBox1.UseSelectable = true;
             // 
@@ -133,6 +133,7 @@
             this.materialRaisedButton1.TabIndex = 18;
             this.materialRaisedButton1.Text = "Go";
             this.materialRaisedButton1.UseVisualStyleBackColor = true;
+            this.materialRaisedButton1.Click += new System.EventHandler(this.materialRaisedButton1_Click);
             // 
             // materialCheckBox1
             // 
@@ -145,10 +146,11 @@
             this.materialCheckBox1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialCheckBox1.Name = "materialCheckBox1";
             this.materialCheckBox1.Ripple = true;
-            this.materialCheckBox1.Size = new System.Drawing.Size(155, 30);
+            this.materialCheckBox1.Size = new System.Drawing.Size(129, 30);
             this.materialCheckBox1.TabIndex = 19;
             this.materialCheckBox1.Text = "Advanced Mode";
             this.materialCheckBox1.UseVisualStyleBackColor = true;
+            this.materialCheckBox1.CheckedChanged += new System.EventHandler(this.materialCheckBox1_CheckedChanged);
             this.materialCheckBox1.CheckStateChanged += new System.EventHandler(this.materialCheckBox1_CheckStateChanged);
             // 
             // materialRaisedButton2
@@ -189,12 +191,12 @@
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.BorderStyle = MetroFramework.Forms.MetroFormBorderStyle.FixedSingle;
-            this.ClientSize = new System.Drawing.Size(287, 541);
+            this.ClientSize = new System.Drawing.Size(291, 540);
             this.Controls.Add(this.materialLabel1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.materialRaisedButton2);
@@ -209,9 +211,7 @@
             this.MaximizeBox = false;
             this.Name = "Form1";
             this.Padding = new System.Windows.Forms.Padding(22, 60, 22, 20);
-            this.Resizable = false;
             this.Text = "ELNA";
-            this.Theme = MetroFramework.MetroThemeStyle.Default;
             this.TransparencyKey = System.Drawing.Color.DeepSkyBlue;
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
