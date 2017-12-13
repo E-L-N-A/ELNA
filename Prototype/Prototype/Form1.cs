@@ -65,6 +65,7 @@ namespace Prototype
 <<<<<<< HEAD
 =======
         }
+<<<<<<< HEAD
 
         private void materialRaisedButton2_Click(object sender, EventArgs e)
         {
@@ -74,5 +75,7 @@ namespace Prototype
             form2.Show();
 >>>>>>> parent of fdc11f2... Dumb Gayhub
         }
+=======
+>>>>>>> parent of ee9a9b7... Brand New UI
     }
 }

@@ -55,6 +55,7 @@ C:\Users\nmb90\Documents\GitHub\ELNA\Prototype\Prototype\obj\Debug\Prototype.csp
 C:\Users\nmb90\Documents\GitHub\ELNA\Prototype\Prototype\obj\Debug\Prototype.exe
 C:\Users\nmb90\Documents\GitHub\ELNA\Prototype\Prototype\obj\Debug\Prototype.pdb
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 C:\Users\Pei\Documents\GitHub\ELNA\Prototype\Prototype\bin\Debug\Prototype.exe.config
 C:\Users\Pei\Documents\GitHub\ELNA\Prototype\Prototype\bin\Debug\Prototype.exe
@@ -73,3 +74,5 @@ C:\Users\Pei\Documents\GitHub\ELNA\Prototype\Prototype\obj\Debug\Prototype.pdb
 C:\Users\Pei\Documents\GitHub\ELNA\Prototype\Prototype\obj\Debug\Prototype.Form4.resources
 C:\Users\Pei\Documents\GitHub\ELNA\Prototype\Prototype\obj\Debug\Prototype.Form2.resources
 >>>>>>> parent of fdc11f2... Dumb Gayhub
+=======
+>>>>>>> parent of ee9a9b7... Brand New UI
