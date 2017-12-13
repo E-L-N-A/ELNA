@@ -62,6 +62,17 @@ namespace Prototype
         private void materialRaisedButton1_Click(object sender, EventArgs e)
         {
            
+<<<<<<< HEAD
+=======
+        }
+
+        private void materialRaisedButton2_Click(object sender, EventArgs e)
+        {
+            Form2 form2 = new Form2();
+
+            // Show the settings form
+            form2.Show();
+>>>>>>> parent of fdc11f2... Dumb Gayhub
         }
     }
 }
