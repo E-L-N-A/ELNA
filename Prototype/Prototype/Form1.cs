@@ -60,14 +60,15 @@ namespace Prototype
 
         private void materialRaisedButton1_Click(object sender, EventArgs e)
         {
-            Form3 f3 = new Form3();
-            f3.Show();
+           
         }
 
         private void materialRaisedButton2_Click(object sender, EventArgs e)
         {
-            Form3 f3 = new Form3();
-            f3.Show();
+            Form2 form2 = new Form2();
+
+            // Show the settings form
+            form2.Show();
         }
     }
 }
