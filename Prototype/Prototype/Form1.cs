@@ -30,7 +30,7 @@ namespace Prototype
 
         private void materialCheckBox1_CheckStateChanged(object sender, EventArgs e)
         {
-            Form1 form = new Form1();
+            Form1 form =new Form1();
             if (materialCheckBox1.Checked)
             {
                 form.AutoSize = true;

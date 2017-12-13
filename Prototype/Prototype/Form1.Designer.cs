@@ -209,7 +209,6 @@
             this.MaximizeBox = false;
             this.Name = "Form1";
             this.Padding = new System.Windows.Forms.Padding(22, 60, 22, 20);
-            this.Resizable = false;
             this.Text = "ELNA";
             this.Theme = MetroFramework.MetroThemeStyle.Default;
             this.TransparencyKey = System.Drawing.Color.DeepSkyBlue;
