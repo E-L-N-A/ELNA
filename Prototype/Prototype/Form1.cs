@@ -63,7 +63,10 @@ namespace Prototype
         {
            
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> parent of fdc11f2... Dumb Gayhub
         }
 <<<<<<< HEAD
 
@@ -73,6 +76,9 @@ namespace Prototype
 
             // Show the settings form
             form2.Show();
+<<<<<<< HEAD
+>>>>>>> parent of fdc11f2... Dumb Gayhub
+=======
 >>>>>>> parent of fdc11f2... Dumb Gayhub
         }
 =======

@@ -30,6 +30,7 @@
         {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> parent of ee9a9b7... Brand New UI
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
@@ -133,12 +134,15 @@
             this.textBox1.ReadOnly = true;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
 =======
+=======
+>>>>>>> parent of fdc11f2... Dumb Gayhub
             this.materialTabControl1 = new MaterialSkin.Controls.MaterialTabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.materialTabSelector1 = new MaterialSkin.Controls.MaterialTabSelector();
+<<<<<<< HEAD
 =======
 >>>>>>> parent of ee9a9b7... Brand New UI
             this.button1 = new System.Windows.Forms.Button();
@@ -149,6 +153,13 @@
             this.SuspendLayout();
             // 
 <<<<<<< HEAD
+=======
+            this.button1 = new System.Windows.Forms.Button();
+            this.materialTabControl1.SuspendLayout();
+            this.tabPage4.SuspendLayout();
+            this.SuspendLayout();
+            // 
+>>>>>>> parent of fdc11f2... Dumb Gayhub
             // materialTabControl1
             // 
             this.materialTabControl1.Controls.Add(this.tabPage1);
@@ -299,6 +310,17 @@
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
 >>>>>>> parent of ee9a9b7... Brand New UI
             // 
+            // materialTabSelector1
+            // 
+            this.materialTabSelector1.BaseTabControl = this.materialTabControl1;
+            this.materialTabSelector1.Depth = 0;
+            this.materialTabSelector1.Location = new System.Drawing.Point(-18, 64);
+            this.materialTabSelector1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialTabSelector1.Name = "materialTabSelector1";
+            this.materialTabSelector1.Size = new System.Drawing.Size(632, 32);
+            this.materialTabSelector1.TabIndex = 1;
+            this.materialTabSelector1.Text = "materialTabSelector1";
+            // 
             // button1
             // 
             resources.ApplyResources(this.button1, "button1");
@@ -306,6 +328,7 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 =======
@@ -334,6 +357,11 @@
             // Form1
             // 
             resources.ApplyResources(this, "$this");
+=======
+            // Form2
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+>>>>>>> parent of fdc11f2... Dumb Gayhub
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.MAINPAGE);
             this.Controls.Add(this.Done);
@@ -374,6 +402,7 @@
             this.Load += new System.EventHandler(this.Form2_Load);
             this.materialTabControl1.ResumeLayout(false);
             this.tabPage4.ResumeLayout(false);
+<<<<<<< HEAD
 >>>>>>> parent of fdc11f2... Dumb Gayhub
 =======
             this.Controls.Add(this.MAINPAGE);
@@ -390,6 +419,8 @@
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
 >>>>>>> parent of ee9a9b7... Brand New UI
+=======
+>>>>>>> parent of fdc11f2... Dumb Gayhub
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -397,6 +428,7 @@
 
         #endregion
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 =======
@@ -416,6 +448,8 @@
         private MaterialSkin.Controls.MaterialFlatButton Done;
         private MaterialSkin.Controls.MaterialFlatButton MAINPAGE;
 =======
+=======
+>>>>>>> parent of fdc11f2... Dumb Gayhub
         private MaterialSkin.Controls.MaterialTabControl materialTabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
@@ -423,6 +457,7 @@
         private System.Windows.Forms.TabPage tabPage4;
         private MaterialSkin.Controls.MaterialTabSelector materialTabSelector1;
         private System.Windows.Forms.Button button1;
+<<<<<<< HEAD
 >>>>>>> parent of fdc11f2... Dumb Gayhub
 =======
         private System.Windows.Forms.Button button1;
@@ -431,6 +466,8 @@
         private MaterialSkin.Controls.MaterialFlatButton Done;
         private MaterialSkin.Controls.MaterialFlatButton MAINPAGE;
 >>>>>>> parent of ee9a9b7... Brand New UI
+=======
+>>>>>>> parent of fdc11f2... Dumb Gayhub
     }
 }
 
