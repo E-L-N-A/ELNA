@@ -43,32 +43,25 @@ namespace Prototype
 >>>>>>> fdc11f2f986cf787c18d0bb77c8e8c5bfc54fed2
             if (materialCheckBox1.Checked)
             {
-                this.AutoSize = true;
+                //form.AutoSize = true;
                 materialRaisedButton2.Visible = true;
                 materialLabel1.Visible = true;
                 textBox1.Visible = true;
+                this.ClientSize = new Size(580,540);
             }
             else
             {
                 materialRaisedButton2.Visible = false;
                 materialLabel1.Visible = false;
                 textBox1.Visible = false;
-                this.AutoSize = false;
-                this.Size = new Size(287, 541);
+                //form.AutoSize = true;
+                this.ClientSize = new Size(287, 541);
             }
         }
 
         private void materialRaisedButton1_Click(object sender, EventArgs e)
         {
            
-        }
-
-        private void materialRaisedButton2_Click(object sender, EventArgs e)
-        {
-            Form2 form2 = new Form2();
-
-            // Show the settings form
-            form2.Show();
         }
     }
 }

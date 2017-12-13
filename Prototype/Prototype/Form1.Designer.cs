@@ -165,7 +165,6 @@
             this.materialRaisedButton2.Text = "Advanced Settings";
             this.materialRaisedButton2.UseVisualStyleBackColor = true;
             this.materialRaisedButton2.Visible = false;
-            this.materialRaisedButton2.Click += new System.EventHandler(this.materialRaisedButton2_Click);
             // 
             // textBox1
             // 
@@ -180,7 +179,7 @@
             // materialLabel1
             // 
             this.materialLabel1.Depth = 0;
-            this.materialLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.materialLabel1.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialLabel1.Location = new System.Drawing.Point(307, 209);
             this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
@@ -194,9 +193,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.BorderStyle = MetroFramework.Forms.MetroFormBorderStyle.FixedSingle;
-            this.ClientSize = new System.Drawing.Size(289, 541);
+            this.ClientSize = new System.Drawing.Size(291, 540);
             this.Controls.Add(this.materialLabel1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.materialRaisedButton2);
