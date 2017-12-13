@@ -20,6 +20,7 @@ namespace Prototype
         public Form1()
         {
             InitializeComponent();
+           
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -30,10 +31,19 @@ namespace Prototype
 
         private void materialCheckBox1_CheckStateChanged(object sender, EventArgs e)
         {
+<<<<<<< HEAD
             Form1 form =new Form1();
+=======
+            
+        }
+
+        private void materialCheckBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            Form1 form = new Form1();
+>>>>>>> fdc11f2f986cf787c18d0bb77c8e8c5bfc54fed2
             if (materialCheckBox1.Checked)
             {
-                form.AutoSize = true;
+                this.AutoSize = true;
                 materialRaisedButton2.Visible = true;
                 materialLabel1.Visible = true;
                 textBox1.Visible = true;
@@ -43,11 +53,21 @@ namespace Prototype
                 materialRaisedButton2.Visible = false;
                 materialLabel1.Visible = false;
                 textBox1.Visible = false;
-                form.AutoSize = false;
-                form.Size = new Size(287, 541);
+                this.AutoSize = false;
+                this.Size = new Size(287, 541);
             }
         }
 
+        private void materialRaisedButton1_Click(object sender, EventArgs e)
+        {
+            Form3 f3 = new Form3();
+            f3.Show();
+        }
 
+        private void materialRaisedButton2_Click(object sender, EventArgs e)
+        {
+            Form3 f3 = new Form3();
+            f3.Show();
+        }
     }
 }
