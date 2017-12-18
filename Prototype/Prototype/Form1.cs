@@ -27,6 +27,9 @@ namespace Prototype
             metroComboBox1.SelectedIndex=0;
             metroComboBox2.SelectedIndex = 0;
             metroComboBox3.SelectedIndex = 0;
+            string lines = File.ReadAllText(@"D:\fie.txt");
+            richTextBox1.Text = lines;
+
         }
 
 
@@ -137,6 +140,11 @@ namespace Prototype
         private void materialRaisedButton3_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void richTextBox1_TextChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }
