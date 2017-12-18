@@ -1,0 +1,29 @@
+Translation other than traditional format:
+(TOTTF)
+
+1.File to File translation:
+  This translation method allow you to choose
+  your personal document,we will scan selected
+  document and automatically generated a
+  translated document of original copy.
+
+  (Supported File type:PDF,TXT,CSV).
+
+2.Image Text translation:
+  This method allows you to select your image
+  we will scan the image, extract text from
+  image,and deliver the translated text that 
+  is shown in the image.
+
+  (Supported File type:PNG,JPG).
+
+3.Existing audio translation:
+  This method allows you to select your own 
+  audio and we will extract text from select 
+  audio and deliver meaning of the speech
+
+  (Supported File type:MP3,MP4).
+
+Notes:Those accuracy of those methods is based 
+      on the file quality,better file quality
+      improves results quality
