@@ -56,7 +56,8 @@ namespace Prototype
             string F_Line = "";
             string target = "";
             text = text.Replace(" ", "_");
-            string Dir = @"D:\ELNA\Temp";
+            string Dir =System.Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+            Dir = Dir + @"\Elna\temp";
             Directory.CreateDirectory(Dir);
 
 
