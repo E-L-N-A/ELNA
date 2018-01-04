@@ -77,7 +77,7 @@ namespace Prototype
             }
             catch (Exception)
             {
-                F_Line = "No Match Result being found ";
+                F_Line = "No Match Result Can be Displayed Use View full content to resolve";
             }
            File.Delete(@"C:\Users\nmb90\Desktop\Game\dudu.txt");
             return F_Line;
