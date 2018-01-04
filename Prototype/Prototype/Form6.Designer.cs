@@ -56,7 +56,7 @@
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.webBrowser1);
             this.Name = "Form6";
-            this.Text = "Wiki";
+            this.Text = "Web Navigation ";
             this.Load += new System.EventHandler(this.Form6_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
