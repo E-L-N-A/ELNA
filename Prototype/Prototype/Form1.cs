@@ -60,8 +60,9 @@ namespace Prototype
             string F_Line = "";
             string target = "";
             text = text.Replace(" ", "_");
+            //取得系统Document文件夹的路径
             string Dir =System.Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
-            Dir = Dir + @"\Elna\temp";
+            Dir = Dir + @"\ELNA\temp";
             Directory.CreateDirectory(Dir);
 
 
@@ -79,10 +80,10 @@ namespace Prototype
             {
                 sw.Write(pg);
             }
-            string[] line = File.ReadAllLines(Dir+"Temp.txt");
+            string line = File.ReadAllText(Dir+"Temp.txt");
             try
             {
-                F_Line = line[0].Substring(0, line[0].IndexOf(".") + 1);
+                F_Line = line.Substring(0, line.IndexOf("="));
             }
             catch (Exception)
             {
