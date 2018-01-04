@@ -56,7 +56,11 @@ namespace Prototype
             string F_Line = "";
             string target = "";
             text = text.Replace(" ", "_");
-           
+            string Dir = @"D:\ELNA\Temp";
+            Directory.CreateDirectory(Dir);
+
+
+
             using (Stream stream = client.OpenRead("http://en.wikipedia.org/w/api.php?format=json&action=query&prop=extracts&explaintext=1&titles=" + text))
             using (StreamReader reader = new StreamReader(stream))
             {
@@ -66,11 +70,11 @@ namespace Prototype
                 foreach (Page page in result.query.pages.Values)
                     pg = page.extract;
             }
-            using (StreamWriter sw = File.CreateText(@"C:\Users\nmb90\Desktop\Game\dudu.txt"))
+            using (StreamWriter sw = File.CreateText(Dir+"Temp.txt"))
             {
                 sw.Write(pg);
             }
-            string[] line = File.ReadAllLines(@"C:\Users\nmb90\Desktop\Game\dudu.txt");
+            string[] line = File.ReadAllLines(Dir+"Temp.txt");
             try
             {
                 F_Line = line[0].Substring(0, line[0].IndexOf(".") + 1);
@@ -79,7 +83,7 @@ namespace Prototype
             {
                 F_Line = "No Match Result Can be Displayed Use View full content to resolve";
             }
-           File.Delete(@"C:\Users\nmb90\Desktop\Game\dudu.txt");
+           File.Delete(Dir+"Temp.txt");
             return F_Line;
             
             
