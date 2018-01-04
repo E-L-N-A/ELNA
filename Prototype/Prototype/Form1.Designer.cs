@@ -33,6 +33,8 @@
             this.materialTabSelector1 = new MaterialSkin.Controls.MaterialTabSelector();
             this.materialTabControl1 = new MaterialSkin.Controls.MaterialTabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.button2 = new System.Windows.Forms.Button();
             this.materialRaisedButton5 = new MaterialSkin.Controls.MaterialRaisedButton();
             this.materialRaisedButton4 = new MaterialSkin.Controls.MaterialRaisedButton();
             this.materialRaisedButton3 = new MaterialSkin.Controls.MaterialRaisedButton();
@@ -132,6 +134,8 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.linkLabel1);
+            this.tabPage1.Controls.Add(this.button2);
             this.tabPage1.Controls.Add(this.materialRaisedButton5);
             this.tabPage1.Controls.Add(this.materialRaisedButton4);
             this.tabPage1.Controls.Add(this.materialRaisedButton3);
@@ -148,6 +152,27 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Main";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // linkLabel1
+            // 
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.Location = new System.Drawing.Point(276, 358);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(39, 13);
+            this.linkLabel1.TabIndex = 28;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "Blank";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(475, 345);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(60, 23);
+            this.button2.TabIndex = 27;
+            this.button2.Text = "Wiki";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // materialRaisedButton5
             // 
@@ -654,5 +679,7 @@
         private MetroFramework.Controls.MetroLabel metroLabel3;
         private MetroFramework.Controls.MetroLabel metroLabel4;
         private MetroFramework.Controls.MetroButton metroButton1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.LinkLabel linkLabel1;
     }
 }

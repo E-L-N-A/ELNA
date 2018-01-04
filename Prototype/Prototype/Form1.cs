@@ -17,12 +17,16 @@ using System.Web.Script.Serialization;
 using Newtonsoft.Json.Linq;
 using System.Text.RegularExpressions;
 using Newtonsoft.Json;
+using System.Diagnostics;
 
 namespace Prototype
 {
     public partial class Form1 : MaterialForm
     {
         string path;
+        string WikiDefaultLink = "https://en.wikipedia.org/wiki/";
+        string User_Query="";
+        public static string Search_Link = "";
         public Form1()
         {
             InitializeComponent();
@@ -34,6 +38,7 @@ namespace Prototype
             metroComboBox1.SelectedIndex=0;
             metroComboBox2.SelectedIndex = 0;
             metroComboBox3.SelectedIndex = 0;
+            linkLabel1.Text = "";
            
             //richTextBox1.Text = lines;
 
@@ -43,6 +48,42 @@ namespace Prototype
         //------------------------------------------------------------------------------------------------------------------------------------------------------
         //------------------------------------------------------------------------------------------------------------------------------------------------------
         //------------------------------------------------------------------------------------------------------------------------------------------------------
+        public static string Wikipedia_Source(string text)
+        {
+
+            WebClient client = new WebClient();
+            string pg = "";
+            string F_Line = "";
+            string target = "";
+            text = text.Replace(" ", "_");
+           
+            using (Stream stream = client.OpenRead("http://en.wikipedia.org/w/api.php?format=json&action=query&prop=extracts&explaintext=1&titles=" + text))
+            using (StreamReader reader = new StreamReader(stream))
+            {
+                JsonSerializer ser = new JsonSerializer();
+                Result result = ser.Deserialize<Result>(new JsonTextReader(reader));
+
+                foreach (Page page in result.query.pages.Values)
+                    pg = page.extract;
+            }
+            using (StreamWriter sw = File.CreateText(@"C:\Users\nmb90\Desktop\Game\dudu.txt"))
+            {
+                sw.Write(pg);
+            }
+            string[] line = File.ReadAllLines(@"C:\Users\nmb90\Desktop\Game\dudu.txt");
+            try
+            {
+                F_Line = line[0].Substring(0, line[0].IndexOf(".") + 1);
+            }
+            catch (Exception)
+            {
+                F_Line = "No Match Result being found ";
+            }
+           File.Delete(@"C:\Users\nmb90\Desktop\Game\dudu.txt");
+            return F_Line;
+            
+            
+        }
         public static string Google_Translate(string text, string from, string to)
         {
             string page = null;
@@ -103,7 +144,7 @@ namespace Prototype
                     }
                 return sb;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 //var id = jo["translation"].ToString();
                 //return id;
@@ -293,5 +334,41 @@ namespace Prototype
         {
 
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (!(string.IsNullOrEmpty(User_Text.Text))) {
+                Output.Text = Wikipedia_Source(User_Text.Text);
+                User_Query = User_Text.Text.Replace(" ", "_");
+                Search_Link = WikiDefaultLink + User_Query;
+                linkLabel1.Text = "View Full Content";
+            }
+            else
+            {
+                MessageBox.Show("No Input Detected");
+            }
+            
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Form6 f6 = new Form6();
+            f6.Show();
+            
+        }
+    }
+    public class Result
+    {
+        public Query query { get; set; }
+    }
+
+    public class Query
+    {
+        public Dictionary<string, Page> pages { get; set; }
+    }
+
+    public class Page
+    {
+        public string extract { get; set; }
     }
 }
