@@ -79,7 +79,11 @@ namespace Prototype
             string line = File.ReadAllText(Dir+"Temp.txt");
             try
             {
-                F_Line = line.Substring(0, line.IndexOf("="));
+                line = line.Substring(0, line.IndexOf("="));
+                string outputText = Regex.Replace(line, @"[^\s()]+(?=[^()]*\))", "");
+                outputText = Regex.Replace(outputText, @"\((\s*)\)", "");
+                Console.WriteLine(outputText);
+                F_Line = outputText.Substring(0, outputText.IndexOf(". "))+".";
             }
             catch (Exception)
             {
