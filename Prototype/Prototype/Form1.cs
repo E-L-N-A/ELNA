@@ -12,6 +12,11 @@ using MaterialSkin.Animations;
 using MaterialSkin;
 using System.IO;
 using System.Net.Http;
+using System.Net;
+using System.Web.Script.Serialization;
+using Newtonsoft.Json.Linq;
+using System.Text.RegularExpressions;
+using Newtonsoft.Json;
 
 namespace Prototype
 {
@@ -33,12 +38,141 @@ namespace Prototype
             //richTextBox1.Text = lines;
 
         }
+        //------------------------------------------------------------------------------------------------------------------------------------------------------
+        //------------------------------------------------------------------------------------------------------------------------------------------------------
+        //------------------------------------------------------------------------------------------------------------------------------------------------------
+        //------------------------------------------------------------------------------------------------------------------------------------------------------
+        //------------------------------------------------------------------------------------------------------------------------------------------------------
+        public static string Google_Translate(string text, string from, string to)
+        {
+            string page = null;
+            try
+            {
+                WebClient wc = new WebClient();
+                wc.Headers.Add(HttpRequestHeader.UserAgent, "Mozilla/5.0");
+                wc.Headers.Add(HttpRequestHeader.AcceptCharset, "UTF-8");
+                wc.Encoding = Encoding.UTF8;
+
+                string url = string.Format(@"http://translate.google.com.tr/m?hl=en&sl={0}&tl={1}&ie=UTF-8&prev=_m&q={2}",
+                                            from, to, Uri.EscapeUriString(text));
+                Console.WriteLine(url);
+                page = wc.DownloadString(url);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+                return null;
+            }
+
+            page = page.Remove(0, page.IndexOf("<div dir=\"ltr\" class=\"t0\">")).Replace("<div dir=\"ltr\" class=\"t0\">", "");
+            int last = page.IndexOf("</div>");
+            page = page.Remove(last, page.Length - last);
+
+            return page;
+        }
+    public static string Youdao_Dictionary(string text)
+        {
+            string page = null;
+            text = Regex.Replace(text, @"\s+", "%20");
+            try
+            {
+                WebClient wc = new WebClient();
+                wc.Headers.Add(HttpRequestHeader.UserAgent, "Mozilla/5.0");
+                wc.Headers.Add(HttpRequestHeader.AcceptCharset, "UTF-8");
+                wc.Encoding = Encoding.UTF8;
+
+                string url = string.Format(@"http://fanyi.youdao.com/openapi.do?keyfrom=sasfasdfasf&key=1177596287&type=data&doctype=json&version=1.1&q={0}",
+                                            text, Uri.EscapeUriString(text));
+                Console.WriteLine(url);
+                page = wc.DownloadString(url);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+                return null;
+            }
+            var jo = JObject.Parse(page);
+            try
+            {
+                //var id = jo["basic"]["explains"].ToString();
+                String sb = "";
+                foreach (JToken result in jo["basic"]["explains"])
+                    {
+                    // JToken.ToObject is a helper method that uses JsonSerializer internally
+                    sb += result + "\r\n";
+                    }
+                return sb;
+            }
+            catch (Exception ex)
+            {
+                //var id = jo["translation"].ToString();
+                //return id;
+                String sb = "";
+                foreach (JToken result in jo["translation"])
+                {
+                    // JToken.ToObject is a helper method that uses JsonSerializer internally
+                    sb += result + "\r\n";
+                }
+                return sb;
+            }
+                //var JSONObj = new JavaScriptSerializer().Deserialize<Dictionary<string, string>>(page);
+                //return JSONObj["basic"];
+        }
+        //------------------------------------------------------------------------------------------------------------------------------------------------------
+        //------------------------------------------------------------------------------------------------------------------------------------------------------
+        //------------------------------------------------------------------------------------------------------------------------------------------------------
+        //------------------------------------------------------------------------------------------------------------------------------------------------------
+        //------------------------------------------------------------------------------------------------------------------------------------------------------
+        //------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
 
 
         private void materialRaisedButton1_Click(object sender, EventArgs e)
         {
-            
-            
+            if (metroComboBox1.SelectedIndex == 1)
+            {
+                if (metroComboBox3.SelectedIndex == 0)
+                {
+                    string translation = Google_Translate(User_Text.Text, "auto", "en");
+                    Output.Text = translation;
+                }
+                if (metroComboBox3.SelectedIndex == 1)
+                {
+                    string translation = Google_Translate(User_Text.Text, "auto", "zh");
+                    string definition = Youdao_Dictionary(User_Text.Text);
+                    Output.Text = translation+"\r\n"+definition;
+                }
+                if (metroComboBox3.SelectedIndex == 2)
+                {
+                    string translation = Google_Translate(User_Text.Text, "auto", "es");
+                    Output.Text = translation;
+                }
+                if (metroComboBox3.SelectedIndex == 3)
+                {
+                    string translation = Google_Translate(User_Text.Text, "auto", "fr");
+                    Output.Text = translation;
+                }
+                if (metroComboBox3.SelectedIndex == 4)
+                {
+                    string translation = Google_Translate(User_Text.Text, "auto", "ru");
+                    Output.Text = translation;
+                }
+                if (metroComboBox3.SelectedIndex == 5)
+                {
+                    string translation = Google_Translate(User_Text.Text, "auto", "ko");
+                    Output.Text = translation;
+                }
+                if (metroComboBox3.SelectedIndex == 6)
+                {
+                    string translation = Google_Translate(User_Text.Text, "auto", "ja");
+                    Output.Text = translation;
+                }
+            }
+            if (metroComboBox1.SelectedIndex == 0)
+            {
+
+            }
         }
 
         private void materialRaisedButton2_Click(object sender, EventArgs e)
@@ -151,6 +285,11 @@ namespace Prototype
         }
 
         private void textBox4_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void metroButton1_Click(object sender, EventArgs e)
         {
 
         }
