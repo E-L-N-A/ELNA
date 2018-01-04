@@ -13,12 +13,15 @@ using MaterialSkin;
 using System.IO;
 using System.Net.Http;
 <<<<<<< HEAD
+<<<<<<< HEAD
 using System.Net;
 using System.Web.Script.Serialization;
 using Newtonsoft.Json.Linq;
 using System.Text.RegularExpressions;
 using Newtonsoft.Json;
 using System.Diagnostics;
+=======
+>>>>>>> parent of 47e9c8d... Functionality Begins!
 =======
 >>>>>>> parent of 47e9c8d... Functionality Begins!
 
@@ -46,6 +49,7 @@ namespace Prototype
             //richTextBox1.Text = lines;
 
         }
+<<<<<<< HEAD
 <<<<<<< HEAD
         //------------------------------------------------------------------------------------------------------------------------------------------------------
         //------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -179,6 +183,8 @@ namespace Prototype
 
 =======
 >>>>>>> parent of 47e9c8d... Functionality Begins!
+=======
+>>>>>>> parent of 47e9c8d... Functionality Begins!
 
 
         private void materialRaisedButton1_Click(object sender, EventArgs e)
@@ -301,6 +307,7 @@ namespace Prototype
 
         }
 <<<<<<< HEAD
+<<<<<<< HEAD
 
         private void metroButton1_Click(object sender, EventArgs e)
         {
@@ -342,6 +349,8 @@ namespace Prototype
     public class Page
     {
         public string extract { get; set; }
+=======
+>>>>>>> parent of 47e9c8d... Functionality Begins!
 =======
 >>>>>>> parent of 47e9c8d... Functionality Begins!
     }
