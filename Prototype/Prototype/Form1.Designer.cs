@@ -109,7 +109,7 @@
             // 
             this.materialTabSelector1.BaseTabControl = this.materialTabControl1;
             this.materialTabSelector1.Depth = 0;
-            this.materialTabSelector1.Location = new System.Drawing.Point(0, 63);
+            this.materialTabSelector1.Location = new System.Drawing.Point(0, 54);
             this.materialTabSelector1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialTabSelector1.Name = "materialTabSelector1";
             this.materialTabSelector1.Size = new System.Drawing.Size(622, 29);
@@ -213,12 +213,13 @@
             this.metroComboBox3.FormattingEnabled = true;
             this.metroComboBox3.ItemHeight = 23;
             this.metroComboBox3.Items.AddRange(new object[] {
-            "English to Chinese",
-            "English to Spanish",
-            "English to French",
-            "English to Russian",
-            "English to Korean",
-            "English to Japanese"});
+            "Detect Language to English",
+            "Detect Language to Chinese",
+            "Detect Language to Spanish",
+            "Detect Language to French",
+            "Detect Language to Russian",
+            "Detect Language to Korean",
+            "Detect Language to Japanese"});
             this.metroComboBox3.Location = new System.Drawing.Point(273, 6);
             this.metroComboBox3.Name = "metroComboBox3";
             this.metroComboBox3.Size = new System.Drawing.Size(283, 29);
@@ -228,7 +229,7 @@
             // 
             // Output
             // 
-            this.Output.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Output.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Output.Location = new System.Drawing.Point(273, 39);
             this.Output.Multiline = true;
             this.Output.Name = "Output";
@@ -272,6 +273,7 @@
             this.metroButton1.TabIndex = 34;
             this.metroButton1.Text = "Try Now";
             this.metroButton1.UseSelectable = true;
+            this.metroButton1.Click += new System.EventHandler(this.metroButton1_Click);
             // 
             // richTextBox1
             // 
