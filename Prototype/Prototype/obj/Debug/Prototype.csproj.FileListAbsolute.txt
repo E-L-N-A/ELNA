@@ -128,6 +128,7 @@ C:\Users\nmb90\Documents\GitHub\ELNA\Prototype\Prototype\bin\Debug\Google.Apis.C
 C:\Users\nmb90\Documents\GitHub\ELNA\Prototype\Prototype\bin\Debug\Google.Apis.Translate.v2.xml
 C:\Users\nmb90\Documents\GitHub\ELNA\Prototype\Prototype\bin\Debug\Newtonsoft.Json.xml
 C:\Users\nmb90\Documents\GitHub\ELNA\Prototype\Prototype\bin\Debug\System.Interactive.Async.xml
+<<<<<<< HEAD
 C:\Users\Pei\Documents\GitHub\ELNA\Prototype\Prototype\bin\Debug\Google.Api.Gax.dll
 C:\Users\Pei\Documents\GitHub\ELNA\Prototype\Prototype\bin\Debug\Google.Api.Gax.Rest.dll
 C:\Users\Pei\Documents\GitHub\ELNA\Prototype\Prototype\bin\Debug\Google.Apis.Auth.dll
@@ -153,3 +154,5 @@ C:\Users\Pei\Documents\GitHub\ELNA\Prototype\Prototype\bin\Debug\Newtonsoft.Json
 C:\Users\Pei\Documents\GitHub\ELNA\Prototype\Prototype\bin\Debug\System.Interactive.Async.xml
 C:\Users\Pei\Documents\GitHub\ELNA\Prototype\Prototype\obj\Debug\Prototype.Form5.resources
 C:\Users\nmb90\Documents\GitHub\ELNA\Prototype\Prototype\obj\Debug\Prototype.Form6.resources
+=======
+>>>>>>> parent of 47e9c8d... Functionality Begins!
