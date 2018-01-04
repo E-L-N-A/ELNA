@@ -11,6 +11,8 @@ using MaterialSkin.Controls;
 using MaterialSkin.Animations;
 using MaterialSkin;
 using System.IO;
+using System.Net.Http;
+
 namespace Prototype
 {
     public partial class Form1 : MaterialForm
@@ -27,15 +29,16 @@ namespace Prototype
             metroComboBox1.SelectedIndex=0;
             metroComboBox2.SelectedIndex = 0;
             metroComboBox3.SelectedIndex = 0;
-            string lines = File.ReadAllText(@"D:\fie.txt");
-            richTextBox1.Text = lines;
+           
+            //richTextBox1.Text = lines;
 
         }
 
 
         private void materialRaisedButton1_Click(object sender, EventArgs e)
         {
-           
+            
+            
         }
 
         private void materialRaisedButton2_Click(object sender, EventArgs e)
@@ -145,6 +148,11 @@ namespace Prototype
         private void richTextBox1_TextChanged(object sender, EventArgs e)
         {
             
+        }
+
+        private void textBox4_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
