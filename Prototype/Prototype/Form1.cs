@@ -12,12 +12,18 @@ using MaterialSkin.Animations;
 using MaterialSkin;
 using System.IO;
 using System.Net.Http;
+<<<<<<< HEAD
+<<<<<<< HEAD
 using System.Net;
 using System.Web.Script.Serialization;
 using Newtonsoft.Json.Linq;
 using System.Text.RegularExpressions;
 using Newtonsoft.Json;
 using System.Diagnostics;
+=======
+>>>>>>> parent of 47e9c8d... Functionality Begins!
+=======
+>>>>>>> parent of 47e9c8d... Functionality Begins!
 
 namespace Prototype
 {
@@ -43,6 +49,8 @@ namespace Prototype
             //richTextBox1.Text = lines;
 
         }
+<<<<<<< HEAD
+<<<<<<< HEAD
         //------------------------------------------------------------------------------------------------------------------------------------------------------
         //------------------------------------------------------------------------------------------------------------------------------------------------------
         //------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -173,53 +181,16 @@ namespace Prototype
         //------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
+=======
+>>>>>>> parent of 47e9c8d... Functionality Begins!
+=======
+>>>>>>> parent of 47e9c8d... Functionality Begins!
 
 
         private void materialRaisedButton1_Click(object sender, EventArgs e)
         {
-            if (metroComboBox1.SelectedIndex == 1)
-            {
-                if (metroComboBox3.SelectedIndex == 0)
-                {
-                    string translation = Google_Translate(User_Text.Text, "auto", "en");
-                    Output.Text = translation;
-                }
-                if (metroComboBox3.SelectedIndex == 1)
-                {
-                    string translation = Google_Translate(User_Text.Text, "auto", "zh");
-                    string definition = Youdao_Dictionary(User_Text.Text);
-                    Output.Text = translation+"\r\n"+definition;
-                }
-                if (metroComboBox3.SelectedIndex == 2)
-                {
-                    string translation = Google_Translate(User_Text.Text, "auto", "es");
-                    Output.Text = translation;
-                }
-                if (metroComboBox3.SelectedIndex == 3)
-                {
-                    string translation = Google_Translate(User_Text.Text, "auto", "fr");
-                    Output.Text = translation;
-                }
-                if (metroComboBox3.SelectedIndex == 4)
-                {
-                    string translation = Google_Translate(User_Text.Text, "auto", "ru");
-                    Output.Text = translation;
-                }
-                if (metroComboBox3.SelectedIndex == 5)
-                {
-                    string translation = Google_Translate(User_Text.Text, "auto", "ko");
-                    Output.Text = translation;
-                }
-                if (metroComboBox3.SelectedIndex == 6)
-                {
-                    string translation = Google_Translate(User_Text.Text, "auto", "ja");
-                    Output.Text = translation;
-                }
-            }
-            if (metroComboBox1.SelectedIndex == 0)
-            {
-
-            }
+            
+            
         }
 
         private void materialRaisedButton2_Click(object sender, EventArgs e)
@@ -335,6 +306,8 @@ namespace Prototype
         {
 
         }
+<<<<<<< HEAD
+<<<<<<< HEAD
 
         private void metroButton1_Click(object sender, EventArgs e)
         {
@@ -376,5 +349,9 @@ namespace Prototype
     public class Page
     {
         public string extract { get; set; }
+=======
+>>>>>>> parent of 47e9c8d... Functionality Begins!
+=======
+>>>>>>> parent of 47e9c8d... Functionality Begins!
     }
 }
