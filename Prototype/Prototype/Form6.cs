@@ -33,6 +33,10 @@ namespace Prototype
         {
 
         }
-        
+
+        private void webBrowser1_Navigated(object sender, WebBrowserNavigatedEventArgs e)
+        {
+            textBox2.Text = webBrowser1.Url.AbsoluteUri;
+        }
     }
 }

@@ -79,13 +79,28 @@ namespace Prototype
             {
                 line = line.Substring(0, line.IndexOf("="));
                 string outputText = Regex.Replace(line, @"[^\s()]+(?=[^()]*\))", "");
-                outputText = Regex.Replace(outputText, @"\((\s*)\)", "");
-                Console.WriteLine(outputText);
+                outputText = Regex.Replace(outputText, @"\((.*)\)", "");
                 F_Line = outputText.Substring(0, outputText.IndexOf(". "))+".";
             }
             catch (Exception)
             {
-                F_Line = "No Match Result Can be Displayed Use View full content to resolve";
+                try
+                {
+                    Console.WriteLine(line+"test");
+                    line = line.Substring(0, line.IndexOf("may also refer to", StringComparison.CurrentCultureIgnoreCase));
+                    F_Line = line + " Please View full content using integrated WebBrowser";
+                }
+                catch (Exception)
+                {
+                    if (line.IndexOf(":\n")>-1)
+                    {
+                        F_Line = line + " (Please View full content using integrated WebBrowser)";
+                    }
+                    else
+                    {
+                        F_Line = line;
+                    }
+                }
             }
            File.Delete(Dir+"Temp.txt");
             return F_Line;
@@ -354,11 +369,12 @@ namespace Prototype
                     webBrowser1.Navigate(Search_Link);
                     temp = GetPageTitle(Search_Link);
                     temp = temp.Substring(0, temp.IndexOf("-"));
-                    temp = temp.Replace(" ", "_");
+                    //temp = temp.Replace(" ", "_");
                     Output.Text = Wikipedia_Source(temp);
-                    User_Query = User_Text.Text.Replace(" ", "_");
+                    //User_Query = User_Text.Text.Replace(" ", "_");
                     linkLabel1.Text = "View Full Content";
                     Output.ForeColor = System.Drawing.Color.Black;
+                    
                 }
                 else
                 {
@@ -368,7 +384,7 @@ namespace Prototype
             catch (Exception)
             {
                 Output.ForeColor = System.Drawing.Color.Red;
-                Output.Text = "Error : Wikipedia does not have you information you requested";
+                Output.Text = "Error : Wikipedia does not have the information you requested";
             }
             
         }
