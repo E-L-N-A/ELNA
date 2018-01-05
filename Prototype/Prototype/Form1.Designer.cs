@@ -693,6 +693,5 @@
         private MetroFramework.Controls.MetroButton metroButton1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.LinkLabel linkLabel1;
-        private System.Windows.Forms.WebBrowser webBrowser1;
     }
 }

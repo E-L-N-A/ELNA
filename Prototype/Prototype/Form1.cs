@@ -50,7 +50,7 @@ namespace Prototype
         //------------------------------------------------------------------------------------------------------------------------------------------------------
         public static string Wikipedia_Source(string text)
         {
-
+            
             WebClient client = new WebClient();
             string pg = "";
             string F_Line = "";
@@ -366,8 +366,7 @@ namespace Prototype
                 if (!(string.IsNullOrEmpty(User_Text.Text)))
                 {
                     Search_Link = WikiDefaultLink + User_Text.Text;
-                    webBrowser1.Navigate(Search_Link);
-                    temp = GetPageTitle(Search_Link);
+                    temp = GetPageTitle(GetRedirectedURL(Search_Link));
                     temp = temp.Substring(0, temp.IndexOf("-"));
                     //temp = temp.Replace(" ", "_");
                     Output.Text = Wikipedia_Source(temp);
@@ -416,6 +415,19 @@ namespace Prototype
             {
                 //MessageBox.Show("Could not connect. Error:" + ex.Message);
                 return "";
+            }
+        }
+        public static string GetRedirectedURL(string url)
+        {
+            HttpWebRequest WebR = (HttpWebRequest)WebRequest.Create(url);
+            HttpWebResponse WebP = (HttpWebResponse)WebR.GetResponse();
+            if (WebR.RequestUri != WebR.Address)
+            {
+                return WebR.Address.ToString();
+            }
+            else
+            {
+                return WebR.RequestUri.ToString();
             }
         }
     }
