@@ -55,13 +55,11 @@ namespace Prototype
             string pg = "";
             string F_Line = "";
             string target = "";
-            text = text.Replace(" ", "_");
+            //text = text.Replace(" ", "_");
             //取得系统Document文件夹的路径
             string Dir =System.Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
             Dir = Dir + @"\ELNA\temp";
             Directory.CreateDirectory(Dir);
-
-
 
             using (Stream stream = client.OpenRead("http://en.wikipedia.org/w/api.php?format=json&action=query&prop=extracts&explaintext=1&titles=" + text))
             using (StreamReader reader = new StreamReader(stream))
@@ -347,15 +345,30 @@ namespace Prototype
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if (!(string.IsNullOrEmpty(User_Text.Text))) {
-                Output.Text = Wikipedia_Source(User_Text.Text);
-                User_Query = User_Text.Text.Replace(" ", "_");
-                Search_Link = WikiDefaultLink + User_Query;
-                linkLabel1.Text = "View Full Content";
-            }
-            else
+            string temp;
+            try
             {
-                MessageBox.Show("No Input Detected");
+                if (!(string.IsNullOrEmpty(User_Text.Text)))
+                {
+                    Search_Link = WikiDefaultLink + User_Text.Text;
+                    webBrowser1.Navigate(Search_Link);
+                    temp = GetPageTitle(Search_Link);
+                    temp = temp.Substring(0, temp.IndexOf("-"));
+                    temp = temp.Replace(" ", "_");
+                    Output.Text = Wikipedia_Source(temp);
+                    User_Query = User_Text.Text.Replace(" ", "_");
+                    linkLabel1.Text = "View Full Content";
+                    Output.ForeColor = System.Drawing.Color.Black;
+                }
+                else
+                {
+                    MessageBox.Show("No Input Detected");
+                }
+            }
+            catch (Exception)
+            {
+                Output.ForeColor = System.Drawing.Color.Red;
+                Output.Text = "Error : Wikipedia does not have you information you requested";
             }
             
         }
@@ -365,6 +378,29 @@ namespace Prototype
             Form6 f6 = new Form6();
             f6.Show();
             
+        }
+        public static string GetPageTitle(string link)
+        {
+            try
+            {
+                WebClient wc = new WebClient();
+                string html = wc.DownloadString(link);
+
+                Regex x = new Regex("<title>(.*)</title>");
+                MatchCollection m = x.Matches(html);
+
+                if (m.Count > 0)
+                {
+                    return m[0].Value.Replace("<title>", "").Replace("</title>", "");
+                }
+                else
+                    return "";
+            }
+            catch (Exception ex)
+            {
+                //MessageBox.Show("Could not connect. Error:" + ex.Message);
+                return "";
+            }
         }
     }
     public class Result
@@ -381,4 +417,5 @@ namespace Prototype
     {
         public string extract { get; set; }
     }
+
 }

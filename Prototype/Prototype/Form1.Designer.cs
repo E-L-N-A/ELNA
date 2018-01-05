@@ -70,6 +70,7 @@
             this.metroComboBox2 = new MetroFramework.Controls.MetroComboBox();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.label1 = new System.Windows.Forms.Label();
+            this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.materialTabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -79,7 +80,6 @@
             // 
             // metroComboBox1
             // 
-            this.metroComboBox1.FontWeight = MetroFramework.MetroComboBoxWeight.Bold;
             this.metroComboBox1.ForeColor = System.Drawing.SystemColors.WindowText;
             this.metroComboBox1.FormattingEnabled = true;
             this.metroComboBox1.ItemHeight = 23;
@@ -134,6 +134,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.webBrowser1);
             this.tabPage1.Controls.Add(this.linkLabel1);
             this.tabPage1.Controls.Add(this.button2);
             this.tabPage1.Controls.Add(this.materialRaisedButton5);
@@ -156,9 +157,10 @@
             // linkLabel1
             // 
             this.linkLabel1.AutoSize = true;
+            this.linkLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLabel1.Location = new System.Drawing.Point(326, 350);
             this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(39, 13);
+            this.linkLabel1.Size = new System.Drawing.Size(34, 13);
             this.linkLabel1.TabIndex = 28;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "Blank";
@@ -166,6 +168,7 @@
             // 
             // button2
             // 
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.Location = new System.Drawing.Point(475, 345);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(60, 23);
@@ -223,11 +226,11 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.DodgerBlue;
             this.label5.Location = new System.Drawing.Point(3, 376);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(250, 18);
+            this.label5.Size = new System.Drawing.Size(220, 18);
             this.label5.TabIndex = 23;
             this.label5.Text = "Current Assistant Mode: Normal";
             // 
@@ -254,7 +257,7 @@
             // 
             // Output
             // 
-            this.Output.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Output.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Output.Location = new System.Drawing.Point(273, 39);
             this.Output.Multiline = true;
             this.Output.Name = "Output";
@@ -264,7 +267,7 @@
             // 
             // User_Text
             // 
-            this.User_Text.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.User_Text.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.User_Text.Location = new System.Drawing.Point(1, 39);
             this.User_Text.Multiline = true;
             this.User_Text.Name = "User_Text";
@@ -606,6 +609,15 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "ELNA Inc. 2017";
             // 
+            // webBrowser1
+            // 
+            this.webBrowser1.Location = new System.Drawing.Point(453, 41);
+            this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
+            this.webBrowser1.Name = "webBrowser1";
+            this.webBrowser1.Size = new System.Drawing.Size(82, 75);
+            this.webBrowser1.TabIndex = 29;
+            this.webBrowser1.Visible = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
@@ -681,5 +693,6 @@
         private MetroFramework.Controls.MetroButton metroButton1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.WebBrowser webBrowser1;
     }
 }
