@@ -54,8 +54,14 @@ namespace Prototype
             try
             {
                 line = line.Substring(0, line.IndexOf("="));
+                Console.WriteLine("line"+line);
                 string outputText = Regex.Replace(line, @"[^\s()]+(?=[^()]*\))", "");
-                outputText = Regex.Replace(outputText, @"\((.*)\)", "");
+                Console.WriteLine("outputText"+outputText);
+                while (outputText.IndexOf("(") > -1 || outputText.IndexOf(")") > -1)
+                {
+                    outputText = Regex.Replace(outputText, @"\(\s+\)", "");
+                }
+                Console.WriteLine("outputText2" + outputText);
                 F_Line = outputText.Substring(0, outputText.IndexOf(". ")) + ".";
             }
             catch (Exception)
