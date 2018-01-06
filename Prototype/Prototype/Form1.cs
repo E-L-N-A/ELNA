@@ -19,6 +19,7 @@ using System.Text.RegularExpressions;
 using Newtonsoft.Json;
 using System.Diagnostics;
 using System.Web;
+using System.Speech.Synthesis;
 
 namespace Prototype
 {
@@ -217,12 +218,22 @@ namespace Prototype
                 materialRaisedButton5.Visible = false;
             }
         }
-
+        SpeechSynthesizer Synthesizer = new SpeechSynthesizer();
         private void materialRaisedButton3_Click(object sender, EventArgs e)
         {
-
+            Synthesizer.Rate = 0;//发音速度
+            Synthesizer.Volume = 100;//音量
+            //Synthesizer.SelectVoice();
+            Synthesizer.SpeakAsync(User_Text.Text);
+            materialRaisedButton3.Visible = false;
+            materialRaisedButton8.Visible = true;
+            Synthesizer.SpeakCompleted += Synthesizer_SpeakCompleted;
         }
-
+        private void Synthesizer_SpeakCompleted(object sender, SpeakCompletedEventArgs e)
+        {
+            materialRaisedButton3.Visible = true;
+            materialRaisedButton8.Visible = false;
+        }
         private void richTextBox1_TextChanged(object sender, EventArgs e)
         {
             
@@ -297,6 +308,42 @@ namespace Prototype
         {
             Form2 f2 = new Form2();
             f2.Show();
+        }
+        SpeechSynthesizer Synthesizer2 = new SpeechSynthesizer();
+        private void materialRaisedButton4_Click(object sender, EventArgs e)
+        {
+            Synthesizer2.Rate = 0;//发音速度
+            Synthesizer2.Volume = 100;//音量
+            //Synthesizer.SelectVoice();
+            materialRaisedButton4.Visible = false;
+            materialRaisedButton9.Visible = true;
+            Synthesizer2.SpeakCompleted += Synthesizer2_SpeakCompleted;
+            Synthesizer2.SpeakAsync(Output.Text);
+
+        }
+        private void Synthesizer2_SpeakCompleted(object sender, SpeakCompletedEventArgs e)
+        {
+            materialRaisedButton4.Visible = true;
+            materialRaisedButton9.Visible = false;
+        }
+        private void materialRaisedButton5_Click(object sender, EventArgs e)
+        {
+            User_Text.Text = Output.Text;
+            metroComboBox1.SelectedIndex = 1;
+        }
+
+        private void materialRaisedButton8_Click(object sender, EventArgs e)
+        {
+            Synthesizer.SpeakAsyncCancelAll();
+            materialRaisedButton3.Visible = true;
+            materialRaisedButton8.Visible = false;
+        }
+
+        private void materialRaisedButton9_Click(object sender, EventArgs e)
+        {
+            Synthesizer2.SpeakAsyncCancelAll();
+            materialRaisedButton4.Visible = true;
+            materialRaisedButton9.Visible = false;
         }
     }
     public class Result
