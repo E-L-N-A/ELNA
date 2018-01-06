@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Net;
 using System.Text.RegularExpressions;
+using System.IO;
 
 namespace Prototype
 {
@@ -32,18 +33,15 @@ namespace Prototype
         {
             try
             {
-                WebClient wc = new WebClient();
-                string html = wc.DownloadString(link);
-
-                Regex x = new Regex("<title>(.*)</title>");
-                MatchCollection m = x.Matches(html);
-
-                if (m.Count > 0)
-                {
-                    return m[0].Value.Replace("<title>", "").Replace("</title>", "");
-                }
-                else
-                    return "";
+                WebRequest request = WebRequest.Create(link);
+                WebResponse response = request.GetResponse();
+                Stream data = response.GetResponseStream();
+                StreamReader sr = new StreamReader(data);
+                string html = sr.ReadToEnd();
+                string regex = @"(?<=<title.*>)([\s\S]*)(?=</title>)";
+                System.Text.RegularExpressions.Regex ex = new System.Text.RegularExpressions.Regex(regex, System.Text.RegularExpressions.RegexOptions.IgnoreCase);
+                string Title = ex.Match(html).Value.Trim();
+                return Title;
             }
             catch (Exception)
             {

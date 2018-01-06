@@ -18,6 +18,7 @@ using Newtonsoft.Json.Linq;
 using System.Text.RegularExpressions;
 using Newtonsoft.Json;
 using System.Diagnostics;
+using System.Web;
 
 namespace Prototype
 {
@@ -223,7 +224,7 @@ namespace Prototype
         {
 
         }
-
+        public string Title { get; set; }
         private void button2_Click(object sender, EventArgs e)
         {
             try
@@ -235,6 +236,7 @@ namespace Prototype
                     Search_Link = WikiDefaultLink + User;
                     //Search_Link = Translations.Auto_Capitalization(Search_Link);
                     temp = URL.GetPageTitle(URL.GetRedirectedURL(Search_Link));
+                    Console.WriteLine(temp);
                     temp = temp.Substring(0, temp.IndexOf("-"));
                     //Translations.Auto_Capitalization(temp);
                     //temp = temp.Replace(" ", "_");

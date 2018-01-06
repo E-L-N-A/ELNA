@@ -34,7 +34,7 @@ namespace Prototype
             //text = text.Replace(" ", "_");
             //取得系统Document文件夹的路径
             string Dir = System.Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
-            Dir = Dir + @"\ELNA\temp";
+            Dir = Dir + @"\ELNA\temp\";
             Directory.CreateDirectory(Dir);
             
             using (Stream stream = client.OpenRead("http://en.wikipedia.org/w/api.php?format=json&action=query&prop=extracts&explaintext=1&titles=" + text))
@@ -69,7 +69,7 @@ namespace Prototype
                 {
                     Console.WriteLine(line + "test");
                     line = line.Substring(0, line.IndexOf("may also refer to", StringComparison.CurrentCultureIgnoreCase));
-                    F_Line = line + " Please View full content using integrated WebBrowser";
+                    F_Line = line + " (Please View full content using integrated WebBrowser)";
                 }
                 catch (Exception)
                 {
