@@ -107,7 +107,7 @@ namespace Prototype
                 }
                 if (metroComboBox1.SelectedIndex == 0)
                 {
-
+                    Output.Text=Translations.UrbanDictionary(User_Text.Text);
                 }
             }
             catch (Exception)

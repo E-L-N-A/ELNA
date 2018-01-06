@@ -215,6 +215,50 @@ namespace Prototype
         {
             public string extract { get; set; }
         }
+        public static string UrbanDictionary(string User_Term)
+        {
+            WebClient client = new WebClient();
+            string UrbanAPI = @"http://api.urbandictionary.com/v0/define?term=";
+            string contents;
+            contents = client.DownloadString(UrbanAPI + User_Term);
+            List<double> ThumbUp = new List<double>();
+            List<double> ThumbDown = new List<double>();
+            List<double> LiketoDislikeRatio = new List<double>();
+            using (Stream stream = client.OpenRead(UrbanAPI + User_Term))
+            using (StreamReader reader = new StreamReader(stream))
+            {
+                JsonSerializer ser = new JsonSerializer();
+                UrbanResult urban = ser.Deserialize<UrbanResult>(new JsonTextReader(reader));
+                foreach (DataRow i in urban.list.Rows)
+                {
+                    ThumbUp.Add(double.Parse(i["thumbs_up"].ToString()));
+                    ThumbDown.Add(double.Parse(i["thumbs_down"].ToString()));
+                }
+                for (int i = 0; i < ThumbDown.Count; i++)
+                {
+                    LiketoDislikeRatio.Add(ThumbUp[i] / ThumbDown[i]);
+                }
+                double Greatest_Ratio = LiketoDislikeRatio[0];
+                int Index = 0;
+                for (int i = 0; i < LiketoDislikeRatio.Count; i++)
+                {
+                    if (LiketoDislikeRatio[i] > Greatest_Ratio)
+                    {
+                        Greatest_Ratio = LiketoDislikeRatio[i];
+                        Index = i;
+                    }
+                }
+
+                return "Definition :" +"\r\n"+ urban.list.Rows[Index]["definition"]+ Environment.NewLine+" "+Environment.NewLine+"Example: " +"\r\n"+ urban.list.Rows[Index]["example"];
+            }
+        }
+        public class UrbanResult
+        {
+            public IList<string> tags { get; set; }
+            public string result_type { get; set; }
+            public DataTable list { get; set; }
+
+        }
     }
 
 }
