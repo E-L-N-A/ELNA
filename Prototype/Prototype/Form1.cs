@@ -39,6 +39,7 @@ namespace Prototype
             metroComboBox2.SelectedIndex = 0;
             metroComboBox3.SelectedIndex = 0;
             linkLabel1.Text = "";
+            materialRaisedButton6.Visible = false;
            
             //richTextBox1.Text = lines;
 
@@ -61,6 +62,8 @@ namespace Prototype
 
         private void materialRaisedButton1_Click(object sender, EventArgs e)
         {
+            materialRaisedButton6.Visible = false;
+            Output.Text = "";
             if (metroComboBox1.SelectedIndex == 1)
             {
                 if (metroComboBox3.SelectedIndex == 0)
@@ -118,6 +121,9 @@ namespace Prototype
         private void metroComboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             metroComboBox3.Visible = metroComboBox1.SelectedIndex == 0 ? false : true;
+            materialRaisedButton7.Visible = metroComboBox1.SelectedIndex == 0 ? true:false;
+            materialRaisedButton6.Visible = false;
+            Output.Text = "";
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -227,6 +233,27 @@ namespace Prototype
         public string Title { get; set; }
         private void button2_Click(object sender, EventArgs e)
         {
+            
+            
+            
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Form2 f2 = new Form2();
+            f2.Show();
+            
+        }
+        
+
+        private void Output_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void materialRaisedButton7_Click(object sender, EventArgs e)
+        {
+            Output.Text = "";
             try
             {
                 string temp;
@@ -243,6 +270,7 @@ namespace Prototype
                     Output.Text = Translations.Wikipedia_Source(temp);
                     //User_Query = User_Text.Text.Replace(" ", "_");
                     linkLabel1.Text = "View Full Content";
+                    materialRaisedButton6.Visible = true;
                     Output.ForeColor = System.Drawing.Color.Black;
 
                 }
@@ -257,21 +285,11 @@ namespace Prototype
                 Output.ForeColor = System.Drawing.Color.Red;
                 Output.Text = "Error : Wikipedia does not have the information you requested";
             }
-            
-            
         }
-
-        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void materialRaisedButton6_Click_1(object sender, EventArgs e)
         {
-            Form6 f6 = new Form6();
-            f6.Show();
-            
-        }
-        
-
-        private void Output_TextChanged(object sender, EventArgs e)
-        {
-
+            Form2 f2 = new Form2();
+            f2.Show();
         }
     }
     public class Result

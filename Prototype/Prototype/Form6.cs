@@ -7,9 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MaterialSkin.Controls;
 using MaterialSkin.Animations;
 using MaterialSkin;
-using MaterialSkin.Controls;
 
 namespace Prototype
 {
@@ -20,23 +20,19 @@ namespace Prototype
             InitializeComponent();
         }
 
-        private void Form6_Load(object sender, EventArgs e)
-        {
-            textBox1.Text = Form1.Search_Link;
-            webBrowser1.Navigate(textBox1.Text);
-            textBox1.Text= URL.GetPageTitle(textBox1.Text);
-            textBox2.Text = Form1.Search_Link;
-            
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void Form5_Load(object sender, EventArgs e)
         {
 
         }
 
-        private void webBrowser1_Navigated(object sender, WebBrowserNavigatedEventArgs e)
+        private void materialTabSelector1_Click(object sender, EventArgs e)
         {
-            textBox2.Text = webBrowser1.Url.AbsoluteUri;
+
+        }
+
+        private void tabPage2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

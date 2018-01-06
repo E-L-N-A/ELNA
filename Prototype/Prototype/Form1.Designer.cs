@@ -33,8 +33,6 @@
             this.materialTabSelector1 = new MaterialSkin.Controls.MaterialTabSelector();
             this.materialTabControl1 = new MaterialSkin.Controls.MaterialTabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
-            this.button2 = new System.Windows.Forms.Button();
             this.materialRaisedButton5 = new MaterialSkin.Controls.MaterialRaisedButton();
             this.materialRaisedButton4 = new MaterialSkin.Controls.MaterialRaisedButton();
             this.materialRaisedButton3 = new MaterialSkin.Controls.MaterialRaisedButton();
@@ -70,13 +68,14 @@
             this.metroComboBox2 = new MetroFramework.Controls.MetroComboBox();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.label1 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.materialRaisedButton7 = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.materialRaisedButton6 = new MaterialSkin.Controls.MaterialRaisedButton();
             this.materialTabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.tabPage4.SuspendLayout();
-            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // metroComboBox1
@@ -87,9 +86,9 @@
             this.metroComboBox1.Items.AddRange(new object[] {
             "Dictionary Mode",
             "Translation Mode"});
-            this.metroComboBox1.Location = new System.Drawing.Point(6, 6);
+            this.metroComboBox1.Location = new System.Drawing.Point(0, 6);
             this.metroComboBox1.Name = "metroComboBox1";
-            this.metroComboBox1.Size = new System.Drawing.Size(200, 29);
+            this.metroComboBox1.Size = new System.Drawing.Size(153, 29);
             this.metroComboBox1.TabIndex = 11;
             this.metroComboBox1.UseSelectable = true;
             this.metroComboBox1.SelectedIndexChanged += new System.EventHandler(this.metroComboBox1_SelectedIndexChanged);
@@ -98,11 +97,11 @@
             // 
             this.materialRaisedButton1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.materialRaisedButton1.Depth = 0;
-            this.materialRaisedButton1.Location = new System.Drawing.Point(208, 6);
+            this.materialRaisedButton1.Location = new System.Drawing.Point(159, 6);
             this.materialRaisedButton1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialRaisedButton1.Name = "materialRaisedButton1";
             this.materialRaisedButton1.Primary = true;
-            this.materialRaisedButton1.Size = new System.Drawing.Size(63, 29);
+            this.materialRaisedButton1.Size = new System.Drawing.Size(54, 29);
             this.materialRaisedButton1.TabIndex = 18;
             this.materialRaisedButton1.Text = "Go";
             this.materialRaisedButton1.UseVisualStyleBackColor = true;
@@ -135,7 +134,8 @@
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.panel1);
+            this.tabPage1.Controls.Add(this.materialRaisedButton6);
+            this.tabPage1.Controls.Add(this.materialRaisedButton7);
             this.tabPage1.Controls.Add(this.materialRaisedButton5);
             this.tabPage1.Controls.Add(this.materialRaisedButton4);
             this.tabPage1.Controls.Add(this.materialRaisedButton3);
@@ -152,29 +152,6 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Main";
             this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // linkLabel1
-            // 
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel1.Location = new System.Drawing.Point(3, 10);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(34, 13);
-            this.linkLabel1.TabIndex = 28;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "Blank";
-            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
-            // 
-            // button2
-            // 
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(196, 5);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(60, 23);
-            this.button2.TabIndex = 27;
-            this.button2.Text = "Wiki";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // materialRaisedButton5
             // 
@@ -609,14 +586,46 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "ELNA Inc. 2017";
             // 
-            // panel1
+            // materialRaisedButton7
             // 
-            this.panel1.Controls.Add(this.button2);
-            this.panel1.Controls.Add(this.linkLabel1);
-            this.panel1.Location = new System.Drawing.Point(276, 336);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(259, 32);
-            this.panel1.TabIndex = 29;
+            this.materialRaisedButton7.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.materialRaisedButton7.Depth = 0;
+            this.materialRaisedButton7.Location = new System.Drawing.Point(216, 6);
+            this.materialRaisedButton7.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialRaisedButton7.Name = "materialRaisedButton7";
+            this.materialRaisedButton7.Primary = true;
+            this.materialRaisedButton7.Size = new System.Drawing.Size(54, 29);
+            this.materialRaisedButton7.TabIndex = 30;
+            this.materialRaisedButton7.Text = "WIKI";
+            this.materialRaisedButton7.UseVisualStyleBackColor = true;
+            this.materialRaisedButton7.Click += new System.EventHandler(this.materialRaisedButton7_Click);
+            // 
+            // linkLabel1
+            // 
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel1.Location = new System.Drawing.Point(490, 31);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(49, 20);
+            this.linkLabel1.TabIndex = 28;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "Blank";
+            this.linkLabel1.Visible = false;
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            // 
+            // materialRaisedButton6
+            // 
+            this.materialRaisedButton6.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.materialRaisedButton6.Depth = 0;
+            this.materialRaisedButton6.Location = new System.Drawing.Point(273, 6);
+            this.materialRaisedButton6.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialRaisedButton6.Name = "materialRaisedButton6";
+            this.materialRaisedButton6.Primary = true;
+            this.materialRaisedButton6.Size = new System.Drawing.Size(283, 29);
+            this.materialRaisedButton6.TabIndex = 31;
+            this.materialRaisedButton6.Text = "View Full Content";
+            this.materialRaisedButton6.UseVisualStyleBackColor = true;
+            this.materialRaisedButton6.Click += new System.EventHandler(this.materialRaisedButton6_Click_1);
             // 
             // Form1
             // 
@@ -626,6 +635,7 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(564, 509);
             this.Controls.Add(this.materialTabControl1);
+            this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.materialTabSelector1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.SystemColors.Highlight;
@@ -646,9 +656,8 @@
             this.tabPage3.PerformLayout();
             this.tabPage4.ResumeLayout(false);
             this.tabPage4.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -693,8 +702,9 @@
         private MetroFramework.Controls.MetroLabel metroLabel3;
         private MetroFramework.Controls.MetroLabel metroLabel4;
         private MetroFramework.Controls.MetroButton metroButton1;
-        private System.Windows.Forms.Button button2;
+        private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton7;
         private System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.Panel panel1;
+        private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton6;
     }
 }
