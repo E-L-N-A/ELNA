@@ -36,7 +36,7 @@ namespace Prototype
             string Dir = System.Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
             Dir = Dir + @"\ELNA\temp";
             Directory.CreateDirectory(Dir);
-
+            
             using (Stream stream = client.OpenRead("http://en.wikipedia.org/w/api.php?format=json&action=query&prop=extracts&explaintext=1&titles=" + text))
             using (StreamReader reader = new StreamReader(stream))
             {
@@ -163,6 +163,11 @@ namespace Prototype
             //var JSONObj = new JavaScriptSerializer().Deserialize<Dictionary<string, string>>(page);
             //return JSONObj["basic"];
         }
+        /*
+        public static string Auto_Capitalization(string text)
+        {
+
+        }*/
         public class Result
         {
             public Query query { get; set; }
@@ -172,7 +177,32 @@ namespace Prototype
         {
             public Dictionary<string, Page> pages { get; set; }
         }
+        public static string Auto_Capitalization(string text)
+        {
+            string[] Word = text.Split(' ');
+            string CapitalizedWord = "";
+            for (int i = 0; i < Word.Length; i++)
+            {
+                string Temp = Word[i];
+                if (!Temp.Equals("of") && !Temp.Equals("Of"))
+                {
+                    string Capitalized = Temp.Substring(0, 1).ToUpper();
+                    string Reset = Temp.Substring(1, Temp.Length - 1);
+                    Word[i] = Capitalized + Reset;
+                }
+                else
+                {
+                    Word[i] = "of";
+                }
+            }
 
+            foreach (string i in Word)
+            {
+                CapitalizedWord = CapitalizedWord + i + " ";
+            }
+            return CapitalizedWord;
+        }
+       
         public class Page
         {
             public string extract { get; set; }

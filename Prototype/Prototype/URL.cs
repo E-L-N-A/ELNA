@@ -12,17 +12,20 @@ namespace Prototype
     {
         public static string GetRedirectedURL(string url)
         {
-            HttpWebRequest WebR = (HttpWebRequest)WebRequest.Create(url);
-            HttpWebResponse WebP = (HttpWebResponse)WebR.GetResponse();
-            WebP.Close();
-            if (WebR.RequestUri != WebR.Address)
-            {
-                return WebR.Address.ToString();
-            }
-            else
-            {
-                return WebR.RequestUri.ToString();
-            }
+
+                HttpWebRequest WebR = (HttpWebRequest)WebRequest.Create(url);
+                HttpWebResponse WebP = (HttpWebResponse)WebR.GetResponse();
+                WebP.Close();
+                if (WebR.RequestUri != WebR.Address)
+                {
+                    return WebR.Address.ToString();
+                }
+                else
+                {
+                    return WebR.RequestUri.ToString();
+                }
+            
+            
             
         }
         public static string GetPageTitle(string link)

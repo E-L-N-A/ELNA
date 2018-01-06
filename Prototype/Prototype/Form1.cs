@@ -226,21 +226,23 @@ namespace Prototype
 
         private void button2_Click(object sender, EventArgs e)
         {
-            string temp;
             try
             {
+                string temp;
                 if (!(string.IsNullOrEmpty(User_Text.Text)))
                 {
-                    Search_Link = WikiDefaultLink + User_Text.Text;
-                    //webBrowser1.Navigate(Search_Link);
-                    temp =URL.GetPageTitle(URL.GetRedirectedURL(Search_Link));
+                    string User = Translations.Auto_Capitalization(User_Text.Text);
+                    Search_Link = WikiDefaultLink + User;
+                    //Search_Link = Translations.Auto_Capitalization(Search_Link);
+                    temp = URL.GetPageTitle(URL.GetRedirectedURL(Search_Link));
                     temp = temp.Substring(0, temp.IndexOf("-"));
+                    //Translations.Auto_Capitalization(temp);
                     //temp = temp.Replace(" ", "_");
                     Output.Text = Translations.Wikipedia_Source(temp);
                     //User_Query = User_Text.Text.Replace(" ", "_");
                     linkLabel1.Text = "View Full Content";
                     Output.ForeColor = System.Drawing.Color.Black;
-                    
+
                 }
                 else
                 {
@@ -249,9 +251,11 @@ namespace Prototype
             }
             catch (Exception)
             {
+
                 Output.ForeColor = System.Drawing.Color.Red;
                 Output.Text = "Error : Wikipedia does not have the information you requested";
             }
+            
             
         }
 
