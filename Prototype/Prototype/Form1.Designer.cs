@@ -33,6 +33,8 @@
             this.materialTabSelector1 = new MaterialSkin.Controls.MaterialTabSelector();
             this.materialTabControl1 = new MaterialSkin.Controls.MaterialTabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.materialRaisedButton9 = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.materialRaisedButton8 = new MaterialSkin.Controls.MaterialRaisedButton();
             this.materialRaisedButton6 = new MaterialSkin.Controls.MaterialRaisedButton();
             this.materialRaisedButton7 = new MaterialSkin.Controls.MaterialRaisedButton();
             this.materialRaisedButton5 = new MaterialSkin.Controls.MaterialRaisedButton();
@@ -70,8 +72,6 @@
             this.metroComboBox2 = new MetroFramework.Controls.MetroComboBox();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.label1 = new System.Windows.Forms.Label();
-            this.materialRaisedButton8 = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.materialRaisedButton9 = new MaterialSkin.Controls.MaterialRaisedButton();
             this.materialTabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -87,9 +87,9 @@
             this.metroComboBox1.Items.AddRange(new object[] {
             "Dictionary Mode",
             "Translation Mode"});
-            this.metroComboBox1.Location = new System.Drawing.Point(0, 6);
+            this.metroComboBox1.Location = new System.Drawing.Point(1, 6);
             this.metroComboBox1.Name = "metroComboBox1";
-            this.metroComboBox1.Size = new System.Drawing.Size(153, 29);
+            this.metroComboBox1.Size = new System.Drawing.Size(152, 29);
             this.metroComboBox1.TabIndex = 11;
             this.metroComboBox1.UseSelectable = true;
             this.metroComboBox1.SelectedIndexChanged += new System.EventHandler(this.metroComboBox1_SelectedIndexChanged);
@@ -155,6 +155,38 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Main";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // materialRaisedButton9
+            // 
+            this.materialRaisedButton9.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.materialRaisedButton9.Depth = 0;
+            this.materialRaisedButton9.Font = new System.Drawing.Font("Microsoft Sans Serif", 5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.materialRaisedButton9.Location = new System.Drawing.Point(412, 374);
+            this.materialRaisedButton9.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialRaisedButton9.Name = "materialRaisedButton9";
+            this.materialRaisedButton9.Primary = true;
+            this.materialRaisedButton9.Size = new System.Drawing.Size(144, 21);
+            this.materialRaisedButton9.TabIndex = 33;
+            this.materialRaisedButton9.Text = "Stop Pronounce";
+            this.materialRaisedButton9.UseVisualStyleBackColor = true;
+            this.materialRaisedButton9.Visible = false;
+            this.materialRaisedButton9.Click += new System.EventHandler(this.materialRaisedButton9_Click);
+            // 
+            // materialRaisedButton8
+            // 
+            this.materialRaisedButton8.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.materialRaisedButton8.Depth = 0;
+            this.materialRaisedButton8.Font = new System.Drawing.Font("Microsoft Sans Serif", 5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.materialRaisedButton8.Location = new System.Drawing.Point(273, 374);
+            this.materialRaisedButton8.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialRaisedButton8.Name = "materialRaisedButton8";
+            this.materialRaisedButton8.Primary = true;
+            this.materialRaisedButton8.Size = new System.Drawing.Size(133, 21);
+            this.materialRaisedButton8.TabIndex = 32;
+            this.materialRaisedButton8.Text = "Stop Pronounce";
+            this.materialRaisedButton8.UseVisualStyleBackColor = true;
+            this.materialRaisedButton8.Visible = false;
+            this.materialRaisedButton8.Click += new System.EventHandler(this.materialRaisedButton8_Click);
             // 
             // materialRaisedButton6
             // 
@@ -618,38 +650,6 @@
             this.label1.Size = new System.Drawing.Size(97, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "ELNA Inc. 2017";
-            // 
-            // materialRaisedButton8
-            // 
-            this.materialRaisedButton8.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.materialRaisedButton8.Depth = 0;
-            this.materialRaisedButton8.Font = new System.Drawing.Font("Microsoft Sans Serif", 5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.materialRaisedButton8.Location = new System.Drawing.Point(273, 374);
-            this.materialRaisedButton8.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialRaisedButton8.Name = "materialRaisedButton8";
-            this.materialRaisedButton8.Primary = true;
-            this.materialRaisedButton8.Size = new System.Drawing.Size(133, 21);
-            this.materialRaisedButton8.TabIndex = 32;
-            this.materialRaisedButton8.Text = "Stop Pronounce";
-            this.materialRaisedButton8.UseVisualStyleBackColor = true;
-            this.materialRaisedButton8.Visible = false;
-            this.materialRaisedButton8.Click += new System.EventHandler(this.materialRaisedButton8_Click);
-            // 
-            // materialRaisedButton9
-            // 
-            this.materialRaisedButton9.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.materialRaisedButton9.Depth = 0;
-            this.materialRaisedButton9.Font = new System.Drawing.Font("Microsoft Sans Serif", 5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.materialRaisedButton9.Location = new System.Drawing.Point(412, 374);
-            this.materialRaisedButton9.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialRaisedButton9.Name = "materialRaisedButton9";
-            this.materialRaisedButton9.Primary = true;
-            this.materialRaisedButton9.Size = new System.Drawing.Size(144, 21);
-            this.materialRaisedButton9.TabIndex = 33;
-            this.materialRaisedButton9.Text = "Stop Pronounce";
-            this.materialRaisedButton9.UseVisualStyleBackColor = true;
-            this.materialRaisedButton9.Visible = false;
-            this.materialRaisedButton9.Click += new System.EventHandler(this.materialRaisedButton9_Click);
             // 
             // Form1
             // 

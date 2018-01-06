@@ -39,7 +39,6 @@ namespace Prototype
             metroComboBox1.SelectedIndex=0;
             metroComboBox2.SelectedIndex = 0;
             metroComboBox3.SelectedIndex = 0;
-            linkLabel1.Text = "";
             materialRaisedButton6.Visible = false;
            
             //richTextBox1.Text = lines;
@@ -287,7 +286,6 @@ namespace Prototype
                     //temp = temp.Replace(" ", "_");
                     Output.Text = Translations.Wikipedia_Source(temp);
                     //User_Query = User_Text.Text.Replace(" ", "_");
-                    linkLabel1.Text = "View Full Content";
                     materialRaisedButton6.Visible = true;
                     Output.ForeColor = System.Drawing.Color.Black;
 
