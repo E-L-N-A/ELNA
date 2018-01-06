@@ -90,30 +90,38 @@ namespace Prototype
         }
         public static string Google_Translate(string text, string from, string to)
         {
-            string page = null;
             try
             {
-                WebClient wc = new WebClient();
-                wc.Headers.Add(HttpRequestHeader.UserAgent, "Mozilla/5.0");
-                wc.Headers.Add(HttpRequestHeader.AcceptCharset, "UTF-8");
-                wc.Encoding = Encoding.UTF8;
+                string page = null;
+                try
+                {
+                    WebClient wc = new WebClient();
+                    wc.Headers.Add(HttpRequestHeader.UserAgent, "Mozilla/5.0");
+                    wc.Headers.Add(HttpRequestHeader.AcceptCharset, "UTF-8");
+                    wc.Encoding = Encoding.UTF8;
 
-                string url = string.Format(@"http://translate.google.com.tr/m?hl=en&sl={0}&tl={1}&ie=UTF-8&prev=_m&q={2}",
-                                            from, to, Uri.EscapeUriString(text));
-                Console.WriteLine(url);
-                page = wc.DownloadString(url);
+                    string url = string.Format(@"http://translate.google.com.tr/m?hl=en&sl={0}&tl={1}&ie=UTF-8&prev=_m&q={2}",
+                                                from, to, Uri.EscapeUriString(text));
+                    Console.WriteLine(url);
+                    page = wc.DownloadString(url);
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.ToString());
+                    return null;
+                }
+
+                page = page.Remove(0, page.IndexOf("<div dir=\"ltr\" class=\"t0\">")).Replace("<div dir=\"ltr\" class=\"t0\">", "");
+                int last = page.IndexOf("</div>");
+                page = page.Remove(last, page.Length - last);
+
+                return page;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                Console.WriteLine(ex.ToString());
-                return null;
+                return "";
+                
             }
-
-            page = page.Remove(0, page.IndexOf("<div dir=\"ltr\" class=\"t0\">")).Replace("<div dir=\"ltr\" class=\"t0\">", "");
-            int last = page.IndexOf("</div>");
-            page = page.Remove(last, page.Length - last);
-
-            return page;
         }
         public static string Youdao_Dictionary(string text)
         {

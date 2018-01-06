@@ -62,50 +62,57 @@ namespace Prototype
 
         private void materialRaisedButton1_Click(object sender, EventArgs e)
         {
-            materialRaisedButton6.Visible = false;
-            Output.Text = "";
-            if (metroComboBox1.SelectedIndex == 1)
+            try
             {
-                if (metroComboBox3.SelectedIndex == 0)
+                materialRaisedButton6.Visible = false;
+                Output.Text = "";
+                if (metroComboBox1.SelectedIndex == 1)
                 {
-                    string translation =Translations.Google_Translate(User_Text.Text, "auto", "en");
-                    Output.Text = translation;
+                    if (metroComboBox3.SelectedIndex == 0)
+                    {
+                        string translation = Translations.Google_Translate(User_Text.Text, "auto", "en");
+                        Output.Text = translation;
+                    }
+                    if (metroComboBox3.SelectedIndex == 1)
+                    {
+                        string translation = Translations.Google_Translate(User_Text.Text, "auto", "zh");
+                        string definition = Translations.Youdao_Dictionary(User_Text.Text);
+                        Output.Text = translation + "\r\n" + definition;
+                    }
+                    if (metroComboBox3.SelectedIndex == 2)
+                    {
+                        string translation = Translations.Google_Translate(User_Text.Text, "auto", "es");
+                        Output.Text = translation;
+                    }
+                    if (metroComboBox3.SelectedIndex == 3)
+                    {
+                        string translation = Translations.Google_Translate(User_Text.Text, "auto", "fr");
+                        Output.Text = translation;
+                    }
+                    if (metroComboBox3.SelectedIndex == 4)
+                    {
+                        string translation = Translations.Google_Translate(User_Text.Text, "auto", "ru");
+                        Output.Text = translation;
+                    }
+                    if (metroComboBox3.SelectedIndex == 5)
+                    {
+                        string translation = Translations.Google_Translate(User_Text.Text, "auto", "ko");
+                        Output.Text = translation;
+                    }
+                    if (metroComboBox3.SelectedIndex == 6)
+                    {
+                        string translation = Translations.Google_Translate(User_Text.Text, "auto", "ja");
+                        Output.Text = translation;
+                    }
                 }
-                if (metroComboBox3.SelectedIndex == 1)
+                if (metroComboBox1.SelectedIndex == 0)
                 {
-                    string translation = Translations.Google_Translate(User_Text.Text, "auto", "zh");
-                    string definition = Translations.Youdao_Dictionary(User_Text.Text);
-                    Output.Text = translation+"\r\n"+definition;
-                }
-                if (metroComboBox3.SelectedIndex == 2)
-                {
-                    string translation = Translations.Google_Translate(User_Text.Text, "auto", "es");
-                    Output.Text = translation;
-                }
-                if (metroComboBox3.SelectedIndex == 3)
-                {
-                    string translation = Translations.Google_Translate(User_Text.Text, "auto", "fr");
-                    Output.Text = translation;
-                }
-                if (metroComboBox3.SelectedIndex == 4)
-                {
-                    string translation = Translations.Google_Translate(User_Text.Text, "auto", "ru");
-                    Output.Text = translation;
-                }
-                if (metroComboBox3.SelectedIndex == 5)
-                {
-                    string translation = Translations.Google_Translate(User_Text.Text, "auto", "ko");
-                    Output.Text = translation;
-                }
-                if (metroComboBox3.SelectedIndex == 6)
-                {
-                    string translation = Translations.Google_Translate(User_Text.Text, "auto", "ja");
-                    Output.Text = translation;
+
                 }
             }
-            if (metroComboBox1.SelectedIndex == 0)
+            catch (Exception)
             {
-
+                Output.Text = "Unexpected Error Detected.";
             }
         }
 
