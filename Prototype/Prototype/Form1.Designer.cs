@@ -72,6 +72,8 @@
             this.metroComboBox2 = new MetroFramework.Controls.MetroComboBox();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.label1 = new System.Windows.Forms.Label();
+            this.webBrowser1 = new System.Windows.Forms.WebBrowser();
+            this.webBrowser2 = new System.Windows.Forms.WebBrowser();
             this.materialTabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -158,7 +160,7 @@
             // 
             // materialRaisedButton9
             // 
-            this.materialRaisedButton9.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.materialRaisedButton9.Cursor = System.Windows.Forms.Cursors.WaitCursor;
             this.materialRaisedButton9.Depth = 0;
             this.materialRaisedButton9.Font = new System.Drawing.Font("Microsoft Sans Serif", 5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.materialRaisedButton9.Location = new System.Drawing.Point(412, 374);
@@ -169,12 +171,13 @@
             this.materialRaisedButton9.TabIndex = 33;
             this.materialRaisedButton9.Text = "Stop Pronounce";
             this.materialRaisedButton9.UseVisualStyleBackColor = true;
+            this.materialRaisedButton9.UseWaitCursor = true;
             this.materialRaisedButton9.Visible = false;
             this.materialRaisedButton9.Click += new System.EventHandler(this.materialRaisedButton9_Click);
             // 
             // materialRaisedButton8
             // 
-            this.materialRaisedButton8.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.materialRaisedButton8.Cursor = System.Windows.Forms.Cursors.WaitCursor;
             this.materialRaisedButton8.Depth = 0;
             this.materialRaisedButton8.Font = new System.Drawing.Font("Microsoft Sans Serif", 5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.materialRaisedButton8.Location = new System.Drawing.Point(273, 374);
@@ -185,6 +188,7 @@
             this.materialRaisedButton8.TabIndex = 32;
             this.materialRaisedButton8.Text = "Stop Pronounce";
             this.materialRaisedButton8.UseVisualStyleBackColor = true;
+            this.materialRaisedButton8.UseWaitCursor = true;
             this.materialRaisedButton8.Visible = false;
             this.materialRaisedButton8.Click += new System.EventHandler(this.materialRaisedButton8_Click);
             // 
@@ -295,6 +299,7 @@
             this.metroComboBox3.TabIndex = 22;
             this.metroComboBox3.UseSelectable = true;
             this.metroComboBox3.Visible = false;
+            this.metroComboBox3.SelectedIndexChanged += new System.EventHandler(this.metroComboBox3_SelectedIndexChanged);
             // 
             // Output
             // 
@@ -651,6 +656,26 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "ELNA Inc. 2017";
             // 
+            // webBrowser1
+            // 
+            this.webBrowser1.Location = new System.Drawing.Point(472, 28);
+            this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
+            this.webBrowser1.Name = "webBrowser1";
+            this.webBrowser1.ScriptErrorsSuppressed = true;
+            this.webBrowser1.Size = new System.Drawing.Size(22, 20);
+            this.webBrowser1.TabIndex = 25;
+            this.webBrowser1.Visible = false;
+            // 
+            // webBrowser2
+            // 
+            this.webBrowser2.Location = new System.Drawing.Point(500, 28);
+            this.webBrowser2.MinimumSize = new System.Drawing.Size(20, 20);
+            this.webBrowser2.Name = "webBrowser2";
+            this.webBrowser2.ScriptErrorsSuppressed = true;
+            this.webBrowser2.Size = new System.Drawing.Size(22, 20);
+            this.webBrowser2.TabIndex = 26;
+            this.webBrowser2.Visible = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
@@ -658,6 +683,8 @@
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(564, 509);
+            this.Controls.Add(this.webBrowser2);
+            this.Controls.Add(this.webBrowser1);
             this.Controls.Add(this.materialTabControl1);
             this.Controls.Add(this.materialTabSelector1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -729,5 +756,7 @@
         private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton6;
         private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton9;
         private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton8;
+        private System.Windows.Forms.WebBrowser webBrowser1;
+        private System.Windows.Forms.WebBrowser webBrowser2;
     }
 }

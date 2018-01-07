@@ -64,6 +64,12 @@ namespace Prototype
         {
             try
             {
+                materialRaisedButton3.Visible = false;
+                materialRaisedButton4.Visible = false;
+                materialRaisedButton5.Visible = false;
+                materialRaisedButton8.Visible = false;
+                materialRaisedButton9.Visible = false;
+                webBrowser1.Navigate("https://translate.google.com/#auto/#auto/" + User_Text.Text);
                 materialRaisedButton6.Visible = false;
                 Output.Text = "";
                 if (metroComboBox1.SelectedIndex == 1)
@@ -131,6 +137,11 @@ namespace Prototype
             materialRaisedButton7.Visible = metroComboBox1.SelectedIndex == 0 ? true:false;
             materialRaisedButton6.Visible = false;
             Output.Text = "";
+            materialRaisedButton3.Visible = false;
+            materialRaisedButton4.Visible = false;
+            materialRaisedButton5.Visible = false;
+            materialRaisedButton8.Visible = false;
+            materialRaisedButton9.Visible = false;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -195,9 +206,9 @@ namespace Prototype
                 metroCheckBox8.Enabled = true;
                 label5.Text = "Current Assistant Mode: Advanced";
                 label5.ForeColor = System.Drawing.Color.Red;
-                materialRaisedButton3.Visible = true;
-                materialRaisedButton4.Visible = true;
-                materialRaisedButton5.Visible = true;
+                //materialRaisedButton3.Visible = true;
+                //materialRaisedButton4.Visible = true;
+                //materialRaisedButton5.Visible = true;
 
             }
             else
@@ -212,21 +223,23 @@ namespace Prototype
                 metroCheckBox8.Enabled = false;
                 label5.Text = "Current Assistant Mode: Normal";
                 label5.ForeColor = System.Drawing.Color.DodgerBlue;
-                materialRaisedButton3.Visible = false;
-                materialRaisedButton4.Visible = false;
-                materialRaisedButton5.Visible = false;
+                //materialRaisedButton3.Visible = false;
+                //materialRaisedButton4.Visible = false;
+                //materialRaisedButton5.Visible = false;
             }
         }
         SpeechSynthesizer Synthesizer = new SpeechSynthesizer();
         private void materialRaisedButton3_Click(object sender, EventArgs e)
         {
-            Synthesizer.Rate = 0;//发音速度
-            Synthesizer.Volume = 100;//音量
+            //Synthesizer.Rate = 0;//发音速度
+            //Synthesizer.Volume = 100;//音量
             //Synthesizer.SelectVoice();
-            Synthesizer.SpeakAsync(User_Text.Text);
+            //Synthesizer.SpeakAsync(User_Text.Text);
             materialRaisedButton3.Visible = false;
             materialRaisedButton8.Visible = true;
-            Synthesizer.SpeakCompleted += Synthesizer_SpeakCompleted;
+            //Synthesizer.SpeakCompleted += Synthesizer_SpeakCompleted;
+
+            webBrowser1.Document.GetElementById("gt-src-listen").InvokeMember("click");
         }
         private void Synthesizer_SpeakCompleted(object sender, SpeakCompletedEventArgs e)
         {
@@ -265,12 +278,21 @@ namespace Prototype
 
         private void Output_TextChanged(object sender, EventArgs e)
         {
-
+            webBrowser2.Navigate("https://translate.google.com/#auto/#auto/" + Output.Text);
+            materialRaisedButton3.Visible = true;
+            materialRaisedButton4.Visible = true;
+            materialRaisedButton5.Visible = true;
         }
 
         private void materialRaisedButton7_Click(object sender, EventArgs e)
         {
             Output.Text = "";
+            materialRaisedButton3.Visible = false;
+            materialRaisedButton4.Visible = false;
+            materialRaisedButton5.Visible = false;
+            materialRaisedButton8.Visible = false;
+            materialRaisedButton9.Visible = false;
+            webBrowser1.Navigate("https://translate.google.com/#auto/#auto/" + User_Text.Text);
             try
             {
                 string temp;
@@ -310,14 +332,14 @@ namespace Prototype
         SpeechSynthesizer Synthesizer2 = new SpeechSynthesizer();
         private void materialRaisedButton4_Click(object sender, EventArgs e)
         {
-            Synthesizer2.Rate = 0;//发音速度
-            Synthesizer2.Volume = 100;//音量
+            //Synthesizer2.Rate = 0;//发音速度
+            //Synthesizer2.Volume = 100;//音量
             //Synthesizer.SelectVoice();
             materialRaisedButton4.Visible = false;
             materialRaisedButton9.Visible = true;
-            Synthesizer2.SpeakCompleted += Synthesizer2_SpeakCompleted;
-            Synthesizer2.SpeakAsync(Output.Text);
-
+            //Synthesizer2.SpeakCompleted += Synthesizer2_SpeakCompleted;
+            //Synthesizer2.SpeakAsync(Output.Text);
+            webBrowser2.Document.GetElementById("gt-src-listen").InvokeMember("click");
         }
         private void Synthesizer2_SpeakCompleted(object sender, SpeakCompletedEventArgs e)
         {
@@ -332,15 +354,26 @@ namespace Prototype
 
         private void materialRaisedButton8_Click(object sender, EventArgs e)
         {
-            Synthesizer.SpeakAsyncCancelAll();
+            //Synthesizer.SpeakAsyncCancelAll();
             materialRaisedButton3.Visible = true;
             materialRaisedButton8.Visible = false;
+            webBrowser1.Refresh();
         }
 
         private void materialRaisedButton9_Click(object sender, EventArgs e)
         {
-            Synthesizer2.SpeakAsyncCancelAll();
+            //Synthesizer2.SpeakAsyncCancelAll();
             materialRaisedButton4.Visible = true;
+            materialRaisedButton9.Visible = false;
+            webBrowser2.Refresh();
+        }
+
+        private void metroComboBox3_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            materialRaisedButton3.Visible = false;
+            materialRaisedButton4.Visible = false;
+            materialRaisedButton5.Visible = false;
+            materialRaisedButton8.Visible = false;
             materialRaisedButton9.Visible = false;
         }
     }
