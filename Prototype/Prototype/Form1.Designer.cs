@@ -432,11 +432,11 @@
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkBox1.ForeColor = System.Drawing.Color.Orange;
-            this.checkBox1.Location = new System.Drawing.Point(8, 122);
+            this.checkBox1.Location = new System.Drawing.Point(8, 83);
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(308, 33);
+            this.checkBox1.Size = new System.Drawing.Size(173, 20);
             this.checkBox1.TabIndex = 28;
             this.checkBox1.Text = "Enable Advanced Mode";
             this.checkBox1.UseVisualStyleBackColor = true;
@@ -446,7 +446,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(7, 172);
+            this.label6.Location = new System.Drawing.Point(3, 106);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(125, 18);
             this.label6.TabIndex = 26;
@@ -467,7 +467,7 @@
             this.metroCheckBox8.AutoSize = true;
             this.metroCheckBox8.Enabled = false;
             this.metroCheckBox8.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.metroCheckBox8.Location = new System.Drawing.Point(8, 360);
+            this.metroCheckBox8.Location = new System.Drawing.Point(6, 290);
             this.metroCheckBox8.Name = "metroCheckBox8";
             this.metroCheckBox8.Size = new System.Drawing.Size(150, 15);
             this.metroCheckBox8.TabIndex = 21;
@@ -480,7 +480,7 @@
             this.metroCheckBox6.AutoSize = true;
             this.metroCheckBox6.Enabled = false;
             this.metroCheckBox6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.metroCheckBox6.Location = new System.Drawing.Point(8, 329);
+            this.metroCheckBox6.Location = new System.Drawing.Point(6, 259);
             this.metroCheckBox6.Name = "metroCheckBox6";
             this.metroCheckBox6.Size = new System.Drawing.Size(327, 15);
             this.metroCheckBox6.TabIndex = 20;
@@ -493,7 +493,7 @@
             this.metroCheckBox4.AutoSize = true;
             this.metroCheckBox4.Enabled = false;
             this.metroCheckBox4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.metroCheckBox4.Location = new System.Drawing.Point(8, 299);
+            this.metroCheckBox4.Location = new System.Drawing.Point(6, 229);
             this.metroCheckBox4.Name = "metroCheckBox4";
             this.metroCheckBox4.Size = new System.Drawing.Size(280, 15);
             this.metroCheckBox4.TabIndex = 17;
@@ -506,7 +506,7 @@
             this.metroCheckBox3.AutoSize = true;
             this.metroCheckBox3.Enabled = false;
             this.metroCheckBox3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.metroCheckBox3.Location = new System.Drawing.Point(8, 266);
+            this.metroCheckBox3.Location = new System.Drawing.Point(6, 196);
             this.metroCheckBox3.Name = "metroCheckBox3";
             this.metroCheckBox3.Size = new System.Drawing.Size(327, 15);
             this.metroCheckBox3.TabIndex = 16;
@@ -519,7 +519,7 @@
             this.metroCheckBox2.AutoSize = true;
             this.metroCheckBox2.Enabled = false;
             this.metroCheckBox2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.metroCheckBox2.Location = new System.Drawing.Point(8, 235);
+            this.metroCheckBox2.Location = new System.Drawing.Point(6, 165);
             this.metroCheckBox2.Name = "metroCheckBox2";
             this.metroCheckBox2.Size = new System.Drawing.Size(362, 15);
             this.metroCheckBox2.TabIndex = 15;
@@ -532,7 +532,7 @@
             this.metroCheckBox1.AutoSize = true;
             this.metroCheckBox1.Enabled = false;
             this.metroCheckBox1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.metroCheckBox1.Location = new System.Drawing.Point(8, 204);
+            this.metroCheckBox1.Location = new System.Drawing.Point(6, 134);
             this.metroCheckBox1.Name = "metroCheckBox1";
             this.metroCheckBox1.Size = new System.Drawing.Size(271, 15);
             this.metroCheckBox1.TabIndex = 14;
@@ -544,9 +544,9 @@
             // 
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.button1.Location = new System.Drawing.Point(322, 58);
+            this.button1.Location = new System.Drawing.Point(288, 55);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(31, 24);
+            this.button1.Size = new System.Drawing.Size(30, 22);
             this.button1.TabIndex = 11;
             this.button1.Text = "...";
             this.button1.UseVisualStyleBackColor = true;
@@ -554,11 +554,11 @@
             // 
             // textBox1
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBox1.Location = new System.Drawing.Point(147, 58);
+            this.textBox1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(147, 55);
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(168, 24);
+            this.textBox1.Size = new System.Drawing.Size(135, 22);
             this.textBox1.TabIndex = 10;
             this.textBox1.Text = "Default Location";
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -566,20 +566,20 @@
             // metroLabel2
             // 
             this.metroLabel2.AutoSize = true;
-            this.metroLabel2.Location = new System.Drawing.Point(8, 61);
+            this.metroLabel2.Location = new System.Drawing.Point(3, 58);
             this.metroLabel2.Name = "metroLabel2";
-            this.metroLabel2.Size = new System.Drawing.Size(142, 19);
+            this.metroLabel2.Size = new System.Drawing.Size(141, 19);
             this.metroLabel2.TabIndex = 9;
-            this.metroLabel2.Text = "Configuration Location";
+            this.metroLabel2.Text = "Location Optimization:";
             // 
             // metroLabel1
             // 
             this.metroLabel1.AutoSize = true;
-            this.metroLabel1.Location = new System.Drawing.Point(8, 21);
+            this.metroLabel1.Location = new System.Drawing.Point(3, 21);
             this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(133, 19);
+            this.metroLabel1.Size = new System.Drawing.Size(136, 19);
             this.metroLabel1.TabIndex = 8;
-            this.metroLabel1.Text = "Language Preference";
+            this.metroLabel1.Text = "Language Preference:";
             // 
             // metroComboBox2
             // 
@@ -589,7 +589,7 @@
             "Default",
             "English",
             "Chinese"});
-            this.metroComboBox2.Location = new System.Drawing.Point(147, 17);
+            this.metroComboBox2.Location = new System.Drawing.Point(147, 11);
             this.metroComboBox2.Name = "metroComboBox2";
             this.metroComboBox2.Size = new System.Drawing.Size(135, 29);
             this.metroComboBox2.TabIndex = 7;
@@ -608,9 +608,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(448, 367);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(97, 13);
+            this.label1.Size = new System.Drawing.Size(97, 16);
             this.label1.TabIndex = 0;
             this.label1.Text = "ELNA Inc. 2017";
             // 
