@@ -234,18 +234,39 @@ namespace Prototype
                     ThumbUp.Add(double.Parse(i["thumbs_up"].ToString()));
                     ThumbDown.Add(double.Parse(i["thumbs_down"].ToString()));
                 }
-                for (int i = 0; i < ThumbDown.Count; i++)
+                
+                for (int i = 0; i < 2; i++)
                 {
                     LiketoDislikeRatio.Add(ThumbUp[i] / ThumbDown[i]);
                 }
                 double Greatest_Ratio = LiketoDislikeRatio[0];
                 int Index = 0;
+                /*
                 for (int i = 0; i < LiketoDislikeRatio.Count; i++)
                 {
                     if (LiketoDislikeRatio[i] > Greatest_Ratio)
                     {
                         Greatest_Ratio = LiketoDislikeRatio[i];
                         Index = i;
+                    }
+                }*/
+                if (Math.Abs(LiketoDislikeRatio[1] - Greatest_Ratio) < 0.1)
+                {
+                    if (LiketoDislikeRatio[1] > Greatest_Ratio)
+                    {
+                        Index = 1;
+                    }
+                    
+                }
+                else
+                {
+                    if (ThumbUp[0] > ThumbUp[1])
+                    {
+
+                    }
+                    else
+                    {
+                        Index = 1;
                     }
                 }
 
