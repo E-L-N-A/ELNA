@@ -54,13 +54,10 @@
             this.materialRaisedButton2 = new MaterialSkin.Controls.MaterialRaisedButton();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.metroCheckBox8 = new MetroFramework.Controls.MetroCheckBox();
             this.metroCheckBox6 = new MetroFramework.Controls.MetroCheckBox();
-            this.metroCheckBox5 = new MetroFramework.Controls.MetroCheckBox();
-            this.metroCheckBox7 = new MetroFramework.Controls.MetroCheckBox();
             this.metroCheckBox4 = new MetroFramework.Controls.MetroCheckBox();
             this.metroCheckBox3 = new MetroFramework.Controls.MetroCheckBox();
             this.metroCheckBox2 = new MetroFramework.Controls.MetroCheckBox();
@@ -411,13 +408,10 @@
             // tabPage3
             // 
             this.tabPage3.Controls.Add(this.checkBox1);
-            this.tabPage3.Controls.Add(this.label3);
             this.tabPage3.Controls.Add(this.label6);
             this.tabPage3.Controls.Add(this.label2);
             this.tabPage3.Controls.Add(this.metroCheckBox8);
             this.tabPage3.Controls.Add(this.metroCheckBox6);
-            this.tabPage3.Controls.Add(this.metroCheckBox5);
-            this.tabPage3.Controls.Add(this.metroCheckBox7);
             this.tabPage3.Controls.Add(this.metroCheckBox4);
             this.tabPage3.Controls.Add(this.metroCheckBox3);
             this.tabPage3.Controls.Add(this.metroCheckBox2);
@@ -438,35 +432,25 @@
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox1.ForeColor = System.Drawing.Color.Black;
-            this.checkBox1.Location = new System.Drawing.Point(322, 17);
+            this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox1.ForeColor = System.Drawing.Color.Orange;
+            this.checkBox1.Location = new System.Drawing.Point(8, 122);
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(156, 19);
+            this.checkBox1.Size = new System.Drawing.Size(308, 33);
             this.checkBox1.TabIndex = 28;
             this.checkBox1.Text = "Enable Advanced Mode";
             this.checkBox1.UseVisualStyleBackColor = true;
             this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(5, 280);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(138, 18);
-            this.label3.TabIndex = 27;
-            this.label3.Text = "Translation Settings";
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(7, 93);
+            this.label6.Location = new System.Drawing.Point(7, 172);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(131, 18);
+            this.label6.Size = new System.Drawing.Size(125, 18);
             this.label6.TabIndex = 26;
-            this.label6.Text = "Dictionary Settings";
+            this.label6.Text = "Assistant Settings";
             // 
             // label2
             // 
@@ -483,7 +467,7 @@
             this.metroCheckBox8.AutoSize = true;
             this.metroCheckBox8.Enabled = false;
             this.metroCheckBox8.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.metroCheckBox8.Location = new System.Drawing.Point(8, 371);
+            this.metroCheckBox8.Location = new System.Drawing.Point(8, 360);
             this.metroCheckBox8.Name = "metroCheckBox8";
             this.metroCheckBox8.Size = new System.Drawing.Size(150, 15);
             this.metroCheckBox8.TabIndex = 21;
@@ -496,7 +480,7 @@
             this.metroCheckBox6.AutoSize = true;
             this.metroCheckBox6.Enabled = false;
             this.metroCheckBox6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.metroCheckBox6.Location = new System.Drawing.Point(8, 340);
+            this.metroCheckBox6.Location = new System.Drawing.Point(8, 329);
             this.metroCheckBox6.Name = "metroCheckBox6";
             this.metroCheckBox6.Size = new System.Drawing.Size(327, 15);
             this.metroCheckBox6.TabIndex = 20;
@@ -504,38 +488,12 @@
             this.metroCheckBox6.UseSelectable = true;
             this.metroCheckBox6.CheckedChanged += new System.EventHandler(this.metroCheckBox6_CheckedChanged);
             // 
-            // metroCheckBox5
-            // 
-            this.metroCheckBox5.AutoSize = true;
-            this.metroCheckBox5.Enabled = false;
-            this.metroCheckBox5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.metroCheckBox5.Location = new System.Drawing.Point(8, 310);
-            this.metroCheckBox5.Name = "metroCheckBox5";
-            this.metroCheckBox5.Size = new System.Drawing.Size(271, 15);
-            this.metroCheckBox5.TabIndex = 19;
-            this.metroCheckBox5.Text = "Multiple Website Analysis to improve Accuracy";
-            this.metroCheckBox5.UseSelectable = true;
-            this.metroCheckBox5.CheckedChanged += new System.EventHandler(this.metroCheckBox5_CheckedChanged);
-            // 
-            // metroCheckBox7
-            // 
-            this.metroCheckBox7.AutoSize = true;
-            this.metroCheckBox7.Enabled = false;
-            this.metroCheckBox7.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.metroCheckBox7.Location = new System.Drawing.Point(8, 251);
-            this.metroCheckBox7.Name = "metroCheckBox7";
-            this.metroCheckBox7.Size = new System.Drawing.Size(150, 15);
-            this.metroCheckBox7.TabIndex = 18;
-            this.metroCheckBox7.Text = "Pronounciation Support";
-            this.metroCheckBox7.UseSelectable = true;
-            this.metroCheckBox7.CheckedChanged += new System.EventHandler(this.metroCheckBox7_CheckedChanged);
-            // 
             // metroCheckBox4
             // 
             this.metroCheckBox4.AutoSize = true;
             this.metroCheckBox4.Enabled = false;
             this.metroCheckBox4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.metroCheckBox4.Location = new System.Drawing.Point(8, 220);
+            this.metroCheckBox4.Location = new System.Drawing.Point(8, 299);
             this.metroCheckBox4.Name = "metroCheckBox4";
             this.metroCheckBox4.Size = new System.Drawing.Size(280, 15);
             this.metroCheckBox4.TabIndex = 17;
@@ -548,7 +506,7 @@
             this.metroCheckBox3.AutoSize = true;
             this.metroCheckBox3.Enabled = false;
             this.metroCheckBox3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.metroCheckBox3.Location = new System.Drawing.Point(8, 187);
+            this.metroCheckBox3.Location = new System.Drawing.Point(8, 266);
             this.metroCheckBox3.Name = "metroCheckBox3";
             this.metroCheckBox3.Size = new System.Drawing.Size(327, 15);
             this.metroCheckBox3.TabIndex = 16;
@@ -561,7 +519,7 @@
             this.metroCheckBox2.AutoSize = true;
             this.metroCheckBox2.Enabled = false;
             this.metroCheckBox2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.metroCheckBox2.Location = new System.Drawing.Point(8, 156);
+            this.metroCheckBox2.Location = new System.Drawing.Point(8, 235);
             this.metroCheckBox2.Name = "metroCheckBox2";
             this.metroCheckBox2.Size = new System.Drawing.Size(362, 15);
             this.metroCheckBox2.TabIndex = 15;
@@ -574,7 +532,7 @@
             this.metroCheckBox1.AutoSize = true;
             this.metroCheckBox1.Enabled = false;
             this.metroCheckBox1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.metroCheckBox1.Location = new System.Drawing.Point(8, 125);
+            this.metroCheckBox1.Location = new System.Drawing.Point(8, 204);
             this.metroCheckBox1.Name = "metroCheckBox1";
             this.metroCheckBox1.Size = new System.Drawing.Size(271, 15);
             this.metroCheckBox1.TabIndex = 14;
@@ -724,21 +682,18 @@
         private MetroFramework.Controls.MetroLabel metroLabel2;
         private MetroFramework.Controls.MetroLabel metroLabel1;
         private MetroFramework.Controls.MetroComboBox metroComboBox2;
-        private MetroFramework.Controls.MetroCheckBox metroCheckBox7;
         private MetroFramework.Controls.MetroCheckBox metroCheckBox4;
         private MetroFramework.Controls.MetroCheckBox metroCheckBox3;
         private MetroFramework.Controls.MetroCheckBox metroCheckBox2;
         private MetroFramework.Controls.MetroCheckBox metroCheckBox1;
         private MetroFramework.Controls.MetroCheckBox metroCheckBox8;
         private MetroFramework.Controls.MetroCheckBox metroCheckBox6;
-        private MetroFramework.Controls.MetroCheckBox metroCheckBox5;
         private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton2;
         private System.Windows.Forms.Label label1;
         private MetroFramework.Controls.MetroComboBox metroComboBox3;
         private System.Windows.Forms.TextBox Output;
         private System.Windows.Forms.TextBox User_Text;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.CheckBox checkBox1;
