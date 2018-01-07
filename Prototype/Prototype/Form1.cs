@@ -136,6 +136,14 @@ namespace Prototype
 
         private void metroComboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            try
+            {
+                timer.Stop();
+            }
+            catch (Exception)
+            {
+
+            }
             metroComboBox3.Visible = metroComboBox1.SelectedIndex == 0 ? false : true;
             materialRaisedButton7.Visible = metroComboBox1.SelectedIndex == 0 ? true:false;
             materialRaisedButton6.Visible = false;
@@ -220,6 +228,12 @@ namespace Prototype
                 metroCheckBox4.Enabled = false;
                 metroCheckBox6.Enabled = false;
                 metroCheckBox8.Enabled = false;
+                metroCheckBox1.Checked = false;
+                metroCheckBox2.Checked = false;
+                metroCheckBox3.Checked = false;
+                metroCheckBox4.Checked = false;
+                metroCheckBox6.Checked = false;
+                metroCheckBox8.Checked = false;
                 label5.Text = "Current Assistant Mode: Normal";
                 label5.ForeColor = System.Drawing.Color.DodgerBlue;
                 //materialRaisedButton3.Visible = false;
@@ -248,12 +262,21 @@ namespace Prototype
             //Console.WriteLine(pc);
 
             //}
+            try
+            {
+                timer.Stop();
+            }
+            catch (Exception)
+            {
+
+            }
             timer = new Timer();
             webBrowser1.Document.GetElementById("gt-src-listen").InvokeMember("click");
             pc = webBrowser1.Document.GetElementById("gt-src-listen").GetAttribute("aria-pressed");
             timer.Interval = 1000;
             timer.Tick += new EventHandler(TimerEventProcessor);
             materialRaisedButton3.Visible = false;
+            materialRaisedButton4.Visible = false;
             materialRaisedButton8.Visible = true;
             timer.Start();
         }
@@ -266,7 +289,11 @@ namespace Prototype
             {
                 materialRaisedButton3.Visible = true;
                 materialRaisedButton8.Visible = false;
-                    materialRaisedButton5.Visible = true;
+                    materialRaisedButton4.Visible = true;
+                    if (metroCheckBox4.Checked)
+                    {
+                        materialRaisedButton5.Visible = true;
+                    }
                     timer.Stop();
                 }
             }
@@ -285,7 +312,11 @@ namespace Prototype
                 {
                     materialRaisedButton4.Visible = true;
                     materialRaisedButton9.Visible = false;
-                    materialRaisedButton5.Visible = true;
+                    materialRaisedButton3.Visible = true;
+                    if (metroCheckBox4.Checked)
+                    {
+                        materialRaisedButton5.Visible = true;
+                    }
                     timer.Stop();
                 }
             }catch(Exception){
@@ -297,7 +328,10 @@ namespace Prototype
         {
             materialRaisedButton3.Visible = true;
             materialRaisedButton8.Visible = false;
-            materialRaisedButton5.Visible = true;
+            if (metroCheckBox4.Checked)
+            {
+                materialRaisedButton5.Visible = true;
+            }
         }
         private void richTextBox1_TextChanged(object sender, EventArgs e)
         {
@@ -326,7 +360,7 @@ namespace Prototype
             f2.Show();
             
         }
-        
+
 
         private void Output_TextChanged(object sender, EventArgs e)
         {
@@ -335,10 +369,12 @@ namespace Prototype
                 webBrowser2.Navigate("https://translate.google.com/#auto/#auto/" + Output.Text);
                 materialRaisedButton3.Visible = true;
                 materialRaisedButton4.Visible = true;
+            }
+            if (metroCheckBox4.Checked)
+            {
                 materialRaisedButton5.Visible = true;
             }
         }
-
         private void materialRaisedButton7_Click(object sender, EventArgs e)
         {
             Output.Text = "";
@@ -395,7 +431,16 @@ namespace Prototype
             //Synthesizer.SelectVoice();
             //Synthesizer2.SpeakCompleted += Synthesizer2_SpeakCompleted;
             //Synthesizer2.SpeakAsync(Output.Text);
+            try
+            {
+                timer.Stop();
+            }
+            catch (Exception)
+            {
+
+            }
             materialRaisedButton5.Visible = false;
+            materialRaisedButton3.Visible = false;
             webBrowser2.Document.GetElementById("gt-src-listen").InvokeMember("click");
             pc = webBrowser2.Document.GetElementById("gt-src-listen").GetAttribute("aria-pressed");
             timer = new Timer();
@@ -409,7 +454,10 @@ namespace Prototype
         {
             materialRaisedButton4.Visible = true;
             materialRaisedButton9.Visible = false;
-            materialRaisedButton5.Visible = true;
+            if (metroCheckBox4.Checked)
+            {
+                materialRaisedButton5.Visible = true;
+            }
         }
         private void materialRaisedButton5_Click(object sender, EventArgs e)
         {
@@ -430,7 +478,11 @@ namespace Prototype
             //Synthesizer.SpeakAsyncCancelAll();
             materialRaisedButton3.Visible = true;
             materialRaisedButton8.Visible = false;
-            materialRaisedButton5.Visible = true;
+            materialRaisedButton4.Visible = true;
+            if (metroCheckBox4.Checked)
+            {
+                materialRaisedButton5.Visible = true;
+            }
             webBrowser1.Refresh();
             timer.Stop();
         }
@@ -439,8 +491,12 @@ namespace Prototype
         {
             //Synthesizer2.SpeakAsyncCancelAll();
             materialRaisedButton4.Visible = true;
+            materialRaisedButton3.Visible = true;
             materialRaisedButton9.Visible = false;
-            materialRaisedButton5.Visible = true;
+            if (metroCheckBox4.Checked)
+            {
+                materialRaisedButton5.Visible = true;
+            }
             webBrowser2.Refresh();
             timer.Stop();
         }
