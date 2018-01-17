@@ -64,6 +64,7 @@ namespace Prototype
         {
             try
             {
+                Output.ForeColor = System.Drawing.Color.Black;
                 materialRaisedButton3.Visible = false;
                 materialRaisedButton4.Visible = false;
                 materialRaisedButton5.Visible = false;
@@ -121,6 +122,7 @@ namespace Prototype
             }
             catch (Exception)
             {
+                Output.ForeColor = System.Drawing.Color.Red;
                 Output.Text = "Unexpected Error Detected.";
             }
         }
@@ -392,6 +394,7 @@ namespace Prototype
                 string temp;
                 if (!(string.IsNullOrEmpty(User_Text.Text)))
                 {
+                    Output.ForeColor = System.Drawing.Color.Black;
                     string User = Translations.Auto_Capitalization(User_Text.Text);
                     Search_Link = WikiDefaultLink + User;
                     //Search_Link = Translations.Auto_Capitalization(Search_Link);
@@ -416,7 +419,9 @@ namespace Prototype
 
                 Output.ForeColor = System.Drawing.Color.Red;
                 Output.Text = "Error : Wikipedia does not have the information you requested";
+
             }
+            
         }
         private void materialRaisedButton6_Click_1(object sender, EventArgs e)
         {
