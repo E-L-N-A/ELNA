@@ -515,6 +515,11 @@ namespace Prototype
             materialRaisedButton9.Visible = false;
             Output.Text = "";
         }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            Output.Text = Translations.DefinitionFromOwlDictionary(User_Text.Text);
+        }
     }
     public class Result
     {

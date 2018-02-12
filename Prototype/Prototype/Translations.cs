@@ -176,15 +176,7 @@ namespace Prototype
         {
 
         }*/
-        public class Result
-        {
-            public Query query { get; set; }
-        }
-
-        public class Query
-        {
-            public Dictionary<string, Page> pages { get; set; }
-        }
+       
         public static string Auto_Capitalization(string text)
         {
             string[] Word = text.Split(' ');
@@ -211,16 +203,11 @@ namespace Prototype
             return CapitalizedWord;
         }
        
-        public class Page
-        {
-            public string extract { get; set; }
-        }
+        
         public static string UrbanDictionary(string User_Term)
         {
             WebClient client = new WebClient();
             string UrbanAPI = @"http://api.urbandictionary.com/v0/define?term=";
-            string contents;
-            contents = client.DownloadString(UrbanAPI + User_Term);
             List<double> ThumbUp = new List<double>();
             List<double> ThumbDown = new List<double>();
             List<double> LiketoDislikeRatio = new List<double>();
@@ -273,6 +260,26 @@ namespace Prototype
                 return "Definition :" +"\r\n"+ urban.list.Rows[Index]["definition"]+ Environment.NewLine+" "+Environment.NewLine+"Example: " +"\r\n"+ urban.list.Rows[Index]["example"];
             }
         }
+        public static string DefinitionFromOwlDictionary(string Term)
+        {
+            try
+            {
+                WebClient OwlDictionary = new WebClient();
+                string SearchLink = "https://owlbot.info/api/v2/dictionary/" + Term + "?format=json";
+                using (Stream str = OwlDictionary.OpenRead(SearchLink))
+                using (StreamReader sr = new StreamReader(str))
+                {
+                    JsonSerializer js = new JsonSerializer();
+                    DataTable Cod = js.Deserialize<DataTable>(new JsonTextReader(sr));
+                    return Cod.Rows[0]["definition"].ToString();
+                }
+            }
+            catch
+            {
+                return "Term does not exist";
+            }
+
+        }
         public class UrbanResult
         {
             public IList<string> tags { get; set; }
@@ -280,6 +287,20 @@ namespace Prototype
             public DataTable list { get; set; }
 
         }
+        public class Result
+        {
+            public Query query { get; set; }
+        }
+
+        public class Query
+        {
+            public Dictionary<string, Page> pages { get; set; }
+        }
+        public class Page
+        {
+            public string extract { get; set; }
+        }
+        
     }
 
 }
