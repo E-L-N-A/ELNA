@@ -117,7 +117,14 @@ namespace Prototype
                 }
                 if (metroComboBox1.SelectedIndex == 0)
                 {
-                    Output.Text=Translations.UrbanDictionary(User_Text.Text);
+                    if(textBox2.Text!=""&& textBox3.Text == "" || textBox3.Text != "" && textBox2.Text == "")
+                    {
+                        MessageBox.Show("Please fill proxy settings or leave it completely blank.");
+                    }
+                    else
+                    {
+                        Output.Text=Translations.UrbanDictionary(User_Text.Text, "http://" + textBox2.Text+":"+textBox3.Text);
+                    }
                 }
             }
             catch (Exception)

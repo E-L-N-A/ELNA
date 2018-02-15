@@ -55,6 +55,9 @@
             this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
             this.materialRaisedButton2 = new MaterialSkin.Controls.MaterialRaisedButton();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.metroLabel7 = new MetroFramework.Controls.MetroLabel();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -73,6 +76,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.webBrowser2 = new System.Windows.Forms.WebBrowser();
+            this.metroLabel8 = new MetroFramework.Controls.MetroLabel();
+            this.textBox3 = new System.Windows.Forms.TextBox();
             this.materialTabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -429,6 +434,11 @@
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.textBox3);
+            this.tabPage3.Controls.Add(this.metroLabel8);
+            this.tabPage3.Controls.Add(this.metroLabel7);
+            this.tabPage3.Controls.Add(this.textBox2);
+            this.tabPage3.Controls.Add(this.label3);
             this.tabPage3.Controls.Add(this.checkBox1);
             this.tabPage3.Controls.Add(this.label6);
             this.tabPage3.Controls.Add(this.label2);
@@ -450,6 +460,34 @@
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Settings";
             this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // metroLabel7
+            // 
+            this.metroLabel7.AutoSize = true;
+            this.metroLabel7.Location = new System.Drawing.Point(6, 329);
+            this.metroLabel7.Name = "metroLabel7";
+            this.metroLabel7.Size = new System.Drawing.Size(23, 19);
+            this.metroLabel7.TabIndex = 31;
+            this.metroLabel7.Text = "ip:";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox2.Location = new System.Drawing.Point(35, 329);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(135, 22);
+            this.textBox2.TabIndex = 30;
+            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(3, 308);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(103, 18);
+            this.label3.TabIndex = 29;
+            this.label3.Text = "Proxy Settings";
             // 
             // checkBox1
             // 
@@ -478,7 +516,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(7, 3);
+            this.label2.Location = new System.Drawing.Point(3, 3);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(60, 18);
             this.label2.TabIndex = 25;
@@ -657,6 +695,24 @@
             this.webBrowser2.TabIndex = 26;
             this.webBrowser2.Visible = false;
             // 
+            // metroLabel8
+            // 
+            this.metroLabel8.AutoSize = true;
+            this.metroLabel8.Location = new System.Drawing.Point(176, 329);
+            this.metroLabel8.Name = "metroLabel8";
+            this.metroLabel8.Size = new System.Drawing.Size(37, 19);
+            this.metroLabel8.TabIndex = 32;
+            this.metroLabel8.Text = "Port:";
+            // 
+            // textBox3
+            // 
+            this.textBox3.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox3.Location = new System.Drawing.Point(220, 329);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(54, 22);
+            this.textBox3.TabIndex = 33;
+            this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
@@ -738,5 +794,10 @@
         private System.Windows.Forms.WebBrowser webBrowser2;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.StatusStrip statusStrip1;
+        private MetroFramework.Controls.MetroLabel metroLabel7;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox textBox3;
+        private MetroFramework.Controls.MetroLabel metroLabel8;
     }
 }

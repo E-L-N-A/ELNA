@@ -204,60 +204,71 @@ namespace Prototype
         }
        
         
-        public static string UrbanDictionary(string User_Term)
+        public static string UrbanDictionary(string User_Term,String url)
         {
             WebClient client = new WebClient();
-            string UrbanAPI = @"http://api.urbandictionary.com/v0/define?term=";
-            List<double> ThumbUp = new List<double>();
-            List<double> ThumbDown = new List<double>();
-            List<double> LiketoDislikeRatio = new List<double>();
-            using (Stream stream = client.OpenRead(UrbanAPI + User_Term))
-            using (StreamReader reader = new StreamReader(stream))
+            if (url != "http://:")
             {
-                JsonSerializer ser = new JsonSerializer();
-                UrbanResult urban = ser.Deserialize<UrbanResult>(new JsonTextReader(reader));
-                foreach (DataRow i in urban.list.Rows)
+                WebProxy wp = new WebProxy(url);
+                client.Proxy = wp;
+            }
+            try
+            {
+                string UrbanAPI = @"http://api.urbandictionary.com/v0/define?term=";
+                List<double> ThumbUp = new List<double>();
+                List<double> ThumbDown = new List<double>();
+                List<double> LiketoDislikeRatio = new List<double>();
+                using (Stream stream = client.OpenRead(UrbanAPI + User_Term))
+                using (StreamReader reader = new StreamReader(stream))
                 {
-                    ThumbUp.Add(double.Parse(i["thumbs_up"].ToString()));
-                    ThumbDown.Add(double.Parse(i["thumbs_down"].ToString()));
-                }
-                
-                for (int i = 0; i < 2; i++)
-                {
-                    LiketoDislikeRatio.Add(ThumbUp[i] / ThumbDown[i]);
-                }
-                double Greatest_Ratio = LiketoDislikeRatio[0];
-                int Index = 0;
-                /*
-                for (int i = 0; i < LiketoDislikeRatio.Count; i++)
-                {
-                    if (LiketoDislikeRatio[i] > Greatest_Ratio)
+                    JsonSerializer ser = new JsonSerializer();
+                    UrbanResult urban = ser.Deserialize<UrbanResult>(new JsonTextReader(reader));
+                    foreach (DataRow i in urban.list.Rows)
                     {
-                        Greatest_Ratio = LiketoDislikeRatio[i];
-                        Index = i;
+                        ThumbUp.Add(double.Parse(i["thumbs_up"].ToString()));
+                        ThumbDown.Add(double.Parse(i["thumbs_down"].ToString()));
                     }
-                }*/
-                if (Math.Abs(LiketoDislikeRatio[1] - Greatest_Ratio) < 0.1)
-                {
-                    if (LiketoDislikeRatio[1] > Greatest_Ratio)
+
+                    for (int i = 0; i < 2; i++)
                     {
-                        Index = 1;
+                        LiketoDislikeRatio.Add(ThumbUp[i] / ThumbDown[i]);
                     }
-                    
-                }
-                else
-                {
-                    if (ThumbUp[0] > ThumbUp[1])
+                    double Greatest_Ratio = LiketoDislikeRatio[0];
+                    int Index = 0;
+                    /*
+                    for (int i = 0; i < LiketoDislikeRatio.Count; i++)
                     {
+                        if (LiketoDislikeRatio[i] > Greatest_Ratio)
+                        {
+                            Greatest_Ratio = LiketoDislikeRatio[i];
+                            Index = i;
+                        }
+                    }*/
+                    if (Math.Abs(LiketoDislikeRatio[1] - Greatest_Ratio) < 0.1)
+                    {
+                        if (LiketoDislikeRatio[1] > Greatest_Ratio)
+                        {
+                            Index = 1;
+                        }
 
                     }
                     else
                     {
-                        Index = 1;
-                    }
-                }
+                        if (ThumbUp[0] > ThumbUp[1])
+                        {
 
-                return "Definition :" +"\r\n"+ urban.list.Rows[Index]["definition"]+ Environment.NewLine+" "+Environment.NewLine+"Example: " +"\r\n"+ urban.list.Rows[Index]["example"];
+                        }
+                        else
+                        {
+                            Index = 1;
+                        }
+                    }
+
+                    return "Definition :" + "\r\n" + urban.list.Rows[Index]["definition"] + Environment.NewLine + " " + Environment.NewLine + "Example: " + "\r\n" + urban.list.Rows[Index]["example"];
+                }
+            }catch(Exception ex)
+            {
+                return "Unexpected Error! Check your proxy server.";
             }
         }
         public static string DefinitionFromOwlDictionary(string Term)
