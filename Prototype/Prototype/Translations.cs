@@ -266,7 +266,7 @@ namespace Prototype
 
                     return "Definition :" + "\r\n" + urban.list.Rows[Index]["definition"] + Environment.NewLine + " " + Environment.NewLine + "Example: " + "\r\n" + urban.list.Rows[Index]["example"];
                 }
-            }catch(Exception ex)
+            }catch(Exception)
             {
                 return "Unexpected Error! Check your proxy server.";
             }

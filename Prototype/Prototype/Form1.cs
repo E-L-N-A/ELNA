@@ -40,7 +40,8 @@ namespace Prototype
             metroComboBox2.SelectedIndex = 0;
             metroComboBox3.SelectedIndex = 0;
             materialRaisedButton6.Visible = false;
-           
+            Directory.CreateDirectory(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)+@"\ELNA_Temp");
+            
             //richTextBox1.Text = lines;
 
         }
@@ -353,7 +354,10 @@ namespace Prototype
 
         private void metroButton1_Click(object sender, EventArgs e)
         {
-
+            Form1 f1 = new Form1();
+            f1.Hide();
+            Form6 f6 = new Form6();
+            f6.Show();
         }
         public string Title { get; set; }
         private void button2_Click(object sender, EventArgs e)
