@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.metroComboBox1 = new MetroFramework.Controls.MetroComboBox();
             this.materialRaisedButton1 = new MaterialSkin.Controls.MaterialRaisedButton();
             this.materialTabSelector1 = new MaterialSkin.Controls.MaterialTabSelector();
@@ -69,7 +70,6 @@
             this.metroCheckBox3 = new MetroFramework.Controls.MetroCheckBox();
             this.metroCheckBox2 = new MetroFramework.Controls.MetroCheckBox();
             this.metroCheckBox1 = new MetroFramework.Controls.MetroCheckBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
@@ -78,6 +78,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.webBrowser2 = new System.Windows.Forms.WebBrowser();
+            this.button1 = new System.Windows.Forms.Button();
             this.materialTabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -381,7 +382,7 @@
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.Size = new System.Drawing.Size(245, 339);
             this.richTextBox1.TabIndex = 33;
-            this.richTextBox1.Text = "";
+            this.richTextBox1.Text = resources.GetString("richTextBox1.Text");
             this.richTextBox1.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
             // 
             // metroLabel6
@@ -434,6 +435,7 @@
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.button1);
             this.tabPage3.Controls.Add(this.textBox3);
             this.tabPage3.Controls.Add(this.metroLabel8);
             this.tabPage3.Controls.Add(this.metroLabel7);
@@ -448,7 +450,6 @@
             this.tabPage3.Controls.Add(this.metroCheckBox3);
             this.tabPage3.Controls.Add(this.metroCheckBox2);
             this.tabPage3.Controls.Add(this.metroCheckBox1);
-            this.tabPage3.Controls.Add(this.button1);
             this.tabPage3.Controls.Add(this.textBox1);
             this.tabPage3.Controls.Add(this.metroLabel2);
             this.tabPage3.Controls.Add(this.metroLabel1);
@@ -464,7 +465,7 @@
             // textBox3
             // 
             this.textBox3.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(220, 329);
+            this.textBox3.Location = new System.Drawing.Point(220, 341);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(54, 22);
             this.textBox3.TabIndex = 33;
@@ -473,7 +474,7 @@
             // metroLabel8
             // 
             this.metroLabel8.AutoSize = true;
-            this.metroLabel8.Location = new System.Drawing.Point(176, 329);
+            this.metroLabel8.Location = new System.Drawing.Point(176, 341);
             this.metroLabel8.Name = "metroLabel8";
             this.metroLabel8.Size = new System.Drawing.Size(37, 19);
             this.metroLabel8.TabIndex = 32;
@@ -482,7 +483,7 @@
             // metroLabel7
             // 
             this.metroLabel7.AutoSize = true;
-            this.metroLabel7.Location = new System.Drawing.Point(6, 329);
+            this.metroLabel7.Location = new System.Drawing.Point(6, 341);
             this.metroLabel7.Name = "metroLabel7";
             this.metroLabel7.Size = new System.Drawing.Size(23, 19);
             this.metroLabel7.TabIndex = 31;
@@ -491,7 +492,7 @@
             // textBox2
             // 
             this.textBox2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(35, 329);
+            this.textBox2.Location = new System.Drawing.Point(35, 341);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(135, 22);
             this.textBox2.TabIndex = 30;
@@ -501,7 +502,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(3, 308);
+            this.label3.Location = new System.Drawing.Point(3, 320);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(103, 18);
             this.label3.TabIndex = 29;
@@ -512,7 +513,7 @@
             this.checkBox1.AutoSize = true;
             this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkBox1.ForeColor = System.Drawing.Color.Orange;
-            this.checkBox1.Location = new System.Drawing.Point(8, 83);
+            this.checkBox1.Location = new System.Drawing.Point(6, 83);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(173, 20);
             this.checkBox1.TabIndex = 28;
@@ -524,7 +525,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(3, 106);
+            this.label6.Location = new System.Drawing.Point(3, 118);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(125, 18);
             this.label6.TabIndex = 26;
@@ -545,7 +546,7 @@
             this.metroCheckBox8.AutoSize = true;
             this.metroCheckBox8.Enabled = false;
             this.metroCheckBox8.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.metroCheckBox8.Location = new System.Drawing.Point(6, 290);
+            this.metroCheckBox8.Location = new System.Drawing.Point(6, 302);
             this.metroCheckBox8.Name = "metroCheckBox8";
             this.metroCheckBox8.Size = new System.Drawing.Size(150, 15);
             this.metroCheckBox8.TabIndex = 21;
@@ -558,7 +559,7 @@
             this.metroCheckBox6.AutoSize = true;
             this.metroCheckBox6.Enabled = false;
             this.metroCheckBox6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.metroCheckBox6.Location = new System.Drawing.Point(6, 259);
+            this.metroCheckBox6.Location = new System.Drawing.Point(6, 271);
             this.metroCheckBox6.Name = "metroCheckBox6";
             this.metroCheckBox6.Size = new System.Drawing.Size(327, 15);
             this.metroCheckBox6.TabIndex = 20;
@@ -571,7 +572,7 @@
             this.metroCheckBox4.AutoSize = true;
             this.metroCheckBox4.Enabled = false;
             this.metroCheckBox4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.metroCheckBox4.Location = new System.Drawing.Point(6, 229);
+            this.metroCheckBox4.Location = new System.Drawing.Point(6, 241);
             this.metroCheckBox4.Name = "metroCheckBox4";
             this.metroCheckBox4.Size = new System.Drawing.Size(280, 15);
             this.metroCheckBox4.TabIndex = 17;
@@ -584,7 +585,7 @@
             this.metroCheckBox3.AutoSize = true;
             this.metroCheckBox3.Enabled = false;
             this.metroCheckBox3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.metroCheckBox3.Location = new System.Drawing.Point(6, 196);
+            this.metroCheckBox3.Location = new System.Drawing.Point(6, 208);
             this.metroCheckBox3.Name = "metroCheckBox3";
             this.metroCheckBox3.Size = new System.Drawing.Size(327, 15);
             this.metroCheckBox3.TabIndex = 16;
@@ -597,7 +598,7 @@
             this.metroCheckBox2.AutoSize = true;
             this.metroCheckBox2.Enabled = false;
             this.metroCheckBox2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.metroCheckBox2.Location = new System.Drawing.Point(6, 165);
+            this.metroCheckBox2.Location = new System.Drawing.Point(6, 177);
             this.metroCheckBox2.Name = "metroCheckBox2";
             this.metroCheckBox2.Size = new System.Drawing.Size(362, 15);
             this.metroCheckBox2.TabIndex = 15;
@@ -610,7 +611,7 @@
             this.metroCheckBox1.AutoSize = true;
             this.metroCheckBox1.Enabled = false;
             this.metroCheckBox1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.metroCheckBox1.Location = new System.Drawing.Point(6, 134);
+            this.metroCheckBox1.Location = new System.Drawing.Point(6, 146);
             this.metroCheckBox1.Name = "metroCheckBox1";
             this.metroCheckBox1.Size = new System.Drawing.Size(271, 15);
             this.metroCheckBox1.TabIndex = 14;
@@ -618,22 +619,10 @@
             this.metroCheckBox1.UseSelectable = true;
             this.metroCheckBox1.CheckedChanged += new System.EventHandler(this.metroCheckBox1_CheckedChanged);
             // 
-            // button1
-            // 
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.button1.Location = new System.Drawing.Point(288, 55);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(30, 22);
-            this.button1.TabIndex = 11;
-            this.button1.Text = "...";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // textBox1
             // 
             this.textBox1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(147, 55);
+            this.textBox1.Location = new System.Drawing.Point(147, 51);
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
             this.textBox1.Size = new System.Drawing.Size(135, 22);
@@ -644,11 +633,11 @@
             // metroLabel2
             // 
             this.metroLabel2.AutoSize = true;
-            this.metroLabel2.Location = new System.Drawing.Point(3, 58);
+            this.metroLabel2.Location = new System.Drawing.Point(6, 54);
             this.metroLabel2.Name = "metroLabel2";
-            this.metroLabel2.Size = new System.Drawing.Size(141, 19);
+            this.metroLabel2.Size = new System.Drawing.Size(117, 19);
             this.metroLabel2.TabIndex = 9;
-            this.metroLabel2.Text = "Location Optimization:";
+            this.metroLabel2.Text = "Location Selection:";
             // 
             // metroLabel1
             // 
@@ -713,6 +702,19 @@
             this.webBrowser2.TabIndex = 26;
             this.webBrowser2.Visible = false;
             // 
+            // button1
+            // 
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.button1.Location = new System.Drawing.Point(288, 50);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(40, 23);
+            this.button1.TabIndex = 34;
+            this.button1.Text = "...";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
@@ -756,7 +758,6 @@
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.TabPage tabPage4;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox textBox1;
         private MetroFramework.Controls.MetroLabel metroLabel2;
         private MetroFramework.Controls.MetroLabel metroLabel1;
@@ -799,5 +800,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBox3;
         private MetroFramework.Controls.MetroLabel metroLabel8;
+        private System.Windows.Forms.Button button1;
     }
 }

@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using MaterialSkin.Controls;
 using MaterialSkin.Animations;
 using MaterialSkin;
+using System.Threading;
 
 namespace Prototype
 {
@@ -49,8 +50,17 @@ namespace Prototype
                 sour = SourceFile.Text;
                 tar = TargetLocation.Text;
                 AdvanceFeatures.FileToFileTranslationVer2(sour,tar,"en","zh");
+                MessageBox.Show("File has been successfully generated");
             }
-            MessageBox.Show("File has been successfully generated");
+            /*
+             * Multiple Threading
+            new Thread(() =>
+            {
+                Thread.CurrentThread.IsBackground = true;
+                // run your code here 
+                MessageBox.Show("Multiple Threading");
+            }).Start();*/
+
         }
 
         private void button5_Click(object sender, EventArgs e)

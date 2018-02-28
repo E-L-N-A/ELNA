@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using System.IO;
 using System.Text.RegularExpressions;
 
+
+
 namespace Prototype
 {
     class AdvanceFeatures
@@ -44,6 +46,11 @@ namespace Prototype
             {
                 sw.Write(Result);
             }
+            
+        }
+        // PDF文本提取
+        public static void FileToFileTranslationPDF(string Sourcefile,string Targetfile,string from,string to)
+        {
             
         }
     }

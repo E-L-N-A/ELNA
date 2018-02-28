@@ -21,6 +21,7 @@ using System.Diagnostics;
 using System.Web;
 using System.Speech.Synthesis;
 
+
 namespace Prototype
 {
     public partial class Form1 : MaterialForm
@@ -41,6 +42,7 @@ namespace Prototype
             metroComboBox3.SelectedIndex = 0;
             materialRaisedButton6.Visible = false;
             Directory.CreateDirectory(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)+@"\ELNA_Temp");
+            
             
             //richTextBox1.Text = lines;
 
@@ -167,10 +169,7 @@ namespace Prototype
 
         private void button1_Click(object sender, EventArgs e)
         {
-            FolderBrowserDialog fbs = new FolderBrowserDialog();
-            fbs.ShowDialog();
-            path = fbs.SelectedPath;
-            textBox1.Text = path;
+           
         }
 
         private void metroCheckBox1_CheckedChanged(object sender, EventArgs e)
@@ -530,6 +529,14 @@ namespace Prototype
         private void button2_Click_1(object sender, EventArgs e)
         {
             Output.Text = Translations.DefinitionFromOwlDictionary(User_Text.Text);
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            FolderBrowserDialog fbs = new FolderBrowserDialog();
+           if( fbs.ShowDialog() == DialogResult.OK){
+                path = fbs.SelectedPath;
+                textBox1.Text = path; }
         }
     }
     public class Result
