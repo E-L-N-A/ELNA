@@ -45,12 +45,20 @@ namespace Prototype
                 MessageBox.Show("No Blank is Allowed");
 
             }
-            else
+            else if(SourceFile.Text.Contains(".txt"))
             {
                 sour = SourceFile.Text;
                 tar = TargetLocation.Text;
                 AdvanceFeatures.FileToFileTranslationVer2(sour,tar,"en","zh");
                 MessageBox.Show("File has been successfully generated");
+                
+            }else{
+
+                sour = SourceFile.Text;
+                tar = TargetLocation.Text;
+                AdvanceFeatures.FileToFileTranslationPDF(sour, tar, "en", "zh");
+                MessageBox.Show("File has been successfully generated");
+
             }
             /*
              * Multiple Threading
@@ -69,6 +77,26 @@ namespace Prototype
             if (od.ShowDialog() == DialogResult.OK)
             {
                 SourceFile.Text = od.FileName;
+            }
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+
+            string sour = "";
+            string tar = "";
+            if (string.IsNullOrWhiteSpace(SourceFile.Text) || string.IsNullOrWhiteSpace(TargetLocation.Text))
+            {
+                MessageBox.Show("No Blank is Allowed");
+
+            }
+            else
+            {
+                sour = SourceFile.Text;
+                tar = TargetLocation.Text;
+                AdvanceFeatures.FileToFileTranslation(sour, tar, "en", "zh");
+                MessageBox.Show("File has been successfully generated");
+
             }
         }
     }

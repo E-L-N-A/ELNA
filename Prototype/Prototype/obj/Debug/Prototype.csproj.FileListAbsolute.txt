@@ -207,3 +207,5 @@ C:\Users\Joe\Documents\GitHub\ELNA\Prototype\Prototype\bin\Debug\Newtonsoft.Json
 C:\Users\Joe\Documents\GitHub\ELNA\Prototype\Prototype\bin\Debug\System.Interactive.Async.xml
 C:\Users\Joe\Documents\GitHub\ELNA\Prototype\Prototype\obj\Debug\Prototype.Form5.resources
 C:\Users\Joe\Documents\GitHub\ELNA\Prototype\Prototype\obj\Debug\Prototype.Form6.resources
+C:\Users\Joe\Documents\GitHub\ELNA\Prototype\Prototype\bin\Debug\itextsharp.dll
+C:\Users\Joe\Documents\GitHub\ELNA\Prototype\Prototype\bin\Debug\itextsharp.xml

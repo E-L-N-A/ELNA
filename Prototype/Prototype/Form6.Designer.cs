@@ -59,6 +59,7 @@
             this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.materialTabSelector1 = new MaterialSkin.Controls.MaterialTabSelector();
+            this.button8 = new System.Windows.Forms.Button();
             this.materialTabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -81,6 +82,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.button8);
             this.tabPage1.Controls.Add(this.button7);
             this.tabPage1.Controls.Add(this.button6);
             this.tabPage1.Controls.Add(this.TargetLocation);
@@ -409,6 +411,17 @@
             this.materialTabSelector1.Text = "materialTabSelector1";
             this.materialTabSelector1.Click += new System.EventHandler(this.materialTabSelector1_Click);
             // 
+            // button8
+            // 
+            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button8.Location = new System.Drawing.Point(123, 135);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(144, 23);
+            this.button8.TabIndex = 10;
+            this.button8.Text = "Translate Vocabulary List";
+            this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
+            // 
             // Form6
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -464,5 +477,6 @@
         private System.Windows.Forms.TextBox TargetLocation;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button button8;
     }
 }
