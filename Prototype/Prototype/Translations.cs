@@ -268,7 +268,14 @@ namespace Prototype
                 }
             }catch(Exception)
             {
-                return "Unexpected Error! Check your proxy server.";
+                if (url != "http://:")
+                {
+                    return "Unexpected Error! Check your proxy server and input.";
+                }
+                else
+                {
+                    return "Unexpected Error! ";
+                }
             }
         }
         public static string DefinitionFromOwlDictionary(string Term)
@@ -311,7 +318,7 @@ namespace Prototype
         {
             public string extract { get; set; }
         }
-        
+
     }
 
 }

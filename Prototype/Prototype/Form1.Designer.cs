@@ -34,7 +34,7 @@
             this.materialTabSelector1 = new MaterialSkin.Controls.MaterialTabSelector();
             this.materialTabControl1 = new MaterialSkin.Controls.MaterialTabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.button2 = new System.Windows.Forms.Button();
+            this.metroComboBox4 = new MetroFramework.Controls.MetroComboBox();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.materialRaisedButton9 = new MaterialSkin.Controls.MaterialRaisedButton();
             this.materialRaisedButton8 = new MaterialSkin.Controls.MaterialRaisedButton();
@@ -56,6 +56,7 @@
             this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
             this.materialRaisedButton2 = new MaterialSkin.Controls.MaterialRaisedButton();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.button1 = new System.Windows.Forms.Button();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.metroLabel8 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel7 = new MetroFramework.Controls.MetroLabel();
@@ -65,7 +66,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.metroCheckBox8 = new MetroFramework.Controls.MetroCheckBox();
-            this.metroCheckBox6 = new MetroFramework.Controls.MetroCheckBox();
             this.metroCheckBox4 = new MetroFramework.Controls.MetroCheckBox();
             this.metroCheckBox3 = new MetroFramework.Controls.MetroCheckBox();
             this.metroCheckBox2 = new MetroFramework.Controls.MetroCheckBox();
@@ -78,7 +78,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.webBrowser2 = new System.Windows.Forms.WebBrowser();
-            this.button1 = new System.Windows.Forms.Button();
             this.materialTabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -142,7 +141,7 @@
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.button2);
+            this.tabPage1.Controls.Add(this.metroComboBox4);
             this.tabPage1.Controls.Add(this.statusStrip1);
             this.tabPage1.Controls.Add(this.materialRaisedButton9);
             this.tabPage1.Controls.Add(this.materialRaisedButton8);
@@ -165,15 +164,21 @@
             this.tabPage1.Text = "Main";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // metroComboBox4
             // 
-            this.button2.Location = new System.Drawing.Point(6, 337);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(140, 23);
-            this.button2.TabIndex = 35;
-            this.button2.Text = "Owl Dictionary";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click_1);
+            this.metroComboBox4.FontWeight = MetroFramework.MetroComboBoxWeight.Bold;
+            this.metroComboBox4.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.metroComboBox4.FormattingEnabled = true;
+            this.metroComboBox4.ItemHeight = 23;
+            this.metroComboBox4.Items.AddRange(new object[] {
+            "Multiple Dictionary Analysis",
+            "Owl Dictionary",
+            "Urban Dictionary"});
+            this.metroComboBox4.Location = new System.Drawing.Point(273, 6);
+            this.metroComboBox4.Name = "metroComboBox4";
+            this.metroComboBox4.Size = new System.Drawing.Size(283, 29);
+            this.metroComboBox4.TabIndex = 36;
+            this.metroComboBox4.UseSelectable = true;
             // 
             // statusStrip1
             // 
@@ -221,7 +226,7 @@
             // 
             this.materialRaisedButton6.Cursor = System.Windows.Forms.Cursors.Hand;
             this.materialRaisedButton6.Depth = 0;
-            this.materialRaisedButton6.Location = new System.Drawing.Point(273, 6);
+            this.materialRaisedButton6.Location = new System.Drawing.Point(273, 344);
             this.materialRaisedButton6.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialRaisedButton6.Name = "materialRaisedButton6";
             this.materialRaisedButton6.Primary = true;
@@ -445,7 +450,6 @@
             this.tabPage3.Controls.Add(this.label6);
             this.tabPage3.Controls.Add(this.label2);
             this.tabPage3.Controls.Add(this.metroCheckBox8);
-            this.tabPage3.Controls.Add(this.metroCheckBox6);
             this.tabPage3.Controls.Add(this.metroCheckBox4);
             this.tabPage3.Controls.Add(this.metroCheckBox3);
             this.tabPage3.Controls.Add(this.metroCheckBox2);
@@ -461,6 +465,19 @@
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Settings";
             this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.button1.Location = new System.Drawing.Point(288, 50);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(40, 23);
+            this.button1.TabIndex = 34;
+            this.button1.Text = "...";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // textBox3
             // 
@@ -502,7 +519,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(3, 320);
+            this.label3.Location = new System.Drawing.Point(3, 311);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(103, 18);
             this.label3.TabIndex = 29;
@@ -546,26 +563,13 @@
             this.metroCheckBox8.AutoSize = true;
             this.metroCheckBox8.Enabled = false;
             this.metroCheckBox8.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.metroCheckBox8.Location = new System.Drawing.Point(6, 302);
+            this.metroCheckBox8.Location = new System.Drawing.Point(6, 273);
             this.metroCheckBox8.Name = "metroCheckBox8";
             this.metroCheckBox8.Size = new System.Drawing.Size(150, 15);
             this.metroCheckBox8.TabIndex = 21;
             this.metroCheckBox8.Text = "Pronounciation Support";
             this.metroCheckBox8.UseSelectable = true;
             this.metroCheckBox8.CheckedChanged += new System.EventHandler(this.metroCheckBox8_CheckedChanged);
-            // 
-            // metroCheckBox6
-            // 
-            this.metroCheckBox6.AutoSize = true;
-            this.metroCheckBox6.Enabled = false;
-            this.metroCheckBox6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.metroCheckBox6.Location = new System.Drawing.Point(6, 271);
-            this.metroCheckBox6.Name = "metroCheckBox6";
-            this.metroCheckBox6.Size = new System.Drawing.Size(327, 15);
-            this.metroCheckBox6.TabIndex = 20;
-            this.metroCheckBox6.Text = "Word Meaning Suggestions Using Percentage Calculation";
-            this.metroCheckBox6.UseSelectable = true;
-            this.metroCheckBox6.CheckedChanged += new System.EventHandler(this.metroCheckBox6_CheckedChanged);
             // 
             // metroCheckBox4
             // 
@@ -680,7 +684,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(97, 16);
             this.label1.TabIndex = 0;
-            this.label1.Text = "ELNA Inc. 2017";
+            this.label1.Text = "ELNA Inc. 2018";
             // 
             // webBrowser1
             // 
@@ -701,19 +705,6 @@
             this.webBrowser2.Size = new System.Drawing.Size(22, 20);
             this.webBrowser2.TabIndex = 26;
             this.webBrowser2.Visible = false;
-            // 
-            // button1
-            // 
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.button1.Location = new System.Drawing.Point(288, 50);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(40, 23);
-            this.button1.TabIndex = 34;
-            this.button1.Text = "...";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // Form1
             // 
@@ -767,7 +758,6 @@
         private MetroFramework.Controls.MetroCheckBox metroCheckBox2;
         private MetroFramework.Controls.MetroCheckBox metroCheckBox1;
         private MetroFramework.Controls.MetroCheckBox metroCheckBox8;
-        private MetroFramework.Controls.MetroCheckBox metroCheckBox6;
         private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton2;
         private System.Windows.Forms.Label label1;
         private MetroFramework.Controls.MetroComboBox metroComboBox3;
@@ -793,7 +783,6 @@
         private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton8;
         private System.Windows.Forms.WebBrowser webBrowser1;
         private System.Windows.Forms.WebBrowser webBrowser2;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private MetroFramework.Controls.MetroLabel metroLabel7;
         private System.Windows.Forms.TextBox textBox2;
@@ -801,5 +790,6 @@
         private System.Windows.Forms.TextBox textBox3;
         private MetroFramework.Controls.MetroLabel metroLabel8;
         private System.Windows.Forms.Button button1;
+        private MetroFramework.Controls.MetroComboBox metroComboBox4;
     }
 }

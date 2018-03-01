@@ -40,6 +40,7 @@ namespace Prototype
             metroComboBox1.SelectedIndex=0;
             metroComboBox2.SelectedIndex = 0;
             metroComboBox3.SelectedIndex = 0;
+            metroComboBox4.SelectedIndex = 0;
             materialRaisedButton6.Visible = false;
             Directory.CreateDirectory(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)+@"\ELNA_Temp");
             
@@ -126,7 +127,13 @@ namespace Prototype
                     }
                     else
                     {
-                        Output.Text=Translations.UrbanDictionary(User_Text.Text, "http://" + textBox2.Text+":"+textBox3.Text);
+                        if (metroComboBox4.SelectedIndex == 2)
+                        {
+                            Output.Text = Translations.UrbanDictionary(User_Text.Text, "http://" + textBox2.Text + ":" + textBox3.Text);
+                        }else if (metroComboBox4.SelectedIndex == 1)
+                        {
+                            Output.Text = Translations.DefinitionFromOwlDictionary(User_Text.Text);
+                        }
                     }
                 }
             }
@@ -157,6 +164,7 @@ namespace Prototype
 
             }
             metroComboBox3.Visible = metroComboBox1.SelectedIndex == 0 ? false : true;
+            metroComboBox4.Visible = metroComboBox1.SelectedIndex == 0 ? true : false;
             materialRaisedButton7.Visible = metroComboBox1.SelectedIndex == 0 ? true:false;
             materialRaisedButton6.Visible = false;
             Output.Text = "";
@@ -220,7 +228,6 @@ namespace Prototype
                 metroCheckBox2.Enabled = true;
                 metroCheckBox3.Enabled = true;
                 metroCheckBox4.Enabled = true;
-                metroCheckBox6.Enabled = true;
                 metroCheckBox8.Enabled = true;
                 label5.Text = "Current Assistant Mode: Advanced";
                 label5.ForeColor = System.Drawing.Color.Red;
@@ -235,13 +242,11 @@ namespace Prototype
                 metroCheckBox2.Enabled = false;
                 metroCheckBox3.Enabled = false;
                 metroCheckBox4.Enabled = false;
-                metroCheckBox6.Enabled = false;
                 metroCheckBox8.Enabled = false;
                 metroCheckBox1.Checked = false;
                 metroCheckBox2.Checked = false;
                 metroCheckBox3.Checked = false;
                 metroCheckBox4.Checked = false;
-                metroCheckBox6.Checked = false;
                 metroCheckBox8.Checked = false;
                 label5.Text = "Current Assistant Mode: Normal";
                 label5.ForeColor = System.Drawing.Color.DodgerBlue;
@@ -524,11 +529,6 @@ namespace Prototype
             materialRaisedButton8.Visible = false;
             materialRaisedButton9.Visible = false;
             Output.Text = "";
-        }
-
-        private void button2_Click_1(object sender, EventArgs e)
-        {
-            Output.Text = Translations.DefinitionFromOwlDictionary(User_Text.Text);
         }
 
         private void button1_Click_1(object sender, EventArgs e)
