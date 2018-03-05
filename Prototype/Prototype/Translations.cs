@@ -268,13 +268,14 @@ namespace Prototype
                 }
             }catch(Exception)
             {
+                SpellingCorrector spelling = new SpellingCorrector();
                 if (url != "http://:")
                 {
-                    return "Unexpected Error! Check your proxy server and input.";
+                    return "Unexpected Error! Check your proxy server and input.\r\n\r\nDo you mean: " + spelling.Correct(User_Term);
                 }
                 else
                 {
-                    return "Unexpected Error! ";
+                    return "Unexpected Error!\r\n\r\nDo you mean: " + spelling.Correct(User_Term);
                 }
             }
         }
@@ -294,7 +295,8 @@ namespace Prototype
             }
             catch
             {
-                return "Term does not exist";
+                SpellingCorrector spelling = new SpellingCorrector();
+                return "Term does not exist. \r\n\r\nDo you mean: " + spelling.Correct(Term);
             }
 
         }
