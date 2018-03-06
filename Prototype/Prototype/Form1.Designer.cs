@@ -78,6 +78,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.webBrowser2 = new System.Windows.Forms.WebBrowser();
+            this.button8 = new System.Windows.Forms.Button();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.materialTabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -668,6 +670,8 @@
             // 
             // tabPage4
             // 
+            this.tabPage4.Controls.Add(this.checkBox2);
+            this.tabPage4.Controls.Add(this.button8);
             this.tabPage4.Controls.Add(this.label1);
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
@@ -706,6 +710,29 @@
             this.webBrowser2.TabIndex = 26;
             this.webBrowser2.Visible = false;
             // 
+            // button8
+            // 
+            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.button8.Font = new System.Drawing.Font("Segoe Script", 35.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button8.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.button8.Location = new System.Drawing.Point(102, 78);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(343, 214);
+            this.button8.TabIndex = 11;
+            this.button8.Text = "Support ELNA";
+            this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
+            // 
+            // checkBox2
+            // 
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.Location = new System.Drawing.Point(186, 328);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(178, 17);
+            this.checkBox2.TabIndex = 12;
+            this.checkBox2.Text = "Don\'t support after quitting";
+            this.checkBox2.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
@@ -726,6 +753,7 @@
             this.Sizable = false;
             this.Text = "English Language Network Assistant (ELNA)";
             this.TransparencyKey = System.Drawing.Color.DeepSkyBlue;
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.materialTabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
@@ -791,5 +819,7 @@
         private MetroFramework.Controls.MetroLabel metroLabel8;
         private System.Windows.Forms.Button button1;
         private MetroFramework.Controls.MetroComboBox metroComboBox4;
+        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.CheckBox checkBox2;
     }
 }

