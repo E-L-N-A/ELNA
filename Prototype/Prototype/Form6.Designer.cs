@@ -30,6 +30,7 @@
         {
             this.materialTabControl1 = new MaterialSkin.Controls.MaterialTabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.button8 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.TargetLocation = new System.Windows.Forms.TextBox();
@@ -48,18 +49,22 @@
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.button2 = new System.Windows.Forms.Button();
+            this.button10 = new System.Windows.Forms.Button();
+            this.button9 = new System.Windows.Forms.Button();
+            this.textBox5 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.richTextBox3 = new System.Windows.Forms.RichTextBox();
-            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
-            this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
             this.label1 = new System.Windows.Forms.Label();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.materialLabel6 = new MaterialSkin.Controls.MaterialLabel();
+            this.button2 = new System.Windows.Forms.Button();
+            this.Translated = new System.Windows.Forms.RichTextBox();
+            this.Original = new System.Windows.Forms.RichTextBox();
+            this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
             this.button1 = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.materialTabSelector1 = new MaterialSkin.Controls.MaterialTabSelector();
-            this.button8 = new System.Windows.Forms.Button();
+            this.button11 = new System.Windows.Forms.Button();
             this.materialTabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -98,6 +103,17 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "File to File";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // button8
+            // 
+            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button8.Location = new System.Drawing.Point(123, 135);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(144, 23);
+            this.button8.TabIndex = 10;
+            this.button8.Text = "Translate Vocabulary List";
+            this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // button7
             // 
@@ -285,16 +301,21 @@
             // 
             // tabPage3
             // 
-            this.tabPage3.Controls.Add(this.button2);
+            this.tabPage3.Controls.Add(this.button11);
+            this.tabPage3.Controls.Add(this.button10);
+            this.tabPage3.Controls.Add(this.button9);
+            this.tabPage3.Controls.Add(this.textBox5);
             this.tabPage3.Controls.Add(this.label2);
-            this.tabPage3.Controls.Add(this.richTextBox3);
-            this.tabPage3.Controls.Add(this.richTextBox2);
-            this.tabPage3.Controls.Add(this.materialLabel3);
             this.tabPage3.Controls.Add(this.label1);
+            this.tabPage3.Controls.Add(this.textBox4);
+            this.tabPage3.Controls.Add(this.materialLabel6);
+            this.tabPage3.Controls.Add(this.button2);
+            this.tabPage3.Controls.Add(this.Translated);
+            this.tabPage3.Controls.Add(this.Original);
+            this.tabPage3.Controls.Add(this.materialLabel3);
             this.tabPage3.Controls.Add(this.button1);
             this.tabPage3.Controls.Add(this.textBox2);
             this.tabPage3.Controls.Add(this.materialLabel2);
-            this.tabPage3.Controls.Add(this.progressBar1);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Size = new System.Drawing.Size(476, 354);
@@ -302,102 +323,149 @@
             this.tabPage3.Text = "Audio-Speech";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // button10
             // 
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Location = new System.Drawing.Point(333, 34);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(56, 22);
-            this.button2.TabIndex = 9;
-            this.button2.Text = "Start";
-            this.button2.UseVisualStyleBackColor = true;
+            this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button10.Location = new System.Drawing.Point(377, 88);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(50, 22);
+            this.button10.TabIndex = 16;
+            this.button10.Text = "Start ";
+            this.button10.UseVisualStyleBackColor = true;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
+            // 
+            // button9
+            // 
+            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button9.Location = new System.Drawing.Point(345, 89);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(26, 21);
+            this.button9.TabIndex = 15;
+            this.button9.Text = "...";
+            this.button9.UseVisualStyleBackColor = true;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
+            // 
+            // textBox5
+            // 
+            this.textBox5.Location = new System.Drawing.Point(65, 89);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.ReadOnly = true;
+            this.textBox5.Size = new System.Drawing.Size(274, 20);
+            this.textBox5.TabIndex = 14;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(297, 70);
+            this.label2.Location = new System.Drawing.Point(17, 92);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(119, 13);
-            this.label2.TabIndex = 8;
-            this.label2.Text = "0% Process Not Started";
+            this.label2.Size = new System.Drawing.Size(42, 13);
+            this.label2.TabIndex = 13;
+            this.label2.Text = "Output:";
             // 
-            // richTextBox3
+            // label1
             // 
-            this.richTextBox3.Location = new System.Drawing.Point(9, 220);
-            this.richTextBox3.Name = "richTextBox3";
-            this.richTextBox3.ReadOnly = true;
-            this.richTextBox3.Size = new System.Drawing.Size(457, 128);
-            this.richTextBox3.TabIndex = 7;
-            this.richTextBox3.Text = "Translated Text:";
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(27, 69);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(32, 13);
+            this.label1.TabIndex = 12;
+            this.label1.Text = "URL:";
             // 
-            // richTextBox2
+            // textBox4
             // 
-            this.richTextBox2.Location = new System.Drawing.Point(9, 114);
-            this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.ReadOnly = true;
-            this.richTextBox2.Size = new System.Drawing.Size(457, 100);
-            this.richTextBox2.TabIndex = 6;
-            this.richTextBox2.Text = "Orignal Text:";
+            this.textBox4.Location = new System.Drawing.Point(65, 66);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(274, 20);
+            this.textBox4.TabIndex = 11;
+            // 
+            // materialLabel6
+            // 
+            this.materialLabel6.AutoSize = true;
+            this.materialLabel6.Depth = 0;
+            this.materialLabel6.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.materialLabel6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel6.Location = new System.Drawing.Point(10, 49);
+            this.materialLabel6.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel6.Name = "materialLabel6";
+            this.materialLabel6.Size = new System.Drawing.Size(107, 14);
+            this.materialLabel6.TabIndex = 10;
+            this.materialLabel6.Text = "Select From Youtube";
+            // 
+            // button2
+            // 
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Location = new System.Drawing.Point(345, 24);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(70, 22);
+            this.button2.TabIndex = 9;
+            this.button2.Text = "Start Local ";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // Translated
+            // 
+            this.Translated.Location = new System.Drawing.Point(9, 143);
+            this.Translated.Name = "Translated";
+            this.Translated.ReadOnly = true;
+            this.Translated.Size = new System.Drawing.Size(450, 90);
+            this.Translated.TabIndex = 7;
+            this.Translated.Text = "Translated Text:";
+            // 
+            // Original
+            // 
+            this.Original.Location = new System.Drawing.Point(9, 239);
+            this.Original.Name = "Original";
+            this.Original.ReadOnly = true;
+            this.Original.Size = new System.Drawing.Size(450, 90);
+            this.Original.TabIndex = 6;
+            this.Original.Text = "Orignal Text:";
             // 
             // materialLabel3
             // 
             this.materialLabel3.AutoSize = true;
             this.materialLabel3.Depth = 0;
-            this.materialLabel3.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel3.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.materialLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel3.Location = new System.Drawing.Point(9, 96);
+            this.materialLabel3.Location = new System.Drawing.Point(6, 126);
             this.materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel3.Name = "materialLabel3";
-            this.materialLabel3.Size = new System.Drawing.Size(435, 19);
+            this.materialLabel3.Size = new System.Drawing.Size(311, 14);
             this.materialLabel3.TabIndex = 5;
             this.materialLabel3.Text = "Note: Time take to process your file depends on your file length";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(9, 68);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(51, 13);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Progress:";
             // 
             // button1
             // 
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button1.Location = new System.Drawing.Point(297, 35);
+            this.button1.Location = new System.Drawing.Point(309, 25);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(30, 21);
+            this.button1.Size = new System.Drawing.Size(26, 21);
             this.button1.TabIndex = 3;
             this.button1.Text = "...";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(10, 35);
+            this.textBox2.Location = new System.Drawing.Point(13, 26);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(281, 20);
+            this.textBox2.ReadOnly = true;
+            this.textBox2.Size = new System.Drawing.Size(290, 20);
             this.textBox2.TabIndex = 2;
+            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // materialLabel2
             // 
             this.materialLabel2.AutoSize = true;
             this.materialLabel2.Depth = 0;
-            this.materialLabel2.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel2.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.materialLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel2.Location = new System.Drawing.Point(9, 11);
+            this.materialLabel2.Location = new System.Drawing.Point(10, 9);
             this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel2.Name = "materialLabel2";
-            this.materialLabel2.Size = new System.Drawing.Size(159, 19);
+            this.materialLabel2.Size = new System.Drawing.Size(114, 14);
             this.materialLabel2.TabIndex = 1;
             this.materialLabel2.Text = "Select Your audio File:";
-            // 
-            // progressBar1
-            // 
-            this.progressBar1.Location = new System.Drawing.Point(66, 68);
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(225, 16);
-            this.progressBar1.TabIndex = 0;
             // 
             // materialTabSelector1
             // 
@@ -411,16 +479,16 @@
             this.materialTabSelector1.Text = "materialTabSelector1";
             this.materialTabSelector1.Click += new System.EventHandler(this.materialTabSelector1_Click);
             // 
-            // button8
+            // button11
             // 
-            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button8.Location = new System.Drawing.Point(123, 135);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(144, 23);
-            this.button8.TabIndex = 10;
-            this.button8.Text = "Translate Vocabulary List";
-            this.button8.UseVisualStyleBackColor = true;
-            this.button8.Click += new System.EventHandler(this.button8_Click);
+            this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button11.Location = new System.Drawing.Point(377, 59);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(75, 23);
+            this.button11.TabIndex = 17;
+            this.button11.Text = "Get Text";
+            this.button11.UseVisualStyleBackColor = true;
+            this.button11.Click += new System.EventHandler(this.button11_Click);
             // 
             // Form6
             // 
@@ -456,15 +524,12 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.RichTextBox richTextBox3;
-        private System.Windows.Forms.RichTextBox richTextBox2;
+        private System.Windows.Forms.RichTextBox Translated;
+        private System.Windows.Forms.RichTextBox Original;
         private MaterialSkin.Controls.MaterialLabel materialLabel3;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox textBox2;
         private MaterialSkin.Controls.MaterialLabel materialLabel2;
-        private System.Windows.Forms.ProgressBar progressBar1;
         private MaterialSkin.Controls.MaterialLabel materialLabel4;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
@@ -478,5 +543,13 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox textBox4;
+        private MaterialSkin.Controls.MaterialLabel materialLabel6;
+        private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.Button button11;
     }
 }

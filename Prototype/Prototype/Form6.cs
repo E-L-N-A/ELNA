@@ -11,11 +11,14 @@ using MaterialSkin.Controls;
 using MaterialSkin.Animations;
 using MaterialSkin;
 using System.Threading;
+using System.IO;
+using VideoLibrary;
 
 namespace Prototype
 {
     public partial class Form6 : MaterialForm
     {
+        string output;
         public Form6()
         {
             InitializeComponent();
@@ -98,6 +101,58 @@ namespace Prototype
                 MessageBox.Show("File has been successfully generated");
 
             }
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            FolderBrowserDialog fb = new FolderBrowserDialog();
+            if (fb.ShowDialog() == DialogResult.OK)
+            {
+                textBox5.Text = fb.SelectedPath;
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog opf = new OpenFileDialog();
+            if (opf.ShowDialog() == DialogResult.OK)
+            {
+                textBox2.Text = opf.FileName;
+            }
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            YouTube you = YouTube.Default;
+            Video vid = you.GetVideo(textBox4.Text);
+            string input = textBox5.Text + @"\" + vid.FullName;
+            output = textBox5.Text + @"\" + "Youtube" + DateTime.Now.ToString("MMddyyyy_hhmmtt") + ".wav";
+            Original.Text = "Please wait while We are trying to understand your file...";
+            new Thread(() =>
+            {
+               
+                Thread.CurrentThread.IsBackground = true;
+                AdvanceFeatures.YoutubeExtraction(input, output, vid.GetBytes());
+                
+            }).Start();
+
+            
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            Original.Text = AdvanceFeatures.Voice_Recognition(output);
         }
     }
 }

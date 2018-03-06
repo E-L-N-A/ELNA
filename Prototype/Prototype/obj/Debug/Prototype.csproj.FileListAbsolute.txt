@@ -197,3 +197,7 @@ C:\Users\Joe\Documents\GitHub\ELNA\Prototype\Prototype\bin\Debug\itextsharp.dll
 C:\Users\Joe\Documents\GitHub\ELNA\Prototype\Prototype\bin\Debug\itextsharp.xml
 C:\Users\Pei\Documents\GitHub\ELNA\Prototype\Prototype\bin\Debug\itextsharp.dll
 C:\Users\Pei\Documents\GitHub\ELNA\Prototype\Prototype\bin\Debug\itextsharp.xml
+C:\Users\Joe\Documents\GitHub\ELNA\Prototype\Prototype\bin\Debug\libvideo.dll
+C:\Users\Joe\Documents\GitHub\ELNA\Prototype\Prototype\bin\Debug\MediaToolkit.dll
+C:\Users\Joe\Documents\GitHub\ELNA\Prototype\Prototype\bin\Debug\NAudio.dll
+C:\Users\Joe\Documents\GitHub\ELNA\Prototype\Prototype\bin\Debug\NAudio.xml

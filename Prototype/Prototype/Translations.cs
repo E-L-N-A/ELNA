@@ -18,6 +18,8 @@ using Newtonsoft.Json.Linq;
 using System.Text.RegularExpressions;
 using Newtonsoft.Json;
 using System.Diagnostics;
+using VideoLibrary;
+using NAudio.Wave;
 
 namespace Prototype
 {
