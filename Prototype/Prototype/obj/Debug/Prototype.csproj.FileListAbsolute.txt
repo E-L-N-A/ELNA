@@ -197,3 +197,5 @@ C:\Users\Joe\Documents\GitHub\ELNA\Prototype\Prototype\bin\Debug\itextsharp.dll
 C:\Users\Joe\Documents\GitHub\ELNA\Prototype\Prototype\bin\Debug\itextsharp.xml
 C:\Users\Pei\Documents\GitHub\ELNA\Prototype\Prototype\bin\Debug\itextsharp.dll
 C:\Users\Pei\Documents\GitHub\ELNA\Prototype\Prototype\bin\Debug\itextsharp.xml
+C:\Users\Pei\Documents\GitHub\ELNA\Prototype\Prototype\bin\Debug\WebDriver.dll
+C:\Users\Pei\Documents\GitHub\ELNA\Prototype\Prototype\bin\Debug\WebDriver.xml
