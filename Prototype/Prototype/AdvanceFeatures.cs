@@ -7,6 +7,11 @@ using System.IO;
 using System.Text.RegularExpressions;
 using iTextSharp.text.pdf;
 using iTextSharp.text.pdf.parser;
+using VideoLibrary;
+using MediaToolkit.Model;
+using MediaToolkit;
+using NAudio.Wave;
+using System.Speech.Recognition;
 
 
 namespace Prototype
@@ -69,7 +74,69 @@ namespace Prototype
                 {
                         sw.Write(translationResult);
                 }
-            
+
+        }//mp3和wav文件格式的转换
+        public static void MP3ToWAV(string input, string output)
+        {
+            using (Mp3FileReader m3r = new Mp3FileReader(input))
+            {
+                using (WaveStream wvs = WaveFormatConversionStream.CreatePcmStream(m3r))
+                {
+                    WaveFileWriter.CreateWaveFile(output, wvs);
+                }
+            }
+        }
+
+        //提取Youtube的视频和音频
+        public static void YoutubeExtraction(string input, string output, byte[] Video)
+        {
+
+
+            File.WriteAllBytes(input, Video);
+            MediaFile in_md = new MediaFile(input);
+            MediaFile out_md = new MediaFile(output);
+            using (Engine e = new Engine())
+            {
+                e.GetMetadata(in_md);
+                e.Convert(in_md, out_md);
+            }
+
+
+        }
+
+        //使用System.speech进行语音识别
+        public static string Voice_Recognition(string path)
+        {
+
+            SpeechRecognitionEngine sre = new SpeechRecognitionEngine();
+            Grammar gr = new DictationGrammar();
+            sre.LoadGrammar(gr);
+            sre.SetInputToWaveFile(path);
+            sre.BabbleTimeout = new TimeSpan(Int32.MaxValue);
+            sre.InitialSilenceTimeout = new TimeSpan(Int32.MaxValue);
+            sre.EndSilenceTimeout = new TimeSpan(100000000);
+            sre.EndSilenceTimeoutAmbiguous = new TimeSpan(100000000);
+
+            StringBuilder sb = new StringBuilder();
+            while (true)
+            {
+                try
+                {
+                    var recText = sre.Recognize();
+                    if (recText == null)
+                    {
+                        break;
+                    }
+
+                    sb.Append(recText.Text);
+                }
+                catch (Exception)
+                {
+
+                    break;
+                }
+            }
+            return sb.ToString();
         }
     }
 }
