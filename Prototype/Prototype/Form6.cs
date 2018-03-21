@@ -12,7 +12,7 @@ using MaterialSkin.Animations;
 using MaterialSkin;
 using System.Threading;
 using VideoLibrary;
-
+using System.IO;
 
 namespace Prototype
 {
@@ -140,6 +140,24 @@ namespace Prototype
             {
                 textBox2.Text = opf.FileName;
             }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog opf = new OpenFileDialog();
+           
+            if (DialogResult.OK == opf.ShowDialog())
+            {
+                try
+                {
+                    textBox1.Text = opf.FileName;
+                    richTextBox1.Text = AdvanceFeatures.TextInImage(opf.FileName);
+                }catch(Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+            
         }
     }
 }

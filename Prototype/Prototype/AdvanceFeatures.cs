@@ -12,6 +12,8 @@ using MediaToolkit.Model;
 using MediaToolkit;
 using NAudio.Wave;
 using System.Speech.Recognition;
+using System.Drawing;
+using Tesseract;
 
 
 namespace Prototype
@@ -137,6 +139,15 @@ namespace Prototype
                 }
             }
             return sb.ToString();
+        }
+
+        //图片的文本识别
+        public static string TextInImage(string filepath)
+        {
+            Bitmap img = new Bitmap(filepath);
+            TesseractEngine engine = new TesseractEngine(@"./tesseract-ocr", "eng", EngineMode.TesseractAndCube);
+            Tesseract.Page page = engine.Process(img);
+            return page.GetText();
         }
     }
 }
