@@ -545,12 +545,12 @@ namespace Prototype
 
         private void metroComboBox3_SelectedIndexChanged(object sender, EventArgs e)
         {
+            Output.Text = "";
             materialRaisedButton3.Visible = false;
             materialRaisedButton4.Visible = false;
             materialRaisedButton5.Visible = false;
             materialRaisedButton8.Visible = false;
             materialRaisedButton9.Visible = false;
-            Output.Text = "";
             if (metroComboBox5.SelectedIndex == 2)
             {
                 metroCheckBox3.Enabled = false;
@@ -596,11 +596,22 @@ namespace Prototype
                 metroCheckBox3.Enabled = false;
                 metroComboBox3.SelectedIndex = 1;
             }
+            Output.Text = "";
+            materialRaisedButton3.Visible = false;
+            materialRaisedButton4.Visible = false;
+            materialRaisedButton5.Visible = false;
+            materialRaisedButton8.Visible = false;
+            materialRaisedButton9.Visible = false;
         }
 
         private void metroComboBox4_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            Output.Text = "";
+            materialRaisedButton3.Visible = false;
+            materialRaisedButton4.Visible = false;
+            materialRaisedButton5.Visible = false;
+            materialRaisedButton8.Visible = false;
+            materialRaisedButton9.Visible = false;
         }
     }
     public class Result
