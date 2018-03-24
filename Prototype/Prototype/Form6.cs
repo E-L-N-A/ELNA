@@ -152,12 +152,40 @@ namespace Prototype
                 {
                     textBox1.Text = opf.FileName;
                     richTextBox1.Text = AdvanceFeatures.TextInImage(opf.FileName);
+                    TranslatedImageText.Text = Translations.Google_Translate(richTextBox1.Text, "en", "zh");
                 }catch(Exception ex)
                 {
                     MessageBox.Show(ex.Message);
                 }
             }
             
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            string defaultpath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\ELNA(Image)";
+            Directory.CreateDirectory(defaultpath);
+            defaultpath = defaultpath + @"\Image_" + DateTime.Now.ToString("MMddyyyy_hhmmtt")+".jpeg";
+            if (!(string.IsNullOrEmpty(textBox3.Text)))
+            {
+                try
+                {
+                    textBox1.Text = textBox3.Text;
+                    AdvanceFeatures.DownloadImage(textBox3.Text, defaultpath);
+                    richTextBox1.Text = AdvanceFeatures.TextInImage(defaultpath);
+                    TranslatedImageText.Text = Translations.Google_Translate(richTextBox1.Text, "en", "zh");
+
+                }
+                catch(Exception)
+                {
+                    MessageBox.Show("Format not Supported");
+                }
+
+            }
+            else
+            {
+
+            }
         }
     }
 }

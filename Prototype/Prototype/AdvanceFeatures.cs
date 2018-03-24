@@ -14,6 +14,7 @@ using NAudio.Wave;
 using System.Speech.Recognition;
 using System.Drawing;
 using Tesseract;
+using System.Net;
 
 
 namespace Prototype
@@ -148,6 +149,13 @@ namespace Prototype
             TesseractEngine engine = new TesseractEngine(@"./tesseract-ocr", "eng", EngineMode.TesseractAndCube);
             Tesseract.Page page = engine.Process(img);
             return page.GetText();
+        }
+        //从链接提取图片
+        public static void DownloadImage(string url,string filename)
+        {
+            WebClient webClient = new WebClient();
+            Uri uri = new Uri(url);
+            webClient.DownloadFile(uri, filename);
         }
     }
 }
