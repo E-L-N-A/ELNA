@@ -211,3 +211,13 @@ C:\Users\Joe\Documents\GitHub\ELNA\Prototype\Prototype\bin\Debug\x86\liblept172.
 C:\Users\Joe\Documents\GitHub\ELNA\Prototype\Prototype\bin\Debug\x86\libtesseract304.dll
 C:\Users\Joe\Documents\GitHub\ELNA\Prototype\Prototype\bin\Debug\Tesseract.dll
 C:\Users\Joe\Documents\GitHub\ELNA\Prototype\Prototype\bin\Debug\Tesseract.xml
+C:\Users\Pei\Documents\GitHub\ELNA\Prototype\Prototype\bin\Debug\x64\liblept172.dll
+C:\Users\Pei\Documents\GitHub\ELNA\Prototype\Prototype\bin\Debug\x64\libtesseract304.dll
+C:\Users\Pei\Documents\GitHub\ELNA\Prototype\Prototype\bin\Debug\x86\liblept172.dll
+C:\Users\Pei\Documents\GitHub\ELNA\Prototype\Prototype\bin\Debug\x86\libtesseract304.dll
+C:\Users\Pei\Documents\GitHub\ELNA\Prototype\Prototype\bin\Debug\libvideo.dll
+C:\Users\Pei\Documents\GitHub\ELNA\Prototype\Prototype\bin\Debug\MediaToolkit.dll
+C:\Users\Pei\Documents\GitHub\ELNA\Prototype\Prototype\bin\Debug\NAudio.dll
+C:\Users\Pei\Documents\GitHub\ELNA\Prototype\Prototype\bin\Debug\Tesseract.dll
+C:\Users\Pei\Documents\GitHub\ELNA\Prototype\Prototype\bin\Debug\NAudio.xml
+C:\Users\Pei\Documents\GitHub\ELNA\Prototype\Prototype\bin\Debug\Tesseract.xml

