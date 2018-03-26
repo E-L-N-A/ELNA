@@ -13,13 +13,16 @@ using MaterialSkin.Controls;
 
 namespace Prototype
 {
-    public partial class Form2 : MaterialForm
+    public partial class Form2 : Form
     {
         public Form2()
         {
             InitializeComponent();
         }
-
+        private void Form2_Resize(object sender, EventArgs e)
+        {
+            
+        }
         private void Form6_Load(object sender, EventArgs e)
         {
             textBox1.Text = Form1.Search_Link;
@@ -31,7 +34,7 @@ namespace Prototype
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-
+            this.Text = textBox1.Text;
         }
 
         private void webBrowser1_Navigated(object sender, WebBrowserNavigatedEventArgs e)

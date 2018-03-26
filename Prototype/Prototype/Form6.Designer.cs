@@ -38,8 +38,10 @@
             this.button5 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.SourceFile = new System.Windows.Forms.TextBox();
-            this.materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.TranslatedImageText = new System.Windows.Forms.RichTextBox();
             this.button4 = new System.Windows.Forms.Button();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.button3 = new System.Windows.Forms.Button();
@@ -50,21 +52,27 @@
             this.button10 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
             this.textBox5 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.textBox4 = new System.Windows.Forms.TextBox();
-            this.materialLabel6 = new MaterialSkin.Controls.MaterialLabel();
             this.button2 = new System.Windows.Forms.Button();
             this.Translated = new System.Windows.Forms.RichTextBox();
             this.Original = new System.Windows.Forms.RichTextBox();
-            this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
             this.button1 = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
-            this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
             this.materialTabSelector1 = new MaterialSkin.Controls.MaterialTabSelector();
-            this.TranslatedImageText = new System.Windows.Forms.RichTextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.Image_From = new System.Windows.Forms.ComboBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.Image_To = new System.Windows.Forms.ComboBox();
+            this.File_To = new System.Windows.Forms.ComboBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.File_From = new System.Windows.Forms.ComboBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
             this.materialTabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -86,6 +94,11 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.label14);
+            this.tabPage1.Controls.Add(this.File_To);
+            this.tabPage1.Controls.Add(this.label12);
+            this.tabPage1.Controls.Add(this.File_From);
+            this.tabPage1.Controls.Add(this.label13);
             this.tabPage1.Controls.Add(this.button8);
             this.tabPage1.Controls.Add(this.button7);
             this.tabPage1.Controls.Add(this.button6);
@@ -94,7 +107,6 @@
             this.tabPage1.Controls.Add(this.button5);
             this.tabPage1.Controls.Add(this.label3);
             this.tabPage1.Controls.Add(this.SourceFile);
-            this.tabPage1.Controls.Add(this.materialLabel4);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
@@ -106,7 +118,7 @@
             // button8
             // 
             this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button8.Location = new System.Drawing.Point(123, 135);
+            this.button8.Location = new System.Drawing.Point(123, 137);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(144, 23);
             this.button8.TabIndex = 10;
@@ -117,7 +129,7 @@
             // button7
             // 
             this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.Location = new System.Drawing.Point(6, 135);
+            this.button7.Location = new System.Drawing.Point(6, 137);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(111, 23);
             this.button7.TabIndex = 9;
@@ -185,21 +197,12 @@
             this.SourceFile.Size = new System.Drawing.Size(249, 20);
             this.SourceFile.TabIndex = 1;
             // 
-            // materialLabel4
-            // 
-            this.materialLabel4.AutoSize = true;
-            this.materialLabel4.Depth = 0;
-            this.materialLabel4.Font = new System.Drawing.Font("Roboto", 11F);
-            this.materialLabel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel4.Location = new System.Drawing.Point(9, 13);
-            this.materialLabel4.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel4.Name = "materialLabel4";
-            this.materialLabel4.Size = new System.Drawing.Size(346, 19);
-            this.materialLabel4.TabIndex = 0;
-            this.materialLabel4.Text = "Start Your file to file translation by select your file:";
-            // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.Image_To);
+            this.tabPage2.Controls.Add(this.label11);
+            this.tabPage2.Controls.Add(this.Image_From);
+            this.tabPage2.Controls.Add(this.label10);
             this.tabPage2.Controls.Add(this.label6);
             this.tabPage2.Controls.Add(this.label5);
             this.tabPage2.Controls.Add(this.TranslatedImageText);
@@ -216,6 +219,36 @@
             this.tabPage2.Text = "Image-Text";
             this.tabPage2.UseVisualStyleBackColor = true;
             this.tabPage2.Click += new System.EventHandler(this.tabPage2_Click);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Bahnschrift Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(17, 32);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(34, 14);
+            this.label6.TabIndex = 10;
+            this.label6.Text = "Path:";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Bahnschrift Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(17, 7);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(33, 14);
+            this.label5.TabIndex = 9;
+            this.label5.Text = "URL:";
+            // 
+            // TranslatedImageText
+            // 
+            this.TranslatedImageText.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TranslatedImageText.Location = new System.Drawing.Point(13, 216);
+            this.TranslatedImageText.Name = "TranslatedImageText";
+            this.TranslatedImageText.ReadOnly = true;
+            this.TranslatedImageText.Size = new System.Drawing.Size(460, 132);
+            this.TranslatedImageText.TabIndex = 8;
+            this.TranslatedImageText.Text = "";
             // 
             // button4
             // 
@@ -250,12 +283,12 @@
             // richTextBox1
             // 
             this.richTextBox1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.richTextBox1.Location = new System.Drawing.Point(13, 58);
+            this.richTextBox1.Location = new System.Drawing.Point(13, 82);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.ReadOnly = true;
-            this.richTextBox1.Size = new System.Drawing.Size(460, 139);
+            this.richTextBox1.Size = new System.Drawing.Size(460, 128);
             this.richTextBox1.TabIndex = 3;
-            this.richTextBox1.Text = " You have not Select Any Image Yet";
+            this.richTextBox1.Text = "";
             // 
             // textBox1
             // 
@@ -268,21 +301,21 @@
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.label9);
+            this.tabPage3.Controls.Add(this.label8);
+            this.tabPage3.Controls.Add(this.label7);
+            this.tabPage3.Controls.Add(this.label2);
+            this.tabPage3.Controls.Add(this.label1);
             this.tabPage3.Controls.Add(this.button11);
             this.tabPage3.Controls.Add(this.button10);
             this.tabPage3.Controls.Add(this.button9);
             this.tabPage3.Controls.Add(this.textBox5);
-            this.tabPage3.Controls.Add(this.label2);
-            this.tabPage3.Controls.Add(this.label1);
             this.tabPage3.Controls.Add(this.textBox4);
-            this.tabPage3.Controls.Add(this.materialLabel6);
             this.tabPage3.Controls.Add(this.button2);
             this.tabPage3.Controls.Add(this.Translated);
             this.tabPage3.Controls.Add(this.Original);
-            this.tabPage3.Controls.Add(this.materialLabel3);
             this.tabPage3.Controls.Add(this.button1);
             this.tabPage3.Controls.Add(this.textBox2);
-            this.tabPage3.Controls.Add(this.materialLabel2);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Size = new System.Drawing.Size(476, 354);
@@ -325,54 +358,23 @@
             // 
             // textBox5
             // 
-            this.textBox5.Location = new System.Drawing.Point(71, 97);
+            this.textBox5.Location = new System.Drawing.Point(53, 97);
             this.textBox5.Name = "textBox5";
             this.textBox5.ReadOnly = true;
-            this.textBox5.Size = new System.Drawing.Size(274, 20);
+            this.textBox5.Size = new System.Drawing.Size(292, 20);
             this.textBox5.TabIndex = 29;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(23, 100);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(42, 13);
-            this.label2.TabIndex = 28;
-            this.label2.Text = "Output:";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(33, 77);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(32, 13);
-            this.label1.TabIndex = 27;
-            this.label1.Text = "URL:";
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(71, 74);
+            this.textBox4.Location = new System.Drawing.Point(53, 74);
             this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(274, 20);
+            this.textBox4.Size = new System.Drawing.Size(292, 20);
             this.textBox4.TabIndex = 26;
-            // 
-            // materialLabel6
-            // 
-            this.materialLabel6.AutoSize = true;
-            this.materialLabel6.Depth = 0;
-            this.materialLabel6.Font = new System.Drawing.Font("Roboto", 11F);
-            this.materialLabel6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel6.Location = new System.Drawing.Point(16, 57);
-            this.materialLabel6.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel6.Name = "materialLabel6";
-            this.materialLabel6.Size = new System.Drawing.Size(149, 19);
-            this.materialLabel6.TabIndex = 25;
-            this.materialLabel6.Text = "Select From Youtube";
             // 
             // button2
             // 
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Location = new System.Drawing.Point(351, 32);
+            this.button2.Location = new System.Drawing.Point(383, 27);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(70, 22);
             this.button2.TabIndex = 24;
@@ -381,40 +383,29 @@
             // 
             // Translated
             // 
-            this.Translated.Location = new System.Drawing.Point(15, 151);
+            this.Translated.Font = new System.Drawing.Font("Bahnschrift Light", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Translated.Location = new System.Drawing.Point(15, 240);
             this.Translated.Name = "Translated";
             this.Translated.ReadOnly = true;
-            this.Translated.Size = new System.Drawing.Size(450, 90);
+            this.Translated.Size = new System.Drawing.Size(450, 108);
             this.Translated.TabIndex = 23;
             this.Translated.Text = "Translated Text:";
             // 
             // Original
             // 
-            this.Original.Location = new System.Drawing.Point(15, 247);
+            this.Original.Font = new System.Drawing.Font("Bahnschrift Light", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Original.Location = new System.Drawing.Point(15, 124);
             this.Original.Name = "Original";
             this.Original.ReadOnly = true;
-            this.Original.Size = new System.Drawing.Size(450, 90);
+            this.Original.Size = new System.Drawing.Size(450, 110);
             this.Original.TabIndex = 22;
             this.Original.Text = "Orignal Text:";
-            // 
-            // materialLabel3
-            // 
-            this.materialLabel3.AutoSize = true;
-            this.materialLabel3.Depth = 0;
-            this.materialLabel3.Font = new System.Drawing.Font("Roboto", 11F);
-            this.materialLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel3.Location = new System.Drawing.Point(12, 134);
-            this.materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel3.Name = "materialLabel3";
-            this.materialLabel3.Size = new System.Drawing.Size(435, 19);
-            this.materialLabel3.TabIndex = 21;
-            this.materialLabel3.Text = "Note: Time take to process your file depends on your file length";
             // 
             // button1
             // 
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button1.Location = new System.Drawing.Point(315, 33);
+            this.button1.Location = new System.Drawing.Point(351, 28);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(26, 21);
             this.button1.TabIndex = 20;
@@ -424,24 +415,11 @@
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(19, 34);
+            this.textBox2.Location = new System.Drawing.Point(52, 30);
             this.textBox2.Name = "textBox2";
             this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(290, 20);
+            this.textBox2.Size = new System.Drawing.Size(293, 20);
             this.textBox2.TabIndex = 19;
-            // 
-            // materialLabel2
-            // 
-            this.materialLabel2.AutoSize = true;
-            this.materialLabel2.Depth = 0;
-            this.materialLabel2.Font = new System.Drawing.Font("Roboto", 11F);
-            this.materialLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel2.Location = new System.Drawing.Point(16, 17);
-            this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel2.Name = "materialLabel2";
-            this.materialLabel2.Size = new System.Drawing.Size(159, 19);
-            this.materialLabel2.TabIndex = 18;
-            this.materialLabel2.Text = "Select Your audio File:";
             // 
             // materialTabSelector1
             // 
@@ -455,33 +433,167 @@
             this.materialTabSelector1.Text = "materialTabSelector1";
             this.materialTabSelector1.Click += new System.EventHandler(this.materialTabSelector1_Click);
             // 
-            // TranslatedImageText
+            // label1
             // 
-            this.TranslatedImageText.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TranslatedImageText.Location = new System.Drawing.Point(13, 203);
-            this.TranslatedImageText.Name = "TranslatedImageText";
-            this.TranslatedImageText.ReadOnly = true;
-            this.TranslatedImageText.Size = new System.Drawing.Size(460, 145);
-            this.TranslatedImageText.TabIndex = 8;
-            this.TranslatedImageText.Text = "";
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Bahnschrift Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(12, 31);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(34, 14);
+            this.label1.TabIndex = 33;
+            this.label1.Text = "Path:";
             // 
-            // label5
+            // label2
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(17, 7);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(32, 13);
-            this.label5.TabIndex = 9;
-            this.label5.Text = "URL:";
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Bahnschrift Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(15, 80);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(33, 14);
+            this.label2.TabIndex = 34;
+            this.label2.Text = "URL:";
             // 
-            // label6
+            // label7
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(17, 32);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(32, 13);
-            this.label6.TabIndex = 10;
-            this.label6.Text = "Path:";
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Bahnschrift Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(12, 101);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(35, 14);
+            this.label7.TabIndex = 35;
+            this.label7.Text = "Save:";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Bahnschrift Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(15, 11);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(142, 16);
+            this.label8.TabIndex = 36;
+            this.label8.Text = "Local Video Translation:";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Bahnschrift Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(15, 55);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(157, 16);
+            this.label9.TabIndex = 37;
+            this.label9.Text = "Youtube Video Translation:";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Bahnschrift Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(17, 58);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(39, 14);
+            this.label10.TabIndex = 11;
+            this.label10.Text = "From:";
+            // 
+            // Image_From
+            // 
+            this.Image_From.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.Image_From.Font = new System.Drawing.Font("Bahnschrift Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Image_From.FormattingEnabled = true;
+            this.Image_From.Items.AddRange(new object[] {
+            "English"});
+            this.Image_From.Location = new System.Drawing.Point(55, 56);
+            this.Image_From.Name = "Image_From";
+            this.Image_From.Size = new System.Drawing.Size(121, 22);
+            this.Image_From.TabIndex = 12;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Bahnschrift Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(316, 58);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(23, 14);
+            this.label11.TabIndex = 13;
+            this.label11.Text = "To:";
+            // 
+            // Image_To
+            // 
+            this.Image_To.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.Image_To.Font = new System.Drawing.Font("Bahnschrift Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Image_To.FormattingEnabled = true;
+            this.Image_To.Items.AddRange(new object[] {
+            "Chinese",
+            "Spanish",
+            "Italian",
+            "French",
+            "Russian",
+            "Japanese ",
+            "Korean"});
+            this.Image_To.Location = new System.Drawing.Point(345, 54);
+            this.Image_To.Name = "Image_To";
+            this.Image_To.Size = new System.Drawing.Size(121, 24);
+            this.Image_To.TabIndex = 14;
+            this.Image_To.SelectedIndexChanged += new System.EventHandler(this.Image_To_SelectedIndexChanged);
+            // 
+            // File_To
+            // 
+            this.File_To.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.File_To.Font = new System.Drawing.Font("Bahnschrift Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.File_To.FormattingEnabled = true;
+            this.File_To.Items.AddRange(new object[] {
+            "Chinese",
+            "Spanish",
+            "Italian",
+            "French",
+            "Russian",
+            "Japanese ",
+            "Korean"});
+            this.File_To.Location = new System.Drawing.Point(336, 43);
+            this.File_To.Name = "File_To";
+            this.File_To.Size = new System.Drawing.Size(129, 24);
+            this.File_To.TabIndex = 18;
+            this.File_To.SelectedIndexChanged += new System.EventHandler(this.File_To_SelectedIndexChanged);
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Bahnschrift Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(307, 48);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(23, 14);
+            this.label12.TabIndex = 17;
+            this.label12.Text = "To:";
+            // 
+            // File_From
+            // 
+            this.File_From.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.File_From.Font = new System.Drawing.Font("Bahnschrift Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.File_From.FormattingEnabled = true;
+            this.File_From.Items.AddRange(new object[] {
+            "Auto"});
+            this.File_From.Location = new System.Drawing.Point(48, 44);
+            this.File_From.Name = "File_From";
+            this.File_From.Size = new System.Drawing.Size(121, 22);
+            this.File_From.TabIndex = 16;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Bahnschrift Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(6, 47);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(39, 14);
+            this.label13.TabIndex = 15;
+            this.label13.Text = "From:";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Bahnschrift Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(6, 16);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(219, 16);
+            this.label14.TabIndex = 19;
+            this.label14.Text = "Start Translation by selecting your file";
             // 
             // Form6
             // 
@@ -513,7 +625,6 @@
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TabPage tabPage3;
-        private MaterialSkin.Controls.MaterialLabel materialLabel4;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.TextBox textBox3;
@@ -529,19 +640,28 @@
         private System.Windows.Forms.Button button10;
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox4;
-        private MaterialSkin.Controls.MaterialLabel materialLabel6;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.RichTextBox Translated;
         private System.Windows.Forms.RichTextBox Original;
-        private MaterialSkin.Controls.MaterialLabel materialLabel3;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox textBox2;
-        private MaterialSkin.Controls.MaterialLabel materialLabel2;
         private System.Windows.Forms.RichTextBox TranslatedImageText;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.ComboBox Image_To;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.ComboBox Image_From;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.ComboBox File_To;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.ComboBox File_From;
+        private System.Windows.Forms.Label label13;
     }
 }

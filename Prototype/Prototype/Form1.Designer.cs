@@ -82,6 +82,7 @@
             this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.webBrowser2 = new System.Windows.Forms.WebBrowser();
             this.webBrowser3 = new System.Windows.Forms.WebBrowser();
+            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
             this.materialTabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -694,9 +695,11 @@
             // 
             // tabPage4
             // 
+            this.tabPage4.Controls.Add(this.richTextBox2);
             this.tabPage4.Controls.Add(this.checkBox2);
             this.tabPage4.Controls.Add(this.button8);
             this.tabPage4.Controls.Add(this.label1);
+            this.tabPage4.Font = new System.Drawing.Font("Bahnschrift Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Size = new System.Drawing.Size(563, 416);
@@ -707,21 +710,21 @@
             // checkBox2
             // 
             this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(186, 328);
+            this.checkBox2.Location = new System.Drawing.Point(137, 367);
             this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(178, 17);
+            this.checkBox2.Size = new System.Drawing.Size(176, 20);
             this.checkBox2.TabIndex = 12;
             this.checkBox2.Text = "Don\'t support after quitting";
             this.checkBox2.UseVisualStyleBackColor = true;
             // 
             // button8
             // 
-            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.button8.Font = new System.Drawing.Font("Segoe Script", 35.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button8.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.button8.Location = new System.Drawing.Point(102, 78);
+            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button8.Font = new System.Drawing.Font("Bahnschrift Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button8.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.button8.Location = new System.Drawing.Point(4, 362);
             this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(343, 214);
+            this.button8.Size = new System.Drawing.Size(127, 25);
             this.button8.TabIndex = 11;
             this.button8.Text = "Support ELNA";
             this.button8.UseVisualStyleBackColor = true;
@@ -731,7 +734,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(448, 367);
+            this.label1.Location = new System.Drawing.Point(449, 366);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(97, 16);
             this.label1.TabIndex = 0;
@@ -767,6 +770,15 @@
             this.webBrowser3.TabIndex = 27;
             this.webBrowser3.Url = new System.Uri("https://www.bing.com/translator", System.UriKind.Absolute);
             this.webBrowser3.Visible = false;
+            // 
+            // richTextBox2
+            // 
+            this.richTextBox2.Location = new System.Drawing.Point(4, 3);
+            this.richTextBox2.Name = "richTextBox2";
+            this.richTextBox2.ReadOnly = true;
+            this.richTextBox2.Size = new System.Drawing.Size(542, 349);
+            this.richTextBox2.TabIndex = 13;
+            this.richTextBox2.Text = resources.GetString("richTextBox2.Text");
             // 
             // Form1
             // 
@@ -859,5 +871,6 @@
         private System.Windows.Forms.CheckBox checkBox2;
         private MetroFramework.Controls.MetroComboBox metroComboBox5;
         private System.Windows.Forms.WebBrowser webBrowser3;
+        private System.Windows.Forms.RichTextBox richTextBox2;
     }
 }

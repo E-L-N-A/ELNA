@@ -19,6 +19,7 @@ namespace Prototype
     public partial class Form6 : MaterialForm
     {
         string output;
+        string[] language_Choice = new string[] {"zh","es","it","fr","ru","ja","ko" };
         public Form6()
         {
             InitializeComponent();
@@ -27,6 +28,7 @@ namespace Prototype
         private void Form5_Load(object sender, EventArgs e)
         {
             TargetLocation.Text = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\ELNA_Temp";
+            textBox5.Text = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\ELNA_Temp";
         }
 
         private void materialTabSelector1_Click(object sender, EventArgs e)
@@ -52,14 +54,14 @@ namespace Prototype
             {
                 sour = SourceFile.Text;
                 tar = TargetLocation.Text;
-                AdvanceFeatures.FileToFileTranslationVer2(sour,tar,"en","zh");
+                AdvanceFeatures.FileToFileTranslationVer2(sour,tar,"auto",language_Choice[File_To.SelectedIndex]);
                 MessageBox.Show("File has been successfully generated");
                 
             }else{
 
                 sour = SourceFile.Text;
                 tar = TargetLocation.Text;
-                AdvanceFeatures.FileToFileTranslationPDF(sour, tar, "en", "zh");
+                AdvanceFeatures.FileToFileTranslationPDF(sour, tar, "auto", language_Choice[File_To.SelectedIndex]);
                 MessageBox.Show("File has been successfully generated");
 
             }
@@ -152,7 +154,7 @@ namespace Prototype
                 {
                     textBox1.Text = opf.FileName;
                     richTextBox1.Text = AdvanceFeatures.TextInImage(opf.FileName);
-                    TranslatedImageText.Text = Translations.Google_Translate(richTextBox1.Text, "en", "zh");
+                    TranslatedImageText.Text = Translations.Google_Translate(richTextBox1.Text, "en", language_Choice[Image_To.SelectedIndex]);
                 }catch(Exception ex)
                 {
                     MessageBox.Show(ex.Message);
@@ -173,7 +175,7 @@ namespace Prototype
                     textBox1.Text = textBox3.Text;
                     AdvanceFeatures.DownloadImage(textBox3.Text, defaultpath);
                     richTextBox1.Text = AdvanceFeatures.TextInImage(defaultpath);
-                    TranslatedImageText.Text = Translations.Google_Translate(richTextBox1.Text, "en", "zh");
+                    TranslatedImageText.Text = Translations.Google_Translate(richTextBox1.Text, "en", language_Choice[Image_To.SelectedIndex]);
 
                 }
                 catch(Exception)
@@ -186,6 +188,26 @@ namespace Prototype
             {
 
             }
+        }
+
+        private void Image_To_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (!string.IsNullOrEmpty(richTextBox1.Text))
+                {
+                    TranslatedImageText.Text = Translations.Google_Translate(richTextBox1.Text, "en", language_Choice[Image_To.SelectedIndex]);
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("No Input Detected");
+            }
+        }
+
+        private void File_To_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
