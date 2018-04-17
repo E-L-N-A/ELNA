@@ -30,6 +30,11 @@
         {
             this.materialTabControl1 = new MaterialSkin.Controls.MaterialTabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.label14 = new System.Windows.Forms.Label();
+            this.File_To = new System.Windows.Forms.ComboBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.File_From = new System.Windows.Forms.ComboBox();
+            this.label13 = new System.Windows.Forms.Label();
             this.button8 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
@@ -39,6 +44,10 @@
             this.label3 = new System.Windows.Forms.Label();
             this.SourceFile = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.Image_To = new System.Windows.Forms.ComboBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.Image_From = new System.Windows.Forms.ComboBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.TranslatedImageText = new System.Windows.Forms.RichTextBox();
@@ -48,6 +57,11 @@
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.button11 = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
@@ -59,20 +73,6 @@
             this.button1 = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.materialTabSelector1 = new MaterialSkin.Controls.MaterialTabSelector();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.Image_From = new System.Windows.Forms.ComboBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.Image_To = new System.Windows.Forms.ComboBox();
-            this.File_To = new System.Windows.Forms.ComboBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.File_From = new System.Windows.Forms.ComboBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
             this.materialTabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -114,6 +114,67 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "File to File";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(6, 16);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(229, 16);
+            this.label14.TabIndex = 19;
+            this.label14.Text = "Start Translation by selecting your file";
+            // 
+            // File_To
+            // 
+            this.File_To.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.File_To.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.File_To.FormattingEnabled = true;
+            this.File_To.Items.AddRange(new object[] {
+            "Chinese",
+            "Spanish",
+            "Italian",
+            "French",
+            "Russian",
+            "Japanese ",
+            "Korean"});
+            this.File_To.Location = new System.Drawing.Point(336, 43);
+            this.File_To.Name = "File_To";
+            this.File_To.Size = new System.Drawing.Size(129, 24);
+            this.File_To.TabIndex = 18;
+            this.File_To.SelectedIndexChanged += new System.EventHandler(this.File_To_SelectedIndexChanged);
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(307, 48);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(24, 15);
+            this.label12.TabIndex = 17;
+            this.label12.Text = "To:";
+            // 
+            // File_From
+            // 
+            this.File_From.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.File_From.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.File_From.FormattingEnabled = true;
+            this.File_From.Items.AddRange(new object[] {
+            "Auto"});
+            this.File_From.Location = new System.Drawing.Point(48, 44);
+            this.File_From.Name = "File_From";
+            this.File_From.Size = new System.Drawing.Size(121, 23);
+            this.File_From.TabIndex = 16;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(6, 47);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(39, 15);
+            this.label13.TabIndex = 15;
+            this.label13.Text = "From:";
             // 
             // button8
             // 
@@ -160,10 +221,10 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Bahnschrift Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(3, 102);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(135, 14);
+            this.label4.Size = new System.Drawing.Size(141, 15);
             this.label4.TabIndex = 6;
             this.label4.Text = "File Generated Location:";
             // 
@@ -182,10 +243,10 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Bahnschrift Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(3, 76);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(125, 14);
+            this.label3.Size = new System.Drawing.Size(131, 15);
             this.label3.TabIndex = 2;
             this.label3.Text = "File Selected Location:";
             // 
@@ -220,23 +281,74 @@
             this.tabPage2.UseVisualStyleBackColor = true;
             this.tabPage2.Click += new System.EventHandler(this.tabPage2_Click);
             // 
+            // Image_To
+            // 
+            this.Image_To.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.Image_To.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Image_To.FormattingEnabled = true;
+            this.Image_To.Items.AddRange(new object[] {
+            "Chinese",
+            "Spanish",
+            "Italian",
+            "French",
+            "Russian",
+            "Japanese ",
+            "Korean"});
+            this.Image_To.Location = new System.Drawing.Point(345, 54);
+            this.Image_To.Name = "Image_To";
+            this.Image_To.Size = new System.Drawing.Size(121, 24);
+            this.Image_To.TabIndex = 14;
+            this.Image_To.SelectedIndexChanged += new System.EventHandler(this.Image_To_SelectedIndexChanged);
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(316, 58);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(24, 15);
+            this.label11.TabIndex = 13;
+            this.label11.Text = "To:";
+            // 
+            // Image_From
+            // 
+            this.Image_From.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.Image_From.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Image_From.FormattingEnabled = true;
+            this.Image_From.Items.AddRange(new object[] {
+            "English"});
+            this.Image_From.Location = new System.Drawing.Point(55, 56);
+            this.Image_From.Name = "Image_From";
+            this.Image_From.Size = new System.Drawing.Size(121, 23);
+            this.Image_From.TabIndex = 12;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(17, 58);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(39, 15);
+            this.label10.TabIndex = 11;
+            this.label10.Text = "From:";
+            // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Bahnschrift Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(17, 32);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(34, 14);
+            this.label6.Size = new System.Drawing.Size(35, 15);
             this.label6.TabIndex = 10;
             this.label6.Text = "Path:";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Bahnschrift Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(17, 7);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(33, 14);
+            this.label5.Size = new System.Drawing.Size(35, 15);
             this.label5.TabIndex = 9;
             this.label5.Text = "URL:";
             // 
@@ -323,6 +435,56 @@
             this.tabPage3.Text = "Audio-Speech";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(15, 55);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(170, 16);
+            this.label9.TabIndex = 37;
+            this.label9.Text = "Youtube Video Translation:";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(15, 11);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(153, 16);
+            this.label8.TabIndex = 36;
+            this.label8.Text = "Local Video Translation:";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(12, 101);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(37, 15);
+            this.label7.TabIndex = 35;
+            this.label7.Text = "Save:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(15, 80);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(35, 15);
+            this.label2.TabIndex = 34;
+            this.label2.Text = "URL:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(12, 31);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(35, 15);
+            this.label1.TabIndex = 33;
+            this.label1.Text = "Path:";
+            // 
             // button11
             // 
             this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -383,7 +545,7 @@
             // 
             // Translated
             // 
-            this.Translated.Font = new System.Drawing.Font("Bahnschrift Light", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Translated.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Translated.Location = new System.Drawing.Point(15, 240);
             this.Translated.Name = "Translated";
             this.Translated.ReadOnly = true;
@@ -393,7 +555,7 @@
             // 
             // Original
             // 
-            this.Original.Font = new System.Drawing.Font("Bahnschrift Light", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Original.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Original.Location = new System.Drawing.Point(15, 124);
             this.Original.Name = "Original";
             this.Original.ReadOnly = true;
@@ -432,168 +594,6 @@
             this.materialTabSelector1.TabIndex = 1;
             this.materialTabSelector1.Text = "materialTabSelector1";
             this.materialTabSelector1.Click += new System.EventHandler(this.materialTabSelector1_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Bahnschrift Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 31);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(34, 14);
-            this.label1.TabIndex = 33;
-            this.label1.Text = "Path:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Bahnschrift Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(15, 80);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(33, 14);
-            this.label2.TabIndex = 34;
-            this.label2.Text = "URL:";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Bahnschrift Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(12, 101);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(35, 14);
-            this.label7.TabIndex = 35;
-            this.label7.Text = "Save:";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Bahnschrift Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(15, 11);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(142, 16);
-            this.label8.TabIndex = 36;
-            this.label8.Text = "Local Video Translation:";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Bahnschrift Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(15, 55);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(157, 16);
-            this.label9.TabIndex = 37;
-            this.label9.Text = "Youtube Video Translation:";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Bahnschrift Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(17, 58);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(39, 14);
-            this.label10.TabIndex = 11;
-            this.label10.Text = "From:";
-            // 
-            // Image_From
-            // 
-            this.Image_From.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.Image_From.Font = new System.Drawing.Font("Bahnschrift Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Image_From.FormattingEnabled = true;
-            this.Image_From.Items.AddRange(new object[] {
-            "English"});
-            this.Image_From.Location = new System.Drawing.Point(55, 56);
-            this.Image_From.Name = "Image_From";
-            this.Image_From.Size = new System.Drawing.Size(121, 22);
-            this.Image_From.TabIndex = 12;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Bahnschrift Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(316, 58);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(23, 14);
-            this.label11.TabIndex = 13;
-            this.label11.Text = "To:";
-            // 
-            // Image_To
-            // 
-            this.Image_To.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.Image_To.Font = new System.Drawing.Font("Bahnschrift Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Image_To.FormattingEnabled = true;
-            this.Image_To.Items.AddRange(new object[] {
-            "Chinese",
-            "Spanish",
-            "Italian",
-            "French",
-            "Russian",
-            "Japanese ",
-            "Korean"});
-            this.Image_To.Location = new System.Drawing.Point(345, 54);
-            this.Image_To.Name = "Image_To";
-            this.Image_To.Size = new System.Drawing.Size(121, 24);
-            this.Image_To.TabIndex = 14;
-            this.Image_To.SelectedIndexChanged += new System.EventHandler(this.Image_To_SelectedIndexChanged);
-            // 
-            // File_To
-            // 
-            this.File_To.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.File_To.Font = new System.Drawing.Font("Bahnschrift Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.File_To.FormattingEnabled = true;
-            this.File_To.Items.AddRange(new object[] {
-            "Chinese",
-            "Spanish",
-            "Italian",
-            "French",
-            "Russian",
-            "Japanese ",
-            "Korean"});
-            this.File_To.Location = new System.Drawing.Point(336, 43);
-            this.File_To.Name = "File_To";
-            this.File_To.Size = new System.Drawing.Size(129, 24);
-            this.File_To.TabIndex = 18;
-            this.File_To.SelectedIndexChanged += new System.EventHandler(this.File_To_SelectedIndexChanged);
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Bahnschrift Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(307, 48);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(23, 14);
-            this.label12.TabIndex = 17;
-            this.label12.Text = "To:";
-            // 
-            // File_From
-            // 
-            this.File_From.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.File_From.Font = new System.Drawing.Font("Bahnschrift Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.File_From.FormattingEnabled = true;
-            this.File_From.Items.AddRange(new object[] {
-            "Auto"});
-            this.File_From.Location = new System.Drawing.Point(48, 44);
-            this.File_From.Name = "File_From";
-            this.File_From.Size = new System.Drawing.Size(121, 22);
-            this.File_From.TabIndex = 16;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Bahnschrift Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(6, 47);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(39, 14);
-            this.label13.TabIndex = 15;
-            this.label13.Text = "From:";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Bahnschrift Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(6, 16);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(219, 16);
-            this.label14.TabIndex = 19;
-            this.label14.Text = "Start Translation by selecting your file";
             // 
             // Form6
             // 

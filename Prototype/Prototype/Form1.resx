@@ -120,6 +120,23 @@
   <metadata name="statusStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <metadata name="statusStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <data name="richTextBox1.Text" xml:space="preserve">
+    <value>File to File
+You select file,application will extract text and generate new translated file to the destinition 
+
+Image text translation
+Application is able to scan text inside the image and provide translation to extracted text,Image can be selected either through url provided or local selected.
+
+Existing audio File translation
+Application will go through your audio file and transform audio to text,and provide translation to it 
+
+Notes:
+1. Image and existing require some reconginition behind the scene,therefore,there might be a chance program doesn't interpret the words correctly
+2. According to the previous statement the qualities of file can reflect on qualities on the translation result.</value>
+  </data>
   <data name="richTextBox2.Text" xml:space="preserve">
     <value>End-User License Agreement (EULA) of English Language Network Assistant
 
@@ -165,22 +182,5 @@ It will also terminate immediately if you fail to comply with any term of this E
 Governing Law
 
 This EULA agreement, and any dispute arising out of or in connection with this EULA agreement, shall be governed by and construed in accordance with the laws of United States.</value>
-  </data>
-  <metadata name="statusStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
-  <data name="richTextBox1.Text" xml:space="preserve">
-    <value>File to File
-You select file,application will extract text and generate new translated file to the destinition 
-
-Image text translation
-Application is able to scan text inside the image and provide translation to extracted text,Image can be selected either through url provided or local selected.
-
-Existing audio File translation
-Application will go through your audio file and transform audio to text,and provide translation to it 
-
-Notes:
-1. Image and existing require some reconginition behind the scene,therefore,there might be a chance program doesn't interpret the words correctly
-2. According to the previous statement the qualities of file can reflect on qualities on the translation result.</value>
   </data>
 </root>

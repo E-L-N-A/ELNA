@@ -325,13 +325,21 @@ namespace Prototype
                         }
                     }
                 }
-                timer.Interval = 1000;
-                timer.Tick += new EventHandler(TimerEventProcessor);
-                timer.Start();
                 wb.Document.GetElementById("t_sv").Focus();
                 wb.Document.GetElementById("t_sv").SetAttribute("value", Term);
                 SendKeys.Send("{ENTER}");
                 pc = wb.Document.GetElementById("t_tv").GetAttribute("value");
+                try
+                {
+                    if (wb.Document.GetElementById("t_long").GetAttribute("dir").Equals("ltr"))
+                    {
+                        pc = "That’s too much text to translate at once. Try entering less";
+                    }
+                }
+                catch (Exception)
+                {
+                    pc = "Unexpected Error";
+                }
                 return pc;
 
             }
@@ -343,25 +351,7 @@ namespace Prototype
 
         }
 
-        private static void TimerEventProcessor(object sender, EventArgs e)
-        {
-            String pc = "";
-            try
-            {
-                pc = w.Document.GetElementById("t_tv").GetAttribute("value");
-                if (!pc.Equals(" ...") && !pc.Equals(""))
-                {
-                    //Form1 f1 = new Form1();
-                    //f1.Output.Text = pc;
-                    timer.Stop();
-                }
-            }
-            catch (Exception)
-            {
-                //materialRaisedButton4.Visible = true;
-                //materialRaisedButton9.Visible = false;
-            }
-        }
+
         public class UrbanResult
         {
             public IList<string> tags { get; set; }

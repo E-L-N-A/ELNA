@@ -55,7 +55,7 @@ namespace Prototype
         //------------------------------------------------------------------------------------------------------------------------------------------------------
         //------------------------------------------------------------------------------------------------------------------------------------------------------
         //------------------------------------------------------------------------------------------------------------------------------------------------------
-        
+
         //------------------------------------------------------------------------------------------------------------------------------------------------------
         //------------------------------------------------------------------------------------------------------------------------------------------------------
         //------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -65,8 +65,8 @@ namespace Prototype
 
 
 
-
-        private void materialRaisedButton1_Click(object sender, EventArgs e)
+        String[] bingTemp = { "","",""};
+        private async void materialRaisedButton1_Click(object sender, EventArgs e)
         {
             try
             {
@@ -78,7 +78,7 @@ namespace Prototype
                 materialRaisedButton9.Visible = false;
                 if (metroCheckBox8.Checked)
                 {
-                    webBrowser1.Navigate("https://translate.google.com/#auto/#auto/" + User_Text.Text);
+                    webBrowser1.Navigate("https://translate.google.com/#auto/zh-CN/" + User_Text.Text);
                 }
                 materialRaisedButton6.Visible = false;
                 Output.Text = "";
@@ -129,9 +129,33 @@ namespace Prototype
                     }
                     if (metroComboBox5.SelectedIndex == 1)
                     {
-                        string translation = Translations.Bing_Translate(User_Text.Text, "zh-CHS", webBrowser3);
+                        string[] language_Choice = new string[] { "en", "zh-CHS", "es", "fr", "ru", "it", "ko", "ja" };
+                        string translation = Translations.Bing_Translate(User_Text.Text, language_Choice[metroComboBox3.SelectedIndex], webBrowser3);
+                        if (translation.Equals("That’s too much text to translate at once. Try entering less") || translation.Equals("Unexpected Error"))
+                        {
+                            Output.ForeColor = System.Drawing.Color.Red;
+                            //bingTemp[0] = "";
+                            webBrowser3.Refresh();
+                            bingTemp = new string[] {"","","" };
+                        }
+                        else
+                        {
+                            Output.ForeColor = System.Drawing.Color.Black;
+                        }
                         Output.Text = translation;
+                        if (!Output.Text .Equals(bingTemp[0]) && Output.Text.IndexOf("...") == -1)
+                            {
+                                bingTemp = new string[] { Output.Text, metroComboBox3.SelectedIndex.ToString(),User_Text.Text};
+
+                            }
+                            else if(!bingTemp[1].Equals(metroComboBox3.SelectedIndex.ToString()) || !bingTemp[2].Equals(User_Text.Text))
+                            {
+                            await Task.Delay(500);
+                            materialRaisedButton1.PerformClick();
+                            //bingTemp = "";
+                            }
                     }
+
                     if (metroComboBox5.SelectedIndex == 2)
                     {
                         string definition = Translations.Youdao_Dictionary(User_Text.Text);
@@ -400,12 +424,11 @@ namespace Prototype
             
         }
 
-
         private void Output_TextChanged(object sender, EventArgs e)
         {
             if (metroCheckBox8.Checked)
             {
-                webBrowser2.Navigate("https://translate.google.com/#auto/#auto/" + Output.Text);
+                webBrowser2.Navigate("https://translate.google.com/#auto/zh-CN/" + Output.Text);
                 materialRaisedButton3.Visible = true;
                 materialRaisedButton4.Visible = true;
             }
@@ -424,7 +447,7 @@ namespace Prototype
             materialRaisedButton9.Visible = false;
             if (metroCheckBox8.Checked)
             {
-                webBrowser1.Navigate("https://translate.google.com/#auto/#auto/" + User_Text.Text);
+                webBrowser1.Navigate("https://translate.google.com/#auto/zh-CN/" + User_Text.Text);
             }
             try
             {
@@ -511,7 +534,7 @@ namespace Prototype
             materialRaisedButton8.Visible = false;
             if (metroCheckBox8.Checked)
             {
-                webBrowser1.Navigate("https://translate.google.com/#auto/#auto/" + User_Text.Text);
+                webBrowser1.Navigate("https://translate.google.com/#auto/zh-CN/" + User_Text.Text);
             }
         }
 
