@@ -35,16 +35,17 @@ namespace Prototype
                     Words.Add(n);
                 }
             }
-            string newstr = "";
-            foreach(string w in Words)
-            {
-                 newstr = newstr += Translations.Google_Translate(w, from, to);
-            }
+                using (StreamWriter sw = File.CreateText(TargetFilePath + Filename))
+                {
+                   foreach (string w in Words)
+                   {
 
-            using (StreamWriter sw= File.CreateText(TargetFilePath + Filename))
-            {
-                sw.Write(newstr);
-            }
+                    sw.WriteLine(w + " - " + Translations.Google_Translate(w, from, to));
+
+                }
+                }
+            
+            
         }
         // 用于句子的翻译
         public static void FileToFileTranslationVer2(string SourceFilePath, string TargetFilePath, string from, string to)
@@ -93,8 +94,6 @@ namespace Prototype
         //提取Youtube的视频和音频
         public static void YoutubeExtraction(string input, string output, byte[] Video)
         {
-
-
             File.WriteAllBytes(input, Video);
             MediaFile in_md = new MediaFile(input);
             MediaFile out_md = new MediaFile(output);
@@ -103,8 +102,6 @@ namespace Prototype
                 e.GetMetadata(in_md);
                 e.Convert(in_md, out_md);
             }
-
-
         }
 
         //使用System.speech进行语音识别

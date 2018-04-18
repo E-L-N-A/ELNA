@@ -57,12 +57,15 @@
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.label16 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.button11 = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
             this.textBox5 = new System.Windows.Forms.TextBox();
@@ -138,7 +141,7 @@
             "Russian",
             "Japanese ",
             "Korean"});
-            this.File_To.Location = new System.Drawing.Point(336, 43);
+            this.File_To.Location = new System.Drawing.Point(336, 100);
             this.File_To.Name = "File_To";
             this.File_To.Size = new System.Drawing.Size(129, 24);
             this.File_To.TabIndex = 18;
@@ -148,7 +151,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(307, 48);
+            this.label12.Location = new System.Drawing.Point(307, 105);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(24, 15);
             this.label12.TabIndex = 17;
@@ -161,7 +164,7 @@
             this.File_From.FormattingEnabled = true;
             this.File_From.Items.AddRange(new object[] {
             "Auto"});
-            this.File_From.Location = new System.Drawing.Point(48, 44);
+            this.File_From.Location = new System.Drawing.Point(48, 101);
             this.File_From.Name = "File_From";
             this.File_From.Size = new System.Drawing.Size(121, 23);
             this.File_From.TabIndex = 16;
@@ -170,7 +173,7 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(6, 47);
+            this.label13.Location = new System.Drawing.Point(6, 104);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(39, 15);
             this.label13.TabIndex = 15;
@@ -179,7 +182,7 @@
             // button8
             // 
             this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button8.Location = new System.Drawing.Point(123, 137);
+            this.button8.Location = new System.Drawing.Point(126, 138);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(144, 23);
             this.button8.TabIndex = 10;
@@ -190,7 +193,7 @@
             // button7
             // 
             this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.Location = new System.Drawing.Point(6, 137);
+            this.button7.Location = new System.Drawing.Point(9, 138);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(111, 23);
             this.button7.TabIndex = 9;
@@ -202,16 +205,17 @@
             // 
             this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button6.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button6.Location = new System.Drawing.Point(399, 100);
+            this.button6.Location = new System.Drawing.Point(402, 73);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(66, 21);
             this.button6.TabIndex = 8;
             this.button6.Text = "Customize";
             this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // TargetLocation
             // 
-            this.TargetLocation.Location = new System.Drawing.Point(144, 100);
+            this.TargetLocation.Location = new System.Drawing.Point(147, 73);
             this.TargetLocation.Name = "TargetLocation";
             this.TargetLocation.ReadOnly = true;
             this.TargetLocation.Size = new System.Drawing.Size(249, 20);
@@ -222,7 +226,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(3, 102);
+            this.label4.Location = new System.Drawing.Point(6, 75);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(141, 15);
             this.label4.TabIndex = 6;
@@ -232,7 +236,7 @@
             // 
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button5.Location = new System.Drawing.Point(399, 73);
+            this.button5.Location = new System.Drawing.Point(402, 46);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(30, 21);
             this.button5.TabIndex = 5;
@@ -244,7 +248,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(3, 76);
+            this.label3.Location = new System.Drawing.Point(6, 49);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(131, 15);
             this.label3.TabIndex = 2;
@@ -252,7 +256,7 @@
             // 
             // SourceFile
             // 
-            this.SourceFile.Location = new System.Drawing.Point(144, 74);
+            this.SourceFile.Location = new System.Drawing.Point(147, 47);
             this.SourceFile.Name = "SourceFile";
             this.SourceFile.ReadOnly = true;
             this.SourceFile.Size = new System.Drawing.Size(249, 20);
@@ -413,12 +417,15 @@
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.comboBox1);
+            this.tabPage3.Controls.Add(this.label15);
+            this.tabPage3.Controls.Add(this.comboBox2);
+            this.tabPage3.Controls.Add(this.label16);
             this.tabPage3.Controls.Add(this.label9);
             this.tabPage3.Controls.Add(this.label8);
             this.tabPage3.Controls.Add(this.label7);
             this.tabPage3.Controls.Add(this.label2);
             this.tabPage3.Controls.Add(this.label1);
-            this.tabPage3.Controls.Add(this.button11);
             this.tabPage3.Controls.Add(this.button10);
             this.tabPage3.Controls.Add(this.button9);
             this.tabPage3.Controls.Add(this.textBox5);
@@ -434,6 +441,57 @@
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Audio-Speech";
             this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Chinese",
+            "Spanish",
+            "Italian",
+            "French",
+            "Russian",
+            "Japanese ",
+            "Korean"});
+            this.comboBox1.Location = new System.Drawing.Point(248, 121);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(129, 24);
+            this.comboBox1.TabIndex = 41;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(219, 126);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(24, 15);
+            this.label15.TabIndex = 40;
+            this.label15.Text = "To:";
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Items.AddRange(new object[] {
+            "Auto"});
+            this.comboBox2.Location = new System.Drawing.Point(53, 122);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(121, 23);
+            this.comboBox2.TabIndex = 39;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(11, 125);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(39, 15);
+            this.label16.TabIndex = 38;
+            this.label16.Text = "From:";
             // 
             // label9
             // 
@@ -485,17 +543,6 @@
             this.label1.TabIndex = 33;
             this.label1.Text = "Path:";
             // 
-            // button11
-            // 
-            this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button11.Location = new System.Drawing.Point(383, 67);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(75, 23);
-            this.button11.TabIndex = 32;
-            this.button11.Text = "Get Text";
-            this.button11.UseVisualStyleBackColor = true;
-            this.button11.Click += new System.EventHandler(this.button11_Click);
-            // 
             // button10
             // 
             this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -525,6 +572,7 @@
             this.textBox5.ReadOnly = true;
             this.textBox5.Size = new System.Drawing.Size(292, 20);
             this.textBox5.TabIndex = 29;
+            this.textBox5.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
             // 
             // textBox4
             // 
@@ -542,26 +590,27 @@
             this.button2.TabIndex = 24;
             this.button2.Text = "Start Local ";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // Translated
             // 
             this.Translated.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Translated.Location = new System.Drawing.Point(15, 240);
+            this.Translated.Location = new System.Drawing.Point(15, 247);
             this.Translated.Name = "Translated";
             this.Translated.ReadOnly = true;
-            this.Translated.Size = new System.Drawing.Size(450, 108);
+            this.Translated.Size = new System.Drawing.Size(450, 101);
             this.Translated.TabIndex = 23;
             this.Translated.Text = "Translated Text:";
             // 
             // Original
             // 
             this.Original.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Original.Location = new System.Drawing.Point(15, 124);
+            this.Original.Location = new System.Drawing.Point(16, 152);
             this.Original.Name = "Original";
             this.Original.ReadOnly = true;
-            this.Original.Size = new System.Drawing.Size(450, 110);
+            this.Original.Size = new System.Drawing.Size(450, 89);
             this.Original.TabIndex = 22;
-            this.Original.Text = "Orignal Text:";
+            this.Original.Text = "Original Text:";
             // 
             // button1
             // 
@@ -582,6 +631,7 @@
             this.textBox2.ReadOnly = true;
             this.textBox2.Size = new System.Drawing.Size(293, 20);
             this.textBox2.TabIndex = 19;
+            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // materialTabSelector1
             // 
@@ -636,7 +686,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button11;
         private System.Windows.Forms.Button button10;
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.TextBox textBox5;
@@ -663,5 +712,9 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.ComboBox File_From;
         private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.Label label16;
     }
 }

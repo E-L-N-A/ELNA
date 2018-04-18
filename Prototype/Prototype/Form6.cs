@@ -13,6 +13,8 @@ using MaterialSkin;
 using System.Threading;
 using VideoLibrary;
 using System.IO;
+using MediaToolkit.Model;
+using MediaToolkit;
 
 namespace Prototype
 {
@@ -99,7 +101,7 @@ namespace Prototype
             {
                 sour = SourceFile.Text;
                 tar = TargetLocation.Text;
-                AdvanceFeatures.FileToFileTranslation(sour, tar, "en", "zh");
+                AdvanceFeatures.FileToFileTranslation(sour, tar, "auto",language_Choice[File_To.SelectedIndex] );
                 MessageBox.Show("File has been successfully generated");
 
             }
@@ -107,22 +109,35 @@ namespace Prototype
 
         private void button10_Click(object sender, EventArgs e)
         {
-            YouTube you = YouTube.Default;
-            Video vid = you.GetVideo(textBox4.Text);
-            string input = textBox5.Text + @"\" + vid.FullName;
-            output = textBox5.Text + @"\" + "Youtube" + DateTime.Now.ToString("MMddyyyy_hhmmtt") + ".wav";
-            Original.Text = "Please wait while We are trying to understand your file...";
-            new Thread(() =>
+            try
             {
+                YouTube you = YouTube.Default;
+                Video vid = you.GetVideo(textBox4.Text);
+                string input = textBox5.Text + @"\" + vid.FullName;
+                output = textBox5.Text + @"\" + "Youtube_" + DateTime.Now.ToString("MMddyyyy_hhmmtt") + ".wav";
+                Original.Text = "Please wait while We are trying to understand your file...";
+                Thread thread = new Thread(() =>
+                {
 
-                Thread.CurrentThread.IsBackground = true;
-                AdvanceFeatures.YoutubeExtraction(input, output, vid.GetBytes());
+                    Thread.CurrentThread.IsBackground = true;
+                    AdvanceFeatures.YoutubeExtraction(input, output, vid.GetBytes());
 
-            }).Start();
+                });
+                thread.Start();
+                Original.Text = "Please wait while We are trying to understand your file...";
+                thread.Join();
+                Original.Text = AdvanceFeatures.Voice_Recognition(output);
+                Translated.Text = Translations.Google_Translate(Original.Text, "auto", language_Choice[comboBox1.SelectedIndex]);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Not Vaild URL Address");
+            }
+
         }
 
         private void button11_Click(object sender, EventArgs e)
-        {
+        { //Button Not Exist
             Original.Text = AdvanceFeatures.Voice_Recognition(output);
         }
 
@@ -206,6 +221,51 @@ namespace Prototype
         }
 
         private void File_To_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            FolderBrowserDialog folderBrowserDialog = new FolderBrowserDialog();
+            if (folderBrowserDialog.ShowDialog() == DialogResult.OK)
+            {
+                TargetLocation.Text = folderBrowserDialog.SelectedPath;
+            }
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Translated.Text = Translations.Google_Translate(Original.Text, "auto", language_Choice[comboBox1.SelectedIndex]);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string outputpath = textBox5.Text + @"\" + "Local_" + DateTime.Now.ToString("MMddyyyy_hhmmtt") + ".wav";
+                MediaFile input = new MediaFile(textBox2.Text);
+                MediaFile output = new MediaFile(outputpath);
+                using (Engine en = new Engine())
+                {
+                    en.GetMetadata(input);
+                    en.Convert(input, output);
+                }
+                Original.Text = AdvanceFeatures.Voice_Recognition(outputpath);
+                Translated.Text = Translations.Google_Translate(Original.Text, "en", language_Choice[comboBox1.SelectedIndex]);
+            }
+            catch(Exception)
+            {
+                MessageBox.Show("Error ! Check your Language Selections");
+            }
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox5_TextChanged(object sender, EventArgs e)
         {
 
         }
