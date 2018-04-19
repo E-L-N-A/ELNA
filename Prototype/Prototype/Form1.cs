@@ -636,6 +636,42 @@ namespace Prototype
             materialRaisedButton8.Visible = false;
             materialRaisedButton9.Visible = false;
         }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            string temp;
+            if (metroCheckBox2.Checked)
+            {
+                List<string> Results = new List<string>();
+                string[] Tag = new string[] {"General:","English Definition:","Slang:" };
+                string Final = "";
+
+                string User = Translations.Auto_Capitalization(User_Text.Text);
+                Search_Link = WikiDefaultLink + User;
+                temp = URL.GetPageTitle(URL.GetRedirectedURL(Search_Link));
+                Console.WriteLine(temp);
+                temp = temp.Substring(0, temp.IndexOf("-"));
+                string WikiInfo = "[" + Translations.Wikipedia_Source(temp) + "]"; 
+                string Definition = "[" + Translations.DefinitionFromOwlDictionary(User_Text.Text) + "]";
+                string Slang ="["+Translations.UrbanDictionary(User_Text.Text, "http://" + textBox2.Text + ":" + textBox3.Text)+"]";
+
+                Results.Add(WikiInfo);
+                Results.Add(Definition);
+                Results.Add(Slang);
+
+                for(int i = 0; i < 3; i++)
+                {
+                    if (string.IsNullOrEmpty(Results[i]))
+                    {
+                        Results[i] = "No Info";
+                    }
+                }
+
+                Final += Tag[0] + Environment.NewLine + Results[0]+Environment.NewLine+" "+Environment.NewLine+Tag[1]+ Environment.NewLine+Results[1]+Environment.NewLine+" "+ Environment.NewLine+Tag[2]+Environment.NewLine+Results[2];
+
+                Output.Text = Final; 
+            }
+        }
     }
     public class Result
     {
