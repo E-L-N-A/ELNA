@@ -68,124 +68,174 @@ namespace Prototype
         String[] bingTemp = { "","",""};
         private async void materialRaisedButton1_Click(object sender, EventArgs e)
         {
-            try
+            if (metroComboBox1.SelectedIndex == 0 && metroCheckBox2.Checked)
             {
-                Output.ForeColor = System.Drawing.Color.Black;
-                materialRaisedButton3.Visible = false;
-                materialRaisedButton4.Visible = false;
-                materialRaisedButton5.Visible = false;
-                materialRaisedButton8.Visible = false;
-                materialRaisedButton9.Visible = false;
-                if (metroCheckBox8.Checked)
+                string temp;
+                List<string> Results = new List<string>();
+                string[] Tag = new string[] { "General:", "English Definition:", "Slang:" };
+                string Final = "";
+                string WikiInfo = "";
+
+                try
                 {
-                    webBrowser1.Navigate("https://translate.google.com/#auto/zh-CN/" + User_Text.Text);
-                }
-                materialRaisedButton6.Visible = false;
-                Output.Text = "";
-                if (metroComboBox1.SelectedIndex == 1)
-                {
-                    if (metroComboBox5.SelectedIndex == 0)
+                    if (metroCheckBox2.Checked)
                     {
-                        if (metroComboBox3.SelectedIndex == 0)
+                        string User = Translations.Auto_Capitalization(User_Text.Text);
+                        Search_Link = WikiDefaultLink + User;
+                        temp = URL.GetPageTitle(URL.GetRedirectedURL(Search_Link));
+                        temp = temp.Substring(0, temp.IndexOf("-"));
+                        WikiInfo = "[" + Translations.Wikipedia_Source(temp) + "]";
+                    }
+                }
+                catch (Exception)
+                {
+                    WikiInfo = "[ No Information related to " +User_Text.Text+" ]";
+                }
+
+                if (metroCheckBox2.Checked)
+                {
+                    string Definition = "[" + Translations.DefinitionFromOwlDictionary(User_Text.Text.ToLower()) + "]";
+                    string Slang = "[" + Translations.UrbanDictionary(User_Text.Text, "http://" + textBox2.Text + ":" + textBox3.Text) + "]";
+
+                    Results.Add(WikiInfo);
+                    Results.Add(Definition);
+                    Results.Add(Slang);
+
+                    for (int i = 0; i < 3; i++)
+                    {
+                        if (string.IsNullOrEmpty(Results[i]))
                         {
-                            string translation = Translations.Google_Translate(User_Text.Text, "auto", "en");
-                            Output.Text = translation;
-                        }
-                        if (metroComboBox3.SelectedIndex == 1)
-                        {
-                            string translation = Translations.Google_Translate(User_Text.Text, "auto", "zh");
-                            Output.Text = translation;
-                        }
-                        if (metroComboBox3.SelectedIndex == 2)
-                        {
-                            string translation = Translations.Google_Translate(User_Text.Text, "auto", "es");
-                            Output.Text = translation;
-                        }
-                        if (metroComboBox3.SelectedIndex == 3)
-                        {
-                            string translation = Translations.Google_Translate(User_Text.Text, "auto", "fr");
-                            Output.Text = translation;
-                        }
-                        if (metroComboBox3.SelectedIndex == 4)
-                        {
-                            string translation = Translations.Google_Translate(User_Text.Text, "auto", "ru");
-                            Output.Text = translation;
-                        }
-                        if (metroComboBox3.SelectedIndex == 5)
-                        {
-                            string translation = Translations.Google_Translate(User_Text.Text, "auto", "it");
-                            Output.Text = translation;
-                        }
-                        if (metroComboBox3.SelectedIndex == 6)
-                        {
-                            string translation = Translations.Google_Translate(User_Text.Text, "auto", "ko");
-                            Output.Text = translation;
-                        }
-                        if (metroComboBox3.SelectedIndex == 7)
-                        {
-                            string translation = Translations.Google_Translate(User_Text.Text, "auto", "ja");
-                            Output.Text = translation;
+                            Results[i] = "No Info";
                         }
                     }
-                    if (metroComboBox5.SelectedIndex == 1)
+
+                    Final += Tag[0] + Environment.NewLine + Results[0] + Environment.NewLine + " " + Environment.NewLine + Tag[1] + Environment.NewLine + Results[1] + Environment.NewLine + " " + Environment.NewLine + Tag[2] + Environment.NewLine + Results[2];
+
+                    Output.Text = Final;
+                }
+            }
+            else
+            {
+                try
+                {
+                    Output.ForeColor = System.Drawing.Color.Black;
+                    materialRaisedButton3.Visible = false;
+                    materialRaisedButton4.Visible = false;
+                    materialRaisedButton5.Visible = false;
+                    materialRaisedButton8.Visible = false;
+                    materialRaisedButton9.Visible = false;
+                    if (metroCheckBox8.Checked)
                     {
-                        string[] language_Choice = new string[] { "en", "zh-CHS", "es", "fr", "ru", "it", "ko", "ja" };
-                        string translation = Translations.Bing_Translate(User_Text.Text, language_Choice[metroComboBox3.SelectedIndex], webBrowser3);
-                        if (translation.Equals("That’s too much text to translate at once. Try entering less") || translation.Equals("Unexpected Error"))
+                        webBrowser1.Navigate("https://translate.google.com/#auto/zh-CN/" + User_Text.Text);
+                    }
+                    materialRaisedButton6.Visible = false;
+                    Output.Text = "";
+                    if (metroComboBox1.SelectedIndex == 1)
+                    {
+                        if (metroComboBox5.SelectedIndex == 0)
                         {
-                            Output.ForeColor = System.Drawing.Color.Red;
-                            //bingTemp[0] = "";
-                            webBrowser3.Refresh();
-                            bingTemp = new string[] {"","","" };
+                            if (metroComboBox3.SelectedIndex == 0)
+                            {
+                                string translation = Translations.Google_Translate(User_Text.Text, "auto", "en");
+                                Output.Text = translation;
+                            }
+                            if (metroComboBox3.SelectedIndex == 1)
+                            {
+                                string translation = Translations.Google_Translate(User_Text.Text, "auto", "zh");
+                                Output.Text = translation;
+                            }
+                            if (metroComboBox3.SelectedIndex == 2)
+                            {
+                                string translation = Translations.Google_Translate(User_Text.Text, "auto", "es");
+                                Output.Text = translation;
+                            }
+                            if (metroComboBox3.SelectedIndex == 3)
+                            {
+                                string translation = Translations.Google_Translate(User_Text.Text, "auto", "fr");
+                                Output.Text = translation;
+                            }
+                            if (metroComboBox3.SelectedIndex == 4)
+                            {
+                                string translation = Translations.Google_Translate(User_Text.Text, "auto", "ru");
+                                Output.Text = translation;
+                            }
+                            if (metroComboBox3.SelectedIndex == 5)
+                            {
+                                string translation = Translations.Google_Translate(User_Text.Text, "auto", "it");
+                                Output.Text = translation;
+                            }
+                            if (metroComboBox3.SelectedIndex == 6)
+                            {
+                                string translation = Translations.Google_Translate(User_Text.Text, "auto", "ko");
+                                Output.Text = translation;
+                            }
+                            if (metroComboBox3.SelectedIndex == 7)
+                            {
+                                string translation = Translations.Google_Translate(User_Text.Text, "auto", "ja");
+                                Output.Text = translation;
+                            }
+                        }
+                        if (metroComboBox5.SelectedIndex == 1)
+                        {
+                            string[] language_Choice = new string[] { "en", "zh-CHS", "es", "fr", "ru", "it", "ko", "ja" };
+                            string translation = Translations.Bing_Translate(User_Text.Text, language_Choice[metroComboBox3.SelectedIndex], webBrowser3);
+                            if (translation.Equals("That’s too much text to translate at once. Try entering less") || translation.Equals("Unexpected Error"))
+                            {
+                                Output.ForeColor = System.Drawing.Color.Red;
+                                //bingTemp[0] = "";
+                                webBrowser3.Refresh();
+                                bingTemp = new string[] { "", "", "" };
+                            }
+                            else
+                            {
+                                Output.ForeColor = System.Drawing.Color.Black;
+                            }
+                            Output.Text = translation;
+                            if (!Output.Text.Equals(bingTemp[0]) && Output.Text.IndexOf("...") == -1)
+                            {
+                                bingTemp = new string[] { Output.Text, metroComboBox3.SelectedIndex.ToString(), User_Text.Text };
+
+                            }
+                            else if (!bingTemp[1].Equals(metroComboBox3.SelectedIndex.ToString()) || !bingTemp[2].Equals(User_Text.Text))
+                            {
+                                await Task.Delay(500);
+                                materialRaisedButton1.PerformClick();
+                                //bingTemp = "";
+                            }
+                        }
+
+                        if (metroComboBox5.SelectedIndex == 2)
+                        {
+                            string definition = Translations.Youdao_Dictionary(User_Text.Text);
+                            Output.Text = definition;
+
+                        }
+
+                    }
+                    if (metroComboBox1.SelectedIndex == 0)
+                    {
+                        if (textBox2.Text != "" && textBox3.Text == "" || textBox3.Text != "" && textBox2.Text == "")
+                        {
+                            MessageBox.Show("Please fill proxy settings or leave it completely blank.");
                         }
                         else
                         {
-                            Output.ForeColor = System.Drawing.Color.Black;
+                            if (metroComboBox4.SelectedIndex == 1)
+                            {
+                                Output.Text = Translations.UrbanDictionary(User_Text.Text, "http://" + textBox2.Text + ":" + textBox3.Text);
+                            }
+                            else if (metroComboBox4.SelectedIndex == 0)
+                            {
+                                Output.Text = Translations.DefinitionFromOwlDictionary(User_Text.Text.ToLower());
+                            }
                         }
-                        Output.Text = translation;
-                        if (!Output.Text .Equals(bingTemp[0]) && Output.Text.IndexOf("...") == -1)
-                            {
-                                bingTemp = new string[] { Output.Text, metroComboBox3.SelectedIndex.ToString(),User_Text.Text};
-
-                            }
-                            else if(!bingTemp[1].Equals(metroComboBox3.SelectedIndex.ToString()) || !bingTemp[2].Equals(User_Text.Text))
-                            {
-                            await Task.Delay(500);
-                            materialRaisedButton1.PerformClick();
-                            //bingTemp = "";
-                            }
                     }
-
-                    if (metroComboBox5.SelectedIndex == 2)
-                    {
-                        string definition = Translations.Youdao_Dictionary(User_Text.Text);
-                        Output.Text = definition;
-                        
-                    }
-
                 }
-                if (metroComboBox1.SelectedIndex == 0)
+                catch (Exception)
                 {
-                    if(textBox2.Text!=""&& textBox3.Text == "" || textBox3.Text != "" && textBox2.Text == "")
-                    {
-                        MessageBox.Show("Please fill proxy settings or leave it completely blank.");
-                    }
-                    else
-                    {
-                        if (metroComboBox4.SelectedIndex == 2)
-                        {
-                            Output.Text = Translations.UrbanDictionary(User_Text.Text, "http://" + textBox2.Text + ":" + textBox3.Text);
-                        }else if (metroComboBox4.SelectedIndex == 1)
-                        {
-                            Output.Text = Translations.DefinitionFromOwlDictionary(User_Text.Text);
-                        }
-                    }
+                    Output.ForeColor = System.Drawing.Color.Red;
+                    Output.Text = "Unexpected Error Detected.";
                 }
-            }
-            catch (Exception)
-            {
-                Output.ForeColor = System.Drawing.Color.Red;
-                Output.Text = "Unexpected Error Detected.";
             }
         }
 
@@ -639,27 +689,39 @@ namespace Prototype
 
         private void button2_Click_1(object sender, EventArgs e)
         {
+            /*Test Button
             string temp;
+            List<string> Results = new List<string>();
+            string[] Tag = new string[] { "General:", "English Definition:", "Slang:" };
+            string Final = "";
+            string WikiInfo = "";
+
+            try
+            {
+                if (metroCheckBox2.Checked)
+                {
+                    string User = Translations.Auto_Capitalization(User_Text.Text);
+                    Search_Link = WikiDefaultLink + User;
+                    temp = URL.GetPageTitle(URL.GetRedirectedURL(Search_Link));
+                    temp = temp.Substring(0, temp.IndexOf("-"));
+                    WikiInfo = "[" + Translations.Wikipedia_Source(temp) + "]";
+                }
+            }
+            catch (Exception)
+            {
+                WikiInfo = "[ Cannot Locate Information ]";
+            }
+
             if (metroCheckBox2.Checked)
             {
-                List<string> Results = new List<string>();
-                string[] Tag = new string[] {"General:","English Definition:","Slang:" };
-                string Final = "";
-
-                string User = Translations.Auto_Capitalization(User_Text.Text);
-                Search_Link = WikiDefaultLink + User;
-                temp = URL.GetPageTitle(URL.GetRedirectedURL(Search_Link));
-                Console.WriteLine(temp);
-                temp = temp.Substring(0, temp.IndexOf("-"));
-                string WikiInfo = "[" + Translations.Wikipedia_Source(temp) + "]"; 
                 string Definition = "[" + Translations.DefinitionFromOwlDictionary(User_Text.Text) + "]";
-                string Slang ="["+Translations.UrbanDictionary(User_Text.Text, "http://" + textBox2.Text + ":" + textBox3.Text)+"]";
+                string Slang = "[" + Translations.UrbanDictionary(User_Text.Text, "http://" + textBox2.Text + ":" + textBox3.Text) + "]";
 
                 Results.Add(WikiInfo);
                 Results.Add(Definition);
                 Results.Add(Slang);
 
-                for(int i = 0; i < 3; i++)
+                for (int i = 0; i < 3; i++)
                 {
                     if (string.IsNullOrEmpty(Results[i]))
                     {
@@ -667,10 +729,19 @@ namespace Prototype
                     }
                 }
 
-                Final += Tag[0] + Environment.NewLine + Results[0]+Environment.NewLine+" "+Environment.NewLine+Tag[1]+ Environment.NewLine+Results[1]+Environment.NewLine+" "+ Environment.NewLine+Tag[2]+Environment.NewLine+Results[2];
+                Final += Tag[0] + Environment.NewLine + Results[0] + Environment.NewLine + " " + Environment.NewLine + Tag[1] + Environment.NewLine + Results[1] + Environment.NewLine + " " + Environment.NewLine + Tag[2] + Environment.NewLine + Results[2];
 
-                Output.Text = Final; 
-            }
+                Output.Text = Final;
+            }*/
+            
+        }
+
+        private void materialRaisedButton2_Click_1(object sender, EventArgs e)
+        {
+            User_Text.Text = richTextBox1.Text;
+            metroComboBox1.SelectedIndex = 1;
+            metroComboBox3.SelectedIndex = 1;
+            Output.Text = Translations.Google_Translate(User_Text.Text, "auto", "zh");
         }
     }
     public class Result

@@ -13,7 +13,7 @@ namespace Prototype
     {
         public static string GetRedirectedURL(string url)
         {
-
+            
                 HttpWebRequest WebR = (HttpWebRequest)WebRequest.Create(url);
                 HttpWebResponse WebP = (HttpWebResponse)WebR.GetResponse();
                 WebP.Close();

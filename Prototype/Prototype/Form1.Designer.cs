@@ -34,7 +34,6 @@
             this.materialTabSelector1 = new MaterialSkin.Controls.MaterialTabSelector();
             this.materialTabControl1 = new MaterialSkin.Controls.MaterialTabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.button2 = new System.Windows.Forms.Button();
             this.metroComboBox5 = new MetroFramework.Controls.MetroComboBox();
             this.metroComboBox4 = new MetroFramework.Controls.MetroComboBox();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
@@ -147,7 +146,6 @@
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.button2);
             this.tabPage1.Controls.Add(this.metroComboBox5);
             this.tabPage1.Controls.Add(this.metroComboBox4);
             this.tabPage1.Controls.Add(this.statusStrip1);
@@ -171,17 +169,6 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Main";
             this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(6, 344);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(96, 23);
-            this.button2.TabIndex = 38;
-            this.button2.Text = "Auto Detect";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click_1);
             // 
             // metroComboBox5
             // 
@@ -209,7 +196,6 @@
             this.metroComboBox4.FormattingEnabled = true;
             this.metroComboBox4.ItemHeight = 23;
             this.metroComboBox4.Items.AddRange(new object[] {
-            "Multiple Dictionary Analysis",
             "Owl Dictionary",
             "Urban Dictionary"});
             this.metroComboBox4.Location = new System.Drawing.Point(273, 6);
@@ -475,8 +461,9 @@
             this.materialRaisedButton2.Primary = true;
             this.materialRaisedButton2.Size = new System.Drawing.Size(535, 36);
             this.materialRaisedButton2.TabIndex = 27;
-            this.materialRaisedButton2.Text = "Translate Retrived English Texts to Main Menu";
+            this.materialRaisedButton2.Text = "Translate User Manual in Main Menu";
             this.materialRaisedButton2.UseVisualStyleBackColor = true;
+            this.materialRaisedButton2.Click += new System.EventHandler(this.materialRaisedButton2_Click_1);
             // 
             // tabPage3
             // 
@@ -885,6 +872,5 @@
         private MetroFramework.Controls.MetroComboBox metroComboBox5;
         private System.Windows.Forms.WebBrowser webBrowser3;
         private System.Windows.Forms.RichTextBox richTextBox2;
-        private System.Windows.Forms.Button button2;
     }
 }

@@ -273,6 +273,10 @@ namespace Prototype
                 {
                     return "Unexpected Error! Check your proxy server and input.\r\n\r\nDo you mean: " + spelling.Correct(User_Term);
                 }
+                else if (url == "http://:")
+                {
+                    return "No proxy being assigned please check your address";
+                }
                 else
                 {
                     return "Unexpected Error!\r\n\r\nDo you mean: " + spelling.Correct(User_Term);
