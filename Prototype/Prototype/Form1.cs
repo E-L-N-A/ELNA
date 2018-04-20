@@ -283,7 +283,19 @@ namespace Prototype
 
         private void metroCheckBox2_CheckedChanged(object sender, EventArgs e)
         {
-
+            
+            if (metroCheckBox2.Checked)
+            {
+                metroComboBox4.Items.Add("Auto");
+                metroComboBox4.SelectedIndex = 2;
+                metroComboBox4.Enabled = false;
+            }
+            else
+            {
+                metroComboBox4.Enabled = true;
+                metroComboBox4.SelectedIndex=0;
+                metroComboBox4.Items.RemoveAt(2);
+            }
         }
 
         private void metroCheckBox3_CheckedChanged(object sender, EventArgs e)
