@@ -288,9 +288,22 @@ namespace Prototype
                 using (Stream str = OwlDictionary.OpenRead(SearchLink))
                 using (StreamReader sr = new StreamReader(str))
                 {
+                    SpellingCorrector spelling = new SpellingCorrector();
                     JsonSerializer js = new JsonSerializer();
                     DataTable Cod = js.Deserialize<DataTable>(new JsonTextReader(sr));
-                    return Cod.Rows[0]["definition"].ToString();
+                    string result = "";
+                    for(int i = 0; i < Cod.Rows.Count; i++)
+                    {
+                        int cata = i + 1;
+                        string def = Cod.Rows[i]["definition"].ToString();
+                        def = Regex.Replace(def, "<.*?>", string.Empty);
+                        result += cata + " - " + def +Environment.NewLine+" "+Environment.NewLine ; 
+                    }
+                    if (string.IsNullOrEmpty(result))
+                    {
+                       result= "Term does not exist. \r\n\r\nDo you mean: " + spelling.Correct(Term);
+                    }
+                    return result;
                 }
             }
             catch
