@@ -63,7 +63,7 @@ namespace Prototype
             }
 
             if (candidates.Count > 0)
-                return candidates.OrderByDescending(x => x.Value).First().Key;
+                return "\r\n\r\nDo you mean: " + candidates.OrderByDescending(x => x.Value).First().Key;
 
             // known_edits2()
             foreach (string item in list)
@@ -75,7 +75,7 @@ namespace Prototype
                 }
             }
 
-            return (candidates.Count > 0) ? candidates.OrderByDescending(x => x.Value).First().Key : "";
+            return (candidates.Count > 0) ? "\r\n\r\nDo you mean: " + candidates.OrderByDescending(x => x.Value).First().Key : "";
         }
 
         private List<string> Edits(string word)

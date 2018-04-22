@@ -271,11 +271,11 @@ namespace Prototype
                 SpellingCorrector spelling = new SpellingCorrector();
                 if (url != "http://:")
                 {
-                    return "Check your proxy server and input.\r\n\r\nDo you mean: " + spelling.Correct(User_Term);
+                    return "Check your proxy server and input." + spelling.Correct(User_Term);
                 }
                 else
                 {
-                    return "No such a result, check your input and internet.\r\n\r\n(Use proxy to bypass the internet block if necessary).\r\n\r\nDo you mean: " + spelling.Correct(User_Term);
+                    return "No such a result, check your input and internet.\r\n\r\n(Use proxy to bypass the internet block if necessary)." + spelling.Correct(User_Term);
                 }
             }
         }
@@ -301,7 +301,7 @@ namespace Prototype
                     }
                     if (string.IsNullOrEmpty(result))
                     {
-                       result= "Term does not exist. \r\n\r\nDo you mean: " + spelling.Correct(Term);
+                       result= "Term does not exist. " + spelling.Correct(Term);
                     }
                     return result;
                 }
@@ -309,7 +309,7 @@ namespace Prototype
             catch
             {
                 SpellingCorrector spelling = new SpellingCorrector();
-                return "Term does not exist. \r\n\r\nDo you mean: " + spelling.Correct(Term);
+                return "Term does not exist. " + spelling.Correct(Term);
             }
 
         }
@@ -359,7 +359,7 @@ namespace Prototype
             catch
             {
                 SpellingCorrector spelling = new SpellingCorrector();
-                return "Term does not exist. \r\n\r\nDo you mean: " + spelling.Correct(Term);
+                return "Term does not exist. " + spelling.Correct(Term);
             }
 
         }
@@ -393,7 +393,7 @@ namespace Prototype
                     page = page.Remove(0, page.IndexOf("<ul class=\"didyoumean\">")).Replace("<ul class=\"didyoumean\">", "");
                     int last = page.IndexOf("</ul>");
                     page = page.Remove(last, page.Length - last).Replace("  ", "");
-                    page = "Did you mean:\r\n\r\n" + Regex.Replace(page, "<.*?>", String.Empty);
+                    page = "No Info\r\n\r\n------------------------------------------------------------- Did you mean:\r\n\r\n" + Regex.Replace(page, "<.*?>", String.Empty);
                 }
                 else
                 {

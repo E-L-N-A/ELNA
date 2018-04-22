@@ -704,7 +704,7 @@
             // checkBox2
             // 
             this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(137, 363);
+            this.checkBox2.Location = new System.Drawing.Point(246, 363);
             this.checkBox2.Name = "checkBox2";
             this.checkBox2.Size = new System.Drawing.Size(180, 20);
             this.checkBox2.TabIndex = 12;
@@ -718,7 +718,7 @@
             this.button8.ForeColor = System.Drawing.SystemColors.Desktop;
             this.button8.Location = new System.Drawing.Point(3, 358);
             this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(128, 29);
+            this.button8.Size = new System.Drawing.Size(237, 29);
             this.button8.TabIndex = 11;
             this.button8.Text = "Support ELNA";
             this.button8.UseVisualStyleBackColor = true;

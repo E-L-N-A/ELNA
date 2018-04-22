@@ -72,7 +72,7 @@ namespace Prototype
             {
                 string temp;
                 List<string> Results = new List<string>();
-                string[] Tag = new string[] { "[General]\r\n", "-------------------------------------------------------------\r\n[English Definition]\r\n", "-------------------------------------------------------------\r\n[Slang]\r\n", "-------------------------------------------------------------\r\n[Idiom]\r\n"};
+                string[] Tag = new string[] { "[General]\r\n", "-------------------------------------------------------------\r\n[English Definition]\r\n", "-------------------------------------------------------------\r\n[Slang/Meme]\r\n", "-------------------------------------------------------------\r\n[Idiom]\r\n"};
                 string Final = "";
                 string WikiInfo = "";
 
@@ -89,7 +89,8 @@ namespace Prototype
                 }
                 catch (Exception)
                 {
-                    WikiInfo = "No Information related to " +User_Text.Text;
+                    SpellingCorrector spelling = new SpellingCorrector();
+                    WikiInfo = "No Information related to " +User_Text.Text+ spelling.Correct(User_Text.Text);
                 }
 
                 if (metroCheckBox2.Checked)
