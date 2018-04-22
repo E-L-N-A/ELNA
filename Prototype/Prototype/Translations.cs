@@ -271,15 +271,11 @@ namespace Prototype
                 SpellingCorrector spelling = new SpellingCorrector();
                 if (url != "http://:")
                 {
-                    return "Unexpected Error! Check your proxy server and input.\r\n\r\nDo you mean: " + spelling.Correct(User_Term);
-                }
-                else if (url == "http://:")
-                {
-                    return "No proxy being assigned please check your address";
+                    return "Check your proxy server and input.\r\n\r\nDo you mean: " + spelling.Correct(User_Term);
                 }
                 else
                 {
-                    return "Unexpected Error!\r\n\r\nDo you mean: " + spelling.Correct(User_Term);
+                    return "No such a result, check your input and internet.\r\n\r\n(Use proxy to bypass the internet block if necessary).\r\n\r\nDo you mean: " + spelling.Correct(User_Term);
                 }
             }
         }
@@ -354,7 +350,53 @@ namespace Prototype
             }
 
         }
+        public static string LongmanDictionary(string idiom)
+        {
+            try
+            {
+                string page = null;
+                try
+                {
+                    WebClient wc = new WebClient();
+                    wc.Headers.Add(HttpRequestHeader.UserAgent, "Mozilla/5.0");
+                    wc.Headers.Add(HttpRequestHeader.AcceptCharset, "UTF-8");
+                    wc.Encoding = Encoding.UTF8;
+                    idiom = idiom.Replace(" ", "-");
+                    string url = string.Format(@"https://www.ldoceonline.com/dictionary/{0}",
+                                                idiom);
+                    Console.WriteLine(url);
+                    page = wc.DownloadString(url);
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.ToString());
+                    return null;
+                }
+                if (page.IndexOf("speaker") >-1)
+                {
+                    page = "The input is not an idiom";
+                }else if(page.IndexOf("Did you mean") > -1)
+                {
+                    page = page.Remove(0, page.IndexOf("<ul class=\"didyoumean\">")).Replace("<ul class=\"didyoumean\">", "");
+                    int last = page.IndexOf("</ul>");
+                    page = page.Remove(last, page.Length - last).Replace("  ", "");
+                    page = "Did you mean:\r\n\r\n" + Regex.Replace(page, "<.*?>", String.Empty);
+                }
+                else
+                {
+                    page = page.Remove(0, page.IndexOf("<span class=\"ACTIV\">")).Replace("<span class=\"ACTIV\">SUCCESSFUL", "");
+                    int last = page.IndexOf("<span class=\"Tail\">");
+                    page = page.Remove(last, page.Length - last);
+                    page = Regex.Replace(page, "<.*?>", String.Empty);
+                }
+                return page;
+            }
+            catch (Exception)
+            {
+                return "";
 
+            }
+        }
 
         public class UrbanResult
         {

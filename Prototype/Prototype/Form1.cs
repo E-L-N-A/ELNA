@@ -72,7 +72,7 @@ namespace Prototype
             {
                 string temp;
                 List<string> Results = new List<string>();
-                string[] Tag = new string[] { "General:", "English Definition:", "Slang:" };
+                string[] Tag = new string[] { "[General]\r\n", "-------------------------------------------------------------\r\n[English Definition]\r\n", "-------------------------------------------------------------\r\n[Slang]\r\n", "-------------------------------------------------------------\r\n[Idiom]\r\n"};
                 string Final = "";
                 string WikiInfo = "";
 
@@ -84,24 +84,27 @@ namespace Prototype
                         Search_Link = WikiDefaultLink + User;
                         temp = URL.GetPageTitle(URL.GetRedirectedURL(Search_Link));
                         temp = temp.Substring(0, temp.IndexOf("-"));
-                        WikiInfo = "[" + Translations.Wikipedia_Source(temp) + "]";
+                        WikiInfo = Translations.Wikipedia_Source(temp);
                     }
                 }
                 catch (Exception)
                 {
-                    WikiInfo = "[ No Information related to " +User_Text.Text+" ]";
+                    WikiInfo = "No Information related to " +User_Text.Text;
                 }
 
                 if (metroCheckBox2.Checked)
                 {
-                    string Definition = "[" + Translations.DefinitionFromOwlDictionary(User_Text.Text.ToLower()) + "]";
-                    string Slang = "[" + Translations.UrbanDictionary(User_Text.Text, "http://" + textBox2.Text + ":" + textBox3.Text) + "]";
-
+                    string Definition = Translations.DefinitionFromOwlDictionary(User_Text.Text.ToLower()) ;
+                    string Slang = Translations.UrbanDictionary(User_Text.Text, "http://" + textBox2.Text + ":" + textBox3.Text) ;
+                    string idiom = Translations.LongmanDictionary(User_Text.Text);
+                    WikiInfo = WikiInfo.IndexOf("No Information related to") > -1 ? "" : WikiInfo;
+                    Definition = Definition.IndexOf("Term does not exist.") > -1 ? "" : Definition;
+                    Slang = Slang.IndexOf("No such a result") > -1 ? "" : Slang;
                     Results.Add(WikiInfo);
                     Results.Add(Definition);
                     Results.Add(Slang);
-
-                    for (int i = 0; i < 3; i++)
+                    Results.Add(idiom);
+                    for (int i = 0; i < 4; i++)
                     {
                         if (string.IsNullOrEmpty(Results[i]))
                         {
@@ -109,7 +112,7 @@ namespace Prototype
                         }
                     }
 
-                    Final += Tag[0] + Environment.NewLine + Results[0] + Environment.NewLine + " " + Environment.NewLine + Tag[1] + Environment.NewLine + Results[1] + Environment.NewLine + " " + Environment.NewLine + Tag[2] + Environment.NewLine + Results[2];
+                    Final += Tag[0] + Environment.NewLine + Results[0] + Environment.NewLine + " " + Environment.NewLine + Tag[1] + Environment.NewLine + Results[1] + Environment.NewLine + " " + Environment.NewLine + Tag[2] + Environment.NewLine + Results[2] + Environment.NewLine + " " + Environment.NewLine + Tag[3] + Environment.NewLine + Results[3];
 
                     Output.Text = Final;
                 }
@@ -220,13 +223,58 @@ namespace Prototype
                         }
                         else
                         {
-                            if (metroComboBox4.SelectedIndex == 1)
+                            if (metroComboBox4.SelectedIndex == 2)
                             {
                                 Output.Text = Translations.UrbanDictionary(User_Text.Text, "http://" + textBox2.Text + ":" + textBox3.Text);
                             }
-                            else if (metroComboBox4.SelectedIndex == 0)
+                            else if (metroComboBox4.SelectedIndex == 1)
                             {
                                 Output.Text = Translations.DefinitionFromOwlDictionary(User_Text.Text.ToLower());
+                            }
+                            else if(metroComboBox4.SelectedIndex == 0)
+                            {
+                                Output.Text = "";
+                                materialRaisedButton3.Visible = false;
+                                materialRaisedButton4.Visible = false;
+                                materialRaisedButton5.Visible = false;
+                                materialRaisedButton8.Visible = false;
+                                materialRaisedButton9.Visible = false;
+                                if (metroCheckBox8.Checked)
+                                {
+                                    webBrowser1.Navigate("https://translate.google.com/#auto/zh-CN/" + User_Text.Text);
+                                }
+                                try
+                                {
+                                    string temp;
+                                    if (!(string.IsNullOrEmpty(User_Text.Text)))
+                                    {
+                                        Output.ForeColor = System.Drawing.Color.Black;
+                                        string User = Translations.Auto_Capitalization(User_Text.Text);
+                                        Search_Link = WikiDefaultLink + User;
+                                        //Search_Link = Translations.Auto_Capitalization(Search_Link);
+                                        temp = URL.GetPageTitle(URL.GetRedirectedURL(Search_Link));
+                                        Console.WriteLine(temp);
+                                        temp = temp.Substring(0, temp.IndexOf("-"));
+                                        //Translations.Auto_Capitalization(temp);
+                                        //temp = temp.Replace(" ", "_");
+                                        Output.Text = Translations.Wikipedia_Source(temp);
+                                        //User_Query = User_Text.Text.Replace(" ", "_");
+                                        materialRaisedButton6.Visible = true;
+                                        Output.ForeColor = System.Drawing.Color.Black;
+
+                                    }
+                                    else
+                                    {
+                                        MessageBox.Show("No Input Detected");
+                                    }
+                                }
+                                catch (Exception)
+                                {
+
+                                    Output.ForeColor = System.Drawing.Color.Red;
+                                    Output.Text = "Error : Wikipedia does not have the information you requested";
+
+                                }
                             }
                         }
                     }
@@ -261,7 +309,6 @@ namespace Prototype
             metroComboBox3.Visible = metroComboBox1.SelectedIndex == 0 ? false : true;
             metroComboBox5.Visible = metroComboBox1.SelectedIndex == 0 ? false : true;
             metroComboBox4.Visible = metroComboBox1.SelectedIndex == 0 ? true : false;
-            materialRaisedButton7.Visible = metroComboBox1.SelectedIndex == 0 ? true:false;
             materialRaisedButton6.Visible = false;
             Output.Text = "";
             materialRaisedButton3.Visible = false;
@@ -287,14 +334,14 @@ namespace Prototype
             if (metroCheckBox2.Checked)
             {
                 metroComboBox4.Items.Add("Auto");
-                metroComboBox4.SelectedIndex = 2;
+                metroComboBox4.SelectedIndex = 3;
                 metroComboBox4.Enabled = false;
             }
             else
             {
                 metroComboBox4.Enabled = true;
                 metroComboBox4.SelectedIndex=0;
-                metroComboBox4.Items.RemoveAt(2);
+                metroComboBox4.Items.RemoveAt(3);
             }
         }
 
@@ -498,52 +545,10 @@ namespace Prototype
             {
                 materialRaisedButton5.Visible = true;
             }
-        }
-        private void materialRaisedButton7_Click(object sender, EventArgs e)
-        {
-            Output.Text = "";
-            materialRaisedButton3.Visible = false;
-            materialRaisedButton4.Visible = false;
-            materialRaisedButton5.Visible = false;
-            materialRaisedButton8.Visible = false;
-            materialRaisedButton9.Visible = false;
-            if (metroCheckBox8.Checked)
+            if(metroComboBox4.SelectedIndex != 0)
             {
-                webBrowser1.Navigate("https://translate.google.com/#auto/zh-CN/" + User_Text.Text);
+                materialRaisedButton6.Visible = false;
             }
-            try
-            {
-                string temp;
-                if (!(string.IsNullOrEmpty(User_Text.Text)))
-                {
-                    Output.ForeColor = System.Drawing.Color.Black;
-                    string User = Translations.Auto_Capitalization(User_Text.Text);
-                    Search_Link = WikiDefaultLink + User;
-                    //Search_Link = Translations.Auto_Capitalization(Search_Link);
-                    temp = URL.GetPageTitle(URL.GetRedirectedURL(Search_Link));
-                    Console.WriteLine(temp);
-                    temp = temp.Substring(0, temp.IndexOf("-"));
-                    //Translations.Auto_Capitalization(temp);
-                    //temp = temp.Replace(" ", "_");
-                    Output.Text = Translations.Wikipedia_Source(temp);
-                    //User_Query = User_Text.Text.Replace(" ", "_");
-                    materialRaisedButton6.Visible = true;
-                    Output.ForeColor = System.Drawing.Color.Black;
-
-                }
-                else
-                {
-                    MessageBox.Show("No Input Detected");
-                }
-            }
-            catch (Exception)
-            {
-
-                Output.ForeColor = System.Drawing.Color.Red;
-                Output.Text = "Error : Wikipedia does not have the information you requested";
-
-            }
-            
         }
         private void materialRaisedButton6_Click_1(object sender, EventArgs e)
         {

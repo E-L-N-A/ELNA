@@ -40,7 +40,6 @@
             this.materialRaisedButton9 = new MaterialSkin.Controls.MaterialRaisedButton();
             this.materialRaisedButton8 = new MaterialSkin.Controls.MaterialRaisedButton();
             this.materialRaisedButton6 = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.materialRaisedButton7 = new MaterialSkin.Controls.MaterialRaisedButton();
             this.materialRaisedButton5 = new MaterialSkin.Controls.MaterialRaisedButton();
             this.materialRaisedButton4 = new MaterialSkin.Controls.MaterialRaisedButton();
             this.materialRaisedButton3 = new MaterialSkin.Controls.MaterialRaisedButton();
@@ -100,7 +99,7 @@
             "Translation Mode"});
             this.metroComboBox1.Location = new System.Drawing.Point(1, 6);
             this.metroComboBox1.Name = "metroComboBox1";
-            this.metroComboBox1.Size = new System.Drawing.Size(152, 29);
+            this.metroComboBox1.Size = new System.Drawing.Size(209, 29);
             this.metroComboBox1.TabIndex = 11;
             this.metroComboBox1.UseSelectable = true;
             this.metroComboBox1.SelectedIndexChanged += new System.EventHandler(this.metroComboBox1_SelectedIndexChanged);
@@ -109,7 +108,7 @@
             // 
             this.materialRaisedButton1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.materialRaisedButton1.Depth = 0;
-            this.materialRaisedButton1.Location = new System.Drawing.Point(159, 6);
+            this.materialRaisedButton1.Location = new System.Drawing.Point(216, 6);
             this.materialRaisedButton1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialRaisedButton1.Name = "materialRaisedButton1";
             this.materialRaisedButton1.Primary = true;
@@ -152,7 +151,6 @@
             this.tabPage1.Controls.Add(this.materialRaisedButton9);
             this.tabPage1.Controls.Add(this.materialRaisedButton8);
             this.tabPage1.Controls.Add(this.materialRaisedButton6);
-            this.tabPage1.Controls.Add(this.materialRaisedButton7);
             this.tabPage1.Controls.Add(this.materialRaisedButton5);
             this.tabPage1.Controls.Add(this.materialRaisedButton4);
             this.tabPage1.Controls.Add(this.materialRaisedButton3);
@@ -196,6 +194,7 @@
             this.metroComboBox4.FormattingEnabled = true;
             this.metroComboBox4.ItemHeight = 23;
             this.metroComboBox4.Items.AddRange(new object[] {
+            "Wikipedia",
             "Owl Dictionary",
             "Urban Dictionary"});
             this.metroComboBox4.Location = new System.Drawing.Point(273, 6);
@@ -260,20 +259,6 @@
             this.materialRaisedButton6.Text = "View Full Content";
             this.materialRaisedButton6.UseVisualStyleBackColor = true;
             this.materialRaisedButton6.Click += new System.EventHandler(this.materialRaisedButton6_Click_1);
-            // 
-            // materialRaisedButton7
-            // 
-            this.materialRaisedButton7.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.materialRaisedButton7.Depth = 0;
-            this.materialRaisedButton7.Location = new System.Drawing.Point(216, 6);
-            this.materialRaisedButton7.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialRaisedButton7.Name = "materialRaisedButton7";
-            this.materialRaisedButton7.Primary = true;
-            this.materialRaisedButton7.Size = new System.Drawing.Size(54, 29);
-            this.materialRaisedButton7.TabIndex = 30;
-            this.materialRaisedButton7.Text = "WIKI";
-            this.materialRaisedButton7.UseVisualStyleBackColor = true;
-            this.materialRaisedButton7.Click += new System.EventHandler(this.materialRaisedButton7_Click);
             // 
             // materialRaisedButton5
             // 
@@ -852,7 +837,6 @@
         private MetroFramework.Controls.MetroLabel metroLabel3;
         private MetroFramework.Controls.MetroLabel metroLabel4;
         private MetroFramework.Controls.MetroButton metroButton1;
-        private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton7;
         private System.Windows.Forms.Panel panel1;
         private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton6;
         private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton9;
