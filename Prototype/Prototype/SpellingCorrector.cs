@@ -45,14 +45,14 @@ namespace Prototype
         public string Correct(string word)
         {
             if (string.IsNullOrEmpty(word))
-                return word;
-
+                //return word;
+                return "";
             word = word.ToLower();
 
             // known()
             if (_dictionary.ContainsKey(word))
-                return word;
-
+                //return word;
+                return "";
             List<String> list = Edits(word);
             Dictionary<string, int> candidates = new Dictionary<string, int>();
 
