@@ -654,6 +654,7 @@
             this.Controls.Add(this.materialTabControl1);
             this.Name = "Form6";
             this.Text = "Translation other than traditional format (TOTTF)";
+            this.TopMost = true;
             this.Load += new System.EventHandler(this.Form5_Load);
             this.materialTabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);

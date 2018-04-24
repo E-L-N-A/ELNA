@@ -70,6 +70,7 @@
             this.Name = "Form2";
             this.ShowIcon = false;
             this.Text = "Wiki";
+            this.TopMost = true;
             this.Load += new System.EventHandler(this.Form6_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

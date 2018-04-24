@@ -49,5 +49,53 @@ namespace Prototype
                 return "";
             }
         }
+        public static string getRandomProxy()
+        {
+            try
+            {
+                string page = null;
+                try
+                {
+                    WebClient wc = new WebClient();
+                    wc.Headers.Add(HttpRequestHeader.UserAgent, "Mozilla/5.0");
+                    wc.Headers.Add(HttpRequestHeader.AcceptCharset, "UTF-8");
+                    wc.Encoding = Encoding.UTF8;
+
+                    string url = string.Format(@"https://webcache.googleusercontent.com/search?q=cache:{0}",
+                                                "https://www.us-proxy.org");
+                    Console.WriteLine(url);
+                    page = wc.DownloadString(url);
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.ToString());
+                    return null;
+                }
+
+                page = page.Remove(0, page.IndexOf("Last Checked</th></tr></thead><tbody><tr><td>")).Replace("Last Checked</th></tr></thead><tbody><tr><td>", "");
+                int last = page.IndexOf("</td></tr></tbody><tfoot>");
+                page = page.Remove(last, page.Length - last);
+                page = page.Replace("</td><td>", ":");
+                MatchCollection matches = Regex.Matches(page, @"\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}(?=[^\d])\s*:?\s*(\d{2,5})");
+                //return matches.Count.ToString();
+                Random rnd = new Random();
+                int randomInt = rnd.Next(0, 19);
+                Console.Write(randomInt);
+                for (int i = 0; i < matches.Count; i++)
+                {   //loop matches
+                    Match match = matches[i];
+                    //Console.Write(" "+match.Index+" ");
+                    if (i == randomInt)
+                    {
+                        return match.Value;
+                    }
+                }
+                return "Unexpected Error Occured";
+            }
+            catch (Exception)
+            {
+                return "Unexpected Error Occured";
+            }
+        }
     }
 }

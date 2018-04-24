@@ -56,6 +56,8 @@
             this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
             this.materialRaisedButton2 = new MaterialSkin.Controls.MaterialRaisedButton();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.metroButton3 = new MetroFramework.Controls.MetroButton();
+            this.metroButton2 = new MetroFramework.Controls.MetroButton();
             this.button1 = new System.Windows.Forms.Button();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.metroLabel8 = new MetroFramework.Controls.MetroLabel();
@@ -452,6 +454,8 @@
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.metroButton3);
+            this.tabPage3.Controls.Add(this.metroButton2);
             this.tabPage3.Controls.Add(this.button1);
             this.tabPage3.Controls.Add(this.textBox3);
             this.tabPage3.Controls.Add(this.metroLabel8);
@@ -477,6 +481,26 @@
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Settings";
             this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // metroButton3
+            // 
+            this.metroButton3.Location = new System.Drawing.Point(408, 341);
+            this.metroButton3.Name = "metroButton3";
+            this.metroButton3.Size = new System.Drawing.Size(53, 23);
+            this.metroButton3.TabIndex = 36;
+            this.metroButton3.Text = "Empty";
+            this.metroButton3.UseSelectable = true;
+            this.metroButton3.Click += new System.EventHandler(this.metroButton3_Click);
+            // 
+            // metroButton2
+            // 
+            this.metroButton2.Location = new System.Drawing.Point(280, 341);
+            this.metroButton2.Name = "metroButton2";
+            this.metroButton2.Size = new System.Drawing.Size(122, 23);
+            this.metroButton2.TabIndex = 35;
+            this.metroButton2.Text = "Get Random Proxy";
+            this.metroButton2.UseSelectable = true;
+            this.metroButton2.Click += new System.EventHandler(this.metroButton2_Click);
             // 
             // button1
             // 
@@ -526,6 +550,7 @@
             this.textBox2.Size = new System.Drawing.Size(135, 22);
             this.textBox2.TabIndex = 30;
             this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // label3
             // 
@@ -785,6 +810,7 @@
             this.Padding = new System.Windows.Forms.Padding(22, 60, 22, 20);
             this.Sizable = false;
             this.Text = "English Language Network Assistant (ELNA)";
+            this.TopMost = true;
             this.TransparencyKey = System.Drawing.Color.DeepSkyBlue;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -856,5 +882,7 @@
         private MetroFramework.Controls.MetroComboBox metroComboBox5;
         private System.Windows.Forms.WebBrowser webBrowser3;
         private System.Windows.Forms.RichTextBox richTextBox2;
+        private MetroFramework.Controls.MetroButton metroButton3;
+        private MetroFramework.Controls.MetroButton metroButton2;
     }
 }
