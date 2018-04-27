@@ -82,6 +82,7 @@
             this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.webBrowser2 = new System.Windows.Forms.WebBrowser();
             this.webBrowser3 = new System.Windows.Forms.WebBrowser();
+            this.label4 = new System.Windows.Forms.Label();
             this.materialTabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -703,6 +704,7 @@
             // 
             // tabPage4
             // 
+            this.tabPage4.Controls.Add(this.label4);
             this.tabPage4.Controls.Add(this.richTextBox2);
             this.tabPage4.Controls.Add(this.label1);
             this.tabPage4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -762,6 +764,17 @@
             this.webBrowser3.TabIndex = 27;
             this.webBrowser3.Url = new System.Uri("https://www.bing.com/translator", System.UriKind.Absolute);
             this.webBrowser3.Visible = false;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.Gold;
+            this.label4.Location = new System.Drawing.Point(3, 366);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(306, 16);
+            this.label4.TabIndex = 14;
+            this.label4.Text = "2018 Capstone Project Presentation Winner";
             // 
             // Form1
             // 
@@ -855,5 +868,6 @@
         private System.Windows.Forms.RichTextBox richTextBox2;
         private MetroFramework.Controls.MetroButton metroButton3;
         private MetroFramework.Controls.MetroButton metroButton2;
+        private System.Windows.Forms.Label label4;
     }
 }
