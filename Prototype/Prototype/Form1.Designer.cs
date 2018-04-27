@@ -77,12 +77,12 @@
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.metroComboBox2 = new MetroFramework.Controls.MetroComboBox();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.label4 = new System.Windows.Forms.Label();
             this.richTextBox2 = new System.Windows.Forms.RichTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.webBrowser2 = new System.Windows.Forms.WebBrowser();
             this.webBrowser3 = new System.Windows.Forms.WebBrowser();
-            this.label4 = new System.Windows.Forms.Label();
             this.materialTabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -715,6 +715,17 @@
             this.tabPage4.Text = "About";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.Gold;
+            this.label4.Location = new System.Drawing.Point(3, 366);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(265, 16);
+            this.label4.TabIndex = 14;
+            this.label4.Text = "2018 Capstone Project Presentation Winner";
+            // 
             // richTextBox2
             // 
             this.richTextBox2.Location = new System.Drawing.Point(4, 3);
@@ -764,17 +775,6 @@
             this.webBrowser3.TabIndex = 27;
             this.webBrowser3.Url = new System.Uri("https://www.bing.com/translator", System.UriKind.Absolute);
             this.webBrowser3.Visible = false;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.Gold;
-            this.label4.Location = new System.Drawing.Point(3, 366);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(306, 16);
-            this.label4.TabIndex = 14;
-            this.label4.Text = "2018 Capstone Project Presentation Winner";
             // 
             // Form1
             // 
