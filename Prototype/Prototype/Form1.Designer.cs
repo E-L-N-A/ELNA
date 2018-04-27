@@ -78,8 +78,6 @@
             this.metroComboBox2 = new MetroFramework.Controls.MetroComboBox();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.richTextBox2 = new System.Windows.Forms.RichTextBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.button8 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.webBrowser2 = new System.Windows.Forms.WebBrowser();
@@ -706,8 +704,6 @@
             // tabPage4
             // 
             this.tabPage4.Controls.Add(this.richTextBox2);
-            this.tabPage4.Controls.Add(this.checkBox2);
-            this.tabPage4.Controls.Add(this.button8);
             this.tabPage4.Controls.Add(this.label1);
             this.tabPage4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
@@ -725,29 +721,6 @@
             this.richTextBox2.Size = new System.Drawing.Size(542, 349);
             this.richTextBox2.TabIndex = 13;
             this.richTextBox2.Text = resources.GetString("richTextBox2.Text");
-            // 
-            // checkBox2
-            // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(246, 363);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(180, 20);
-            this.checkBox2.TabIndex = 12;
-            this.checkBox2.Text = "Don\'t support after quitting";
-            this.checkBox2.UseVisualStyleBackColor = true;
-            // 
-            // button8
-            // 
-            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button8.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.button8.Location = new System.Drawing.Point(3, 358);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(237, 29);
-            this.button8.TabIndex = 11;
-            this.button8.Text = "Support ELNA";
-            this.button8.UseVisualStyleBackColor = true;
-            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // label1
             // 
@@ -877,8 +850,6 @@
         private MetroFramework.Controls.MetroLabel metroLabel8;
         private System.Windows.Forms.Button button1;
         private MetroFramework.Controls.MetroComboBox metroComboBox4;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.CheckBox checkBox2;
         private MetroFramework.Controls.MetroComboBox metroComboBox5;
         private System.Windows.Forms.WebBrowser webBrowser3;
         private System.Windows.Forms.RichTextBox richTextBox2;

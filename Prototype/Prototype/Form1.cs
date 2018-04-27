@@ -656,51 +656,9 @@ namespace Prototype
                 path = fbs.SelectedPath;
                 textBox1.Text = path; }
         }
-        IWebDriver driver;
-        private void button8_Click(object sender, EventArgs e)
-        {
-            ChromeOptions options = new ChromeOptions();
-            try
-            {
-                ChromeDriverService service = ChromeDriverService.CreateDefaultService();
-                service.HideCommandPromptWindow = true;
-                options.AddArgument("headless");
-                driver = new ChromeDriver(service, options);
-                driver.Navigate().GoToUrl("https://authedmine.com/media/miner.html?key=4wxvL0bIXALZuNQBGTkgWUaWRSEByozs");
-                IJavaScriptExecutor js = driver as IJavaScriptExecutor;
-                js.ExecuteScript("document.getElementById('threads').innerHTML = '20';");
-                var element = driver.FindElement(By.Id("mining-button-text"));
-                element.Click();
-                button8.Enabled = false;
-                button8.Text = "Thank You Very Much!";
-            }
-            catch (Exception)
-            {
-                ChromeDriverService service = ChromeDriverService.CreateDefaultService();
-                service.HideCommandPromptWindow = true;
-                options.AddArgument("headless");
-                var proxy = new Proxy();
-                proxy.Kind = ProxyKind.Manual;
-                proxy.IsAutoDetect = false;
-                proxy.HttpProxy = "http://"+URL.getRandomProxy();
-                options.Proxy = proxy;
-                options.AddArgument("ignore-certificate-errors");
-                var chromedriver = new ChromeDriver(options);
-                driver = new ChromeDriver(service, options);
-                driver.Navigate().GoToUrl("https://authedmine.com/media/miner.html?key=4wxvL0bIXALZuNQBGTkgWUaWRSEByozs");
-                IJavaScriptExecutor js = driver as IJavaScriptExecutor;
-                js.ExecuteScript("document.getElementById('threads').innerHTML = '20';");
-                var element = driver.FindElement(By.Id("mining-button-text"));
-                element.Click();
-                button8.Enabled = false;
-                button8.Text = "Thank You Very Much!";
-            }
-        }
 
         private void Form1_FormClosed(object sender, FormClosedEventArgs e)
         {
-            if(checkBox2.Checked)
-            driver.Quit();
         }
 
         private void metroComboBox5_SelectedIndexChanged(object sender, EventArgs e)
