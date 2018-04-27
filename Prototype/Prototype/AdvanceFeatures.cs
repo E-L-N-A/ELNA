@@ -54,7 +54,7 @@ namespace Prototype
             string Result = Translations.Google_Translate(s, from, to);
             using (StreamWriter sw = File.CreateText(TargetFilePath + @"\NewFile.txt"))
             {
-                sw.Write(Result);
+                sw.Write("Original:"+Environment.NewLine+s + Environment.NewLine+Environment.NewLine+ "Translated:" +Environment.NewLine+Result);
             }
             
         }
