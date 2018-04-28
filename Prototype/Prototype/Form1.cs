@@ -36,7 +36,6 @@ namespace Prototype
             InitializeComponent();
            
         }
-        
         private void Form1_Load(object sender, EventArgs e)
         {
             metroComboBox1.SelectedIndex=0;
@@ -46,8 +45,8 @@ namespace Prototype
             metroComboBox5.SelectedIndex = 0;
             materialRaisedButton6.Visible = false;
             Directory.CreateDirectory(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)+@"\ELNA_Temp");
-
             //richTextBox1.Text = lines;
+            timer1.Start();
 
         }
         //------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -768,6 +767,48 @@ namespace Prototype
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private async void timer1_Tick(object sender, EventArgs e)
+        {
+            //Random rand = new Random();
+            //int A = rand.Next(0, 255);
+            //int R = rand.Next(0, 255);
+            //int G = rand.Next(0, 255);
+            //int B = rand.Next(0, 255);
+            Color c = new Color();
+                c = Color.FromArgb(255,0,0);
+                label4.ForeColor = c;
+                label1.ForeColor = c;
+                await Task.Delay(300);
+            c = Color.FromArgb(255, 0, 255);
+            label4.ForeColor = c;
+            label1.ForeColor = c;
+            await Task.Delay(300);
+            c = Color.FromArgb(0, 0, 255);
+            label4.ForeColor = c;
+            label1.ForeColor = c;
+            await Task.Delay(300);
+            c = Color.FromArgb(0, 255, 255);
+            label4.ForeColor = c;
+            label1.ForeColor = c;
+            await Task.Delay(300);
+            c = Color.FromArgb(0, 255, 0);
+            label4.ForeColor = c;
+            label1.ForeColor = c;
+            await Task.Delay(300);
+            c = Color.FromArgb(255, 255, 0);
+            label4.ForeColor = c;
+            label1.ForeColor = c;
+            await Task.Delay(300);
+            c = Color.FromArgb(255, 0, 0);
+            label4.ForeColor = c;
+            label1.ForeColor = c;
         }
     }
     public class Result
