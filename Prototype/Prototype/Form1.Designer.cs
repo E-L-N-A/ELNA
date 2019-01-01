@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.metroComboBox1 = new MetroFramework.Controls.MetroComboBox();
             this.materialRaisedButton1 = new MaterialSkin.Controls.MaterialRaisedButton();
@@ -36,7 +37,6 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.metroComboBox5 = new MetroFramework.Controls.MetroComboBox();
             this.metroComboBox4 = new MetroFramework.Controls.MetroComboBox();
-            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.materialRaisedButton9 = new MaterialSkin.Controls.MaterialRaisedButton();
             this.materialRaisedButton8 = new MaterialSkin.Controls.MaterialRaisedButton();
             this.materialRaisedButton6 = new MaterialSkin.Controls.MaterialRaisedButton();
@@ -83,6 +83,7 @@
             this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.webBrowser2 = new System.Windows.Forms.WebBrowser();
             this.webBrowser3 = new System.Windows.Forms.WebBrowser();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.materialTabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -94,13 +95,13 @@
             // 
             this.metroComboBox1.ForeColor = System.Drawing.SystemColors.WindowText;
             this.metroComboBox1.FormattingEnabled = true;
-            this.metroComboBox1.ItemHeight = 23;
+            this.metroComboBox1.ItemHeight = 24;
             this.metroComboBox1.Items.AddRange(new object[] {
             "Dictionary Mode",
             "Translation Mode"});
             this.metroComboBox1.Location = new System.Drawing.Point(1, 6);
             this.metroComboBox1.Name = "metroComboBox1";
-            this.metroComboBox1.Size = new System.Drawing.Size(209, 29);
+            this.metroComboBox1.Size = new System.Drawing.Size(209, 30);
             this.metroComboBox1.TabIndex = 11;
             this.metroComboBox1.UseSelectable = true;
             this.metroComboBox1.SelectedIndexChanged += new System.EventHandler(this.metroComboBox1_SelectedIndexChanged);
@@ -148,7 +149,6 @@
             // 
             this.tabPage1.Controls.Add(this.metroComboBox5);
             this.tabPage1.Controls.Add(this.metroComboBox4);
-            this.tabPage1.Controls.Add(this.statusStrip1);
             this.tabPage1.Controls.Add(this.materialRaisedButton9);
             this.tabPage1.Controls.Add(this.materialRaisedButton8);
             this.tabPage1.Controls.Add(this.materialRaisedButton6);
@@ -161,10 +161,10 @@
             this.tabPage1.Controls.Add(this.User_Text);
             this.tabPage1.Controls.Add(this.metroComboBox1);
             this.tabPage1.Controls.Add(this.materialRaisedButton1);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(563, 416);
+            this.tabPage1.Size = new System.Drawing.Size(563, 413);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Main";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -174,7 +174,7 @@
             this.metroComboBox5.FontWeight = MetroFramework.MetroComboBoxWeight.Bold;
             this.metroComboBox5.ForeColor = System.Drawing.SystemColors.WindowText;
             this.metroComboBox5.FormattingEnabled = true;
-            this.metroComboBox5.ItemHeight = 23;
+            this.metroComboBox5.ItemHeight = 24;
             this.metroComboBox5.Items.AddRange(new object[] {
             "Google",
             "Bing",
@@ -182,7 +182,7 @@
             "Multiple"});
             this.metroComboBox5.Location = new System.Drawing.Point(273, 6);
             this.metroComboBox5.Name = "metroComboBox5";
-            this.metroComboBox5.Size = new System.Drawing.Size(99, 29);
+            this.metroComboBox5.Size = new System.Drawing.Size(99, 30);
             this.metroComboBox5.TabIndex = 37;
             this.metroComboBox5.UseSelectable = true;
             this.metroComboBox5.Visible = false;
@@ -193,25 +193,17 @@
             this.metroComboBox4.FontWeight = MetroFramework.MetroComboBoxWeight.Bold;
             this.metroComboBox4.ForeColor = System.Drawing.SystemColors.WindowText;
             this.metroComboBox4.FormattingEnabled = true;
-            this.metroComboBox4.ItemHeight = 23;
+            this.metroComboBox4.ItemHeight = 24;
             this.metroComboBox4.Items.AddRange(new object[] {
             "Wikipedia",
             "Owl Dictionary",
             "Urban Dictionary"});
             this.metroComboBox4.Location = new System.Drawing.Point(273, 6);
             this.metroComboBox4.Name = "metroComboBox4";
-            this.metroComboBox4.Size = new System.Drawing.Size(283, 29);
+            this.metroComboBox4.Size = new System.Drawing.Size(283, 30);
             this.metroComboBox4.TabIndex = 36;
             this.metroComboBox4.UseSelectable = true;
             this.metroComboBox4.SelectedIndexChanged += new System.EventHandler(this.metroComboBox4_SelectedIndexChanged);
-            // 
-            // statusStrip1
-            // 
-            this.statusStrip1.Location = new System.Drawing.Point(3, 391);
-            this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(557, 22);
-            this.statusStrip1.TabIndex = 34;
-            this.statusStrip1.Text = "statusStrip1";
             // 
             // materialRaisedButton9
             // 
@@ -316,7 +308,7 @@
             this.label5.ForeColor = System.Drawing.Color.DodgerBlue;
             this.label5.Location = new System.Drawing.Point(3, 376);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(220, 18);
+            this.label5.Size = new System.Drawing.Size(275, 24);
             this.label5.TabIndex = 23;
             this.label5.Text = "Current Assistant Mode: Normal";
             // 
@@ -374,10 +366,10 @@
             this.tabPage2.Controls.Add(this.metroLabel3);
             this.tabPage2.Controls.Add(this.metroLabel4);
             this.tabPage2.Controls.Add(this.materialRaisedButton2);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(563, 416);
+            this.tabPage2.Size = new System.Drawing.Size(563, 413);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Text Recognition";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -407,7 +399,7 @@
             this.metroLabel6.AutoSize = true;
             this.metroLabel6.Location = new System.Drawing.Point(21, 80);
             this.metroLabel6.Name = "metroLabel6";
-            this.metroLabel6.Size = new System.Drawing.Size(188, 19);
+            this.metroLabel6.Size = new System.Drawing.Size(197, 20);
             this.metroLabel6.TabIndex = 32;
             this.metroLabel6.Text = "3. Existing audio file translation";
             // 
@@ -416,7 +408,7 @@
             this.metroLabel5.AutoSize = true;
             this.metroLabel5.Location = new System.Drawing.Point(21, 61);
             this.metroLabel5.Name = "metroLabel5";
-            this.metroLabel5.Size = new System.Drawing.Size(149, 19);
+            this.metroLabel5.Size = new System.Drawing.Size(155, 20);
             this.metroLabel5.TabIndex = 31;
             this.metroLabel5.Text = "2. Image text translation";
             // 
@@ -425,7 +417,7 @@
             this.metroLabel3.AutoSize = true;
             this.metroLabel3.Location = new System.Drawing.Point(6, 14);
             this.metroLabel3.Name = "metroLabel3";
-            this.metroLabel3.Size = new System.Drawing.Size(283, 19);
+            this.metroLabel3.Size = new System.Drawing.Size(297, 20);
             this.metroLabel3.TabIndex = 30;
             this.metroLabel3.Text = "We Currently Support other translate methods:";
             // 
@@ -434,7 +426,7 @@
             this.metroLabel4.AutoSize = true;
             this.metroLabel4.Location = new System.Drawing.Point(21, 42);
             this.metroLabel4.Name = "metroLabel4";
-            this.metroLabel4.Size = new System.Drawing.Size(145, 19);
+            this.metroLabel4.Size = new System.Drawing.Size(150, 20);
             this.metroLabel4.TabIndex = 2;
             this.metroLabel4.Text = "1. File to File translation";
             // 
@@ -474,9 +466,9 @@
             this.tabPage3.Controls.Add(this.metroLabel1);
             this.tabPage3.Controls.Add(this.metroComboBox2);
             this.tabPage3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Location = new System.Drawing.Point(4, 25);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(563, 416);
+            this.tabPage3.Size = new System.Drawing.Size(563, 413);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Settings";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -519,7 +511,7 @@
             this.textBox3.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox3.Location = new System.Drawing.Point(220, 341);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(54, 22);
+            this.textBox3.Size = new System.Drawing.Size(54, 26);
             this.textBox3.TabIndex = 33;
             this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -528,7 +520,7 @@
             this.metroLabel8.AutoSize = true;
             this.metroLabel8.Location = new System.Drawing.Point(176, 341);
             this.metroLabel8.Name = "metroLabel8";
-            this.metroLabel8.Size = new System.Drawing.Size(37, 19);
+            this.metroLabel8.Size = new System.Drawing.Size(37, 20);
             this.metroLabel8.TabIndex = 32;
             this.metroLabel8.Text = "Port:";
             // 
@@ -537,7 +529,7 @@
             this.metroLabel7.AutoSize = true;
             this.metroLabel7.Location = new System.Drawing.Point(6, 341);
             this.metroLabel7.Name = "metroLabel7";
-            this.metroLabel7.Size = new System.Drawing.Size(23, 19);
+            this.metroLabel7.Size = new System.Drawing.Size(23, 20);
             this.metroLabel7.TabIndex = 31;
             this.metroLabel7.Text = "ip:";
             // 
@@ -546,7 +538,7 @@
             this.textBox2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox2.Location = new System.Drawing.Point(35, 341);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(135, 22);
+            this.textBox2.Size = new System.Drawing.Size(135, 26);
             this.textBox2.TabIndex = 30;
             this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
@@ -557,7 +549,7 @@
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(3, 311);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(103, 18);
+            this.label3.Size = new System.Drawing.Size(129, 24);
             this.label3.TabIndex = 29;
             this.label3.Text = "Proxy Settings";
             // 
@@ -568,7 +560,7 @@
             this.checkBox1.ForeColor = System.Drawing.Color.Orange;
             this.checkBox1.Location = new System.Drawing.Point(6, 83);
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(173, 20);
+            this.checkBox1.Size = new System.Drawing.Size(206, 24);
             this.checkBox1.TabIndex = 28;
             this.checkBox1.Text = "Enable Advanced Mode";
             this.checkBox1.UseVisualStyleBackColor = true;
@@ -580,7 +572,7 @@
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(3, 118);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(125, 18);
+            this.label6.Size = new System.Drawing.Size(154, 24);
             this.label6.TabIndex = 26;
             this.label6.Text = "Assistant Settings";
             // 
@@ -590,7 +582,7 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(3, 3);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(60, 18);
+            this.label2.Size = new System.Drawing.Size(77, 24);
             this.label2.TabIndex = 25;
             this.label2.Text = "General";
             // 
@@ -601,7 +593,7 @@
             this.metroCheckBox8.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.metroCheckBox8.Location = new System.Drawing.Point(6, 273);
             this.metroCheckBox8.Name = "metroCheckBox8";
-            this.metroCheckBox8.Size = new System.Drawing.Size(150, 15);
+            this.metroCheckBox8.Size = new System.Drawing.Size(162, 17);
             this.metroCheckBox8.TabIndex = 21;
             this.metroCheckBox8.Text = "Pronounciation Support";
             this.metroCheckBox8.UseSelectable = true;
@@ -614,7 +606,7 @@
             this.metroCheckBox4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.metroCheckBox4.Location = new System.Drawing.Point(6, 241);
             this.metroCheckBox4.Name = "metroCheckBox4";
-            this.metroCheckBox4.Size = new System.Drawing.Size(280, 15);
+            this.metroCheckBox4.Size = new System.Drawing.Size(308, 17);
             this.metroCheckBox4.TabIndex = 17;
             this.metroCheckBox4.Text = "Translate definition results to your own language";
             this.metroCheckBox4.UseSelectable = true;
@@ -627,7 +619,7 @@
             this.metroCheckBox3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.metroCheckBox3.Location = new System.Drawing.Point(6, 208);
             this.metroCheckBox3.Name = "metroCheckBox3";
-            this.metroCheckBox3.Size = new System.Drawing.Size(327, 15);
+            this.metroCheckBox3.Size = new System.Drawing.Size(359, 17);
             this.metroCheckBox3.TabIndex = 16;
             this.metroCheckBox3.Text = "Word Meaning Suggestions Using Percentage Calculation";
             this.metroCheckBox3.UseSelectable = true;
@@ -640,7 +632,7 @@
             this.metroCheckBox2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.metroCheckBox2.Location = new System.Drawing.Point(6, 177);
             this.metroCheckBox2.Name = "metroCheckBox2";
-            this.metroCheckBox2.Size = new System.Drawing.Size(362, 15);
+            this.metroCheckBox2.Size = new System.Drawing.Size(394, 17);
             this.metroCheckBox2.TabIndex = 15;
             this.metroCheckBox2.Text = "Auto-identify Slangs/Idioms/Memes/Historical Events or Names";
             this.metroCheckBox2.UseSelectable = true;
@@ -653,7 +645,7 @@
             this.metroCheckBox1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.metroCheckBox1.Location = new System.Drawing.Point(6, 146);
             this.metroCheckBox1.Name = "metroCheckBox1";
-            this.metroCheckBox1.Size = new System.Drawing.Size(271, 15);
+            this.metroCheckBox1.Size = new System.Drawing.Size(294, 17);
             this.metroCheckBox1.TabIndex = 14;
             this.metroCheckBox1.Text = "Multiple Website Analysis to improve Accuracy";
             this.metroCheckBox1.UseSelectable = true;
@@ -665,7 +657,7 @@
             this.textBox1.Location = new System.Drawing.Point(147, 51);
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(135, 22);
+            this.textBox1.Size = new System.Drawing.Size(135, 26);
             this.textBox1.TabIndex = 10;
             this.textBox1.Text = "Default Location";
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -675,7 +667,7 @@
             this.metroLabel2.AutoSize = true;
             this.metroLabel2.Location = new System.Drawing.Point(6, 54);
             this.metroLabel2.Name = "metroLabel2";
-            this.metroLabel2.Size = new System.Drawing.Size(117, 19);
+            this.metroLabel2.Size = new System.Drawing.Size(124, 20);
             this.metroLabel2.TabIndex = 9;
             this.metroLabel2.Text = "Location Selection:";
             // 
@@ -684,7 +676,7 @@
             this.metroLabel1.AutoSize = true;
             this.metroLabel1.Location = new System.Drawing.Point(3, 21);
             this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(136, 19);
+            this.metroLabel1.Size = new System.Drawing.Size(146, 20);
             this.metroLabel1.TabIndex = 8;
             this.metroLabel1.Text = "Language Preference:";
             // 
@@ -708,9 +700,9 @@
             this.tabPage4.Controls.Add(this.richTextBox2);
             this.tabPage4.Controls.Add(this.label1);
             this.tabPage4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabPage4.Location = new System.Drawing.Point(4, 22);
+            this.tabPage4.Location = new System.Drawing.Point(4, 25);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(563, 416);
+            this.tabPage4.Size = new System.Drawing.Size(563, 413);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "About";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -722,7 +714,7 @@
             this.label4.ForeColor = System.Drawing.Color.Gold;
             this.label4.Location = new System.Drawing.Point(3, 366);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(265, 16);
+            this.label4.Size = new System.Drawing.Size(336, 20);
             this.label4.TabIndex = 14;
             this.label4.Text = "2018 Capstone Project Presentation Winner";
             // 
@@ -741,7 +733,7 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(449, 366);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(97, 16);
+            this.label1.Size = new System.Drawing.Size(125, 20);
             this.label1.TabIndex = 0;
             this.label1.Text = "ELNA Inc. 2018";
             // 
@@ -776,9 +768,15 @@
             this.webBrowser3.Url = new System.Uri("https://www.bing.com/translator", System.UriKind.Absolute);
             this.webBrowser3.Visible = false;
             // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 300;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick_1Async);
+            // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
@@ -855,7 +853,6 @@
         private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton8;
         private System.Windows.Forms.WebBrowser webBrowser1;
         private System.Windows.Forms.WebBrowser webBrowser2;
-        private System.Windows.Forms.StatusStrip statusStrip1;
         private MetroFramework.Controls.MetroLabel metroLabel7;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label3;
@@ -869,5 +866,6 @@
         private MetroFramework.Controls.MetroButton metroButton3;
         private MetroFramework.Controls.MetroButton metroButton2;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Timer timer1;
     }
 }

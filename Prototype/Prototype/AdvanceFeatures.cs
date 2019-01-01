@@ -154,11 +154,5 @@ namespace Prototype
             Uri uri = new Uri(url);
             webClient.DownloadFile(uri, filename);
         }
-        public static IEnumerable<HtmlElement> getElementsByClassName(HtmlDocument doc, string className)
-        {
-            foreach (HtmlElement e in doc.All)
-                if (e.GetAttribute("className") == className)
-                    yield return e;
-        }
     }
 }

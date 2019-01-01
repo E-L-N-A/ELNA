@@ -48,7 +48,7 @@ namespace Prototype
             Directory.CreateDirectory(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)+@"\ELNA_Temp");
 
             //richTextBox1.Text = lines;
-
+            timer1.Start();
         }
         //------------------------------------------------------------------------------------------------------------------------------------------------------
         //------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -439,13 +439,8 @@ namespace Prototype
 
             }
             timer = new Timer();
-            //webBrowser1.Document.GetElementById("gt-src-listen").InvokeMember("click");
-            //pc = webBrowser1.Document.GetElementById("gt-src-listen").GetAttribute("aria-pressed");
-            var resButton = AdvanceFeatures.getElementsByClassName(webBrowser1.Document, "res-tts").GetEnumerator();
-            Console.Write(resButton.ToString());
-            resButton.MoveNext();
-            resButton.Current.InvokeMember("click");
-            pc = resButton.Current.GetAttribute("aria-pressed");
+            webBrowser1.Document.GetElementById("gt-src-listen").InvokeMember("click");
+            pc = webBrowser1.Document.GetElementById("gt-src-listen").GetAttribute("aria-pressed");
             timer.Interval = 1000;
             timer.Tick += new EventHandler(TimerEventProcessor);
             materialRaisedButton3.Visible = false;
@@ -457,9 +452,7 @@ namespace Prototype
         {
             try
             {
-                //pc = webBrowser1.Document.GetElementById("gt-src-listen").GetAttribute("aria-pressed");
-                var resButton = AdvanceFeatures.getElementsByClassName(webBrowser1.Document, "res-tts").GetEnumerator();
-                pc = resButton.Current.GetAttribute("aria-pressed");
+                pc = webBrowser1.Document.GetElementById("gt-src-listen").GetAttribute("aria-pressed");
                 if (pc.Equals("false"))
             {
                 materialRaisedButton3.Visible = true;
@@ -773,6 +766,38 @@ namespace Prototype
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private async void timer1_Tick_1Async(object sender, EventArgs e)
+        {
+            Color c = new Color();
+            c = Color.FromArgb(255, 0, 0);
+            label4.ForeColor = c;
+            label1.ForeColor = c;
+            await Task.Delay(300);
+            c = Color.FromArgb(255, 0, 255);
+            label4.ForeColor = c;
+            label1.ForeColor = c;
+            await Task.Delay(300);
+            c = Color.FromArgb(0, 0, 255);
+            label4.ForeColor = c;
+            label1.ForeColor = c;
+            await Task.Delay(300);
+            c = Color.FromArgb(0, 255, 255);
+            label4.ForeColor = c;
+            label1.ForeColor = c;
+            await Task.Delay(300);
+            c = Color.FromArgb(0, 255, 0);
+            label4.ForeColor = c;
+            label1.ForeColor = c;
+            await Task.Delay(300);
+            c = Color.FromArgb(255, 255, 0);
+            label4.ForeColor = c;
+            label1.ForeColor = c;
+            await Task.Delay(300);
+            c = Color.FromArgb(255, 0, 0);
+            label4.ForeColor = c;
+            label1.ForeColor = c;
         }
     }
     public class Result
