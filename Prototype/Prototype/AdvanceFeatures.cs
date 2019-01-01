@@ -15,7 +15,7 @@ using System.Speech.Recognition;
 using System.Drawing;
 using Tesseract;
 using System.Net;
-
+using System.Windows.Forms;
 
 namespace Prototype
 {
@@ -153,6 +153,12 @@ namespace Prototype
             WebClient webClient = new WebClient();
             Uri uri = new Uri(url);
             webClient.DownloadFile(uri, filename);
+        }
+        public static IEnumerable<HtmlElement> getElementsByClassName(HtmlDocument doc, string className)
+        {
+            foreach (HtmlElement e in doc.All)
+                if (e.GetAttribute("className") == className)
+                    yield return e;
         }
     }
 }
