@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.metroComboBox1 = new MetroFramework.Controls.MetroComboBox();
             this.materialRaisedButton1 = new MaterialSkin.Controls.MaterialRaisedButton();
@@ -84,7 +83,6 @@
             this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.webBrowser2 = new System.Windows.Forms.WebBrowser();
             this.webBrowser3 = new System.Windows.Forms.WebBrowser();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.materialTabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -721,13 +719,12 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.Orange;
+            this.label4.ForeColor = System.Drawing.Color.Gold;
             this.label4.Location = new System.Drawing.Point(3, 366);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(265, 16);
             this.label4.TabIndex = 14;
             this.label4.Text = "2018 Capstone Project Presentation Winner";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // richTextBox2
             // 
@@ -778,11 +775,6 @@
             this.webBrowser3.TabIndex = 27;
             this.webBrowser3.Url = new System.Uri("https://www.bing.com/translator", System.UriKind.Absolute);
             this.webBrowser3.Visible = false;
-            // 
-            // timer1
-            // 
-            this.timer1.Interval = 1800;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // Form1
             // 
@@ -877,6 +869,5 @@
         private MetroFramework.Controls.MetroButton metroButton3;
         private MetroFramework.Controls.MetroButton metroButton2;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Timer timer1;
     }
 }
